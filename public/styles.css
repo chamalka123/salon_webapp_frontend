@@ -20,16 +20,7 @@ header h1{
     color: white;
 }
 
-welcomeScreen{
-    color: #fff;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgb(175, 250, 255);
-    width: 45%;
-    height: 60vh;
-    margin: 5%;
-    padding: 2%;
-    float: right;
-}
+
 
 .welcomePicture{
     background-image: url(./welcomeScreenImage.jpg);
