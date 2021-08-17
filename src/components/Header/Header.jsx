@@ -1,4 +1,5 @@
 import React from "react";
+import "./Header.css";
 
 function Header(){
     return (
@@ -6,6 +7,7 @@ function Header(){
             <h1>
                 Salon Winray
             </h1>
+            
         </header>
     );
 }

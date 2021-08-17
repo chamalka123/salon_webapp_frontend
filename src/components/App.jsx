@@ -1,14 +1,12 @@
 import react from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import WelcomeScreen from "./WelcomeScreen";
-import WelcomePicture from "./WelcomePicture";
+import Header from "./Header/Header"
+import Footer from "./Footer/Footer";
+import WelcomePicture from "./WelcomeImage/WelcomePicture";
 
 function App(){
     return(
         <div>
             < Header />
-            < WelcomeScreen />
             < WelcomePicture />
             < Footer />  
         </div>);
