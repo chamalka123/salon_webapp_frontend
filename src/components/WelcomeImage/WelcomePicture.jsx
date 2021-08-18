@@ -4,7 +4,7 @@ function WelcomePicture(){
 
     return (
         <welcomePicture>
-          <div class="welcomePicture">
+          <div className="welcomePicture">
           </div>
         </welcomePicture>
         );

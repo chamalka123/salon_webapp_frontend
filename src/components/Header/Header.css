@@ -1,10 +1,27 @@
-header{
-    background-color: rgb(43, 26, 88);
-    margin: auto -16px;
-    padding: 16px 32px;
-    text-align: center;
+.nav-container{
+    padding: 14px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #0516ac;
+    text-decoration: none;
+}
+ 
+.nav-brand{
+    color: palevioletred;
+    margin: 0 2.75%;
+    padding-right: 50%;
 }
 
-header h1{
-    color: white;
+.nav-item{
+    color: #f3f3f3;
+    cursor: pointer;
+    margin: 0 15px;
+    text-decoration: none;
 }
+
+.nav-item:hover{
+    color: palevioletred;
+}
+
+
