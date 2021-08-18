@@ -24,4 +24,11 @@
     color: palevioletred;
 }
 
-
+@media (max-width: 992px) {
+    .nav-brand{
+        padding-right: 10px;
+    }
+    .nav-container{
+        flex-direction: column;
+    }
+}
