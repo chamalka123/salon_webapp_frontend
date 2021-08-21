@@ -17,11 +17,14 @@
     color: #f3f3f3;
     cursor: pointer;
     margin: 0 15px;
-    text-decoration: none;
 }
 
 .nav-item:hover{
     color: palevioletred;
+}
+
+.link{
+    text-decoration: none;
 }
 
 @media (max-width: 992px) {

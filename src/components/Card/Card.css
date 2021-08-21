@@ -1,0 +1,15 @@
+img{
+    width :150px;
+    height: 150px;
+}
+.card{
+    border: solid;
+    margin: 3%;
+    width :200px;
+    height: 200px;
+    float: right;
+}
+p{
+    text-align: center;
+    margin: 2%;
+}
