@@ -1,3 +1,6 @@
+Student IT Number - IT20491994
+ GitHub Username - saduni-udeshika
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
