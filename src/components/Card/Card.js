@@ -4,14 +4,14 @@ import {Link} from 'react-router-dom';
 
 function Card(props){
     return (
-
-        <div className="card">
-            <Link to={"/myAccount"}>
+        <Link to={props.navigate}>
+            <div className="card">
                 <img src = {props.img}
                 alt="admin_home_img" />
                 <p>{props.name}</p>
-            </Link>
-        </div>
+            </div>
+        </Link>
+
     );
 }
 export default Card;
