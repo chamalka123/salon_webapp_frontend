@@ -2,8 +2,6 @@ import React from "react";
 import "./adminPanel.css";
 import Card from "../../components/Card/Card";
 import cardDetails from "../../components/Card/cardDetails";
-//import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-
 
 function Admin(){
     return(
