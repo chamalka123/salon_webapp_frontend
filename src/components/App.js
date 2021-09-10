@@ -8,6 +8,7 @@ import Expenses from "../views/Expenses/Expenses";
 import Payment from "../views/Payment/Payment";
 import AddExpenses from "../views/Expenses/AddExpenses";
 import EditExpenses from "../views/Expenses/EditExpenses";
+import AddPayment from "../views/Payment/AddPayment";
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route exact path="/AddExpense">
             <AddExpenses />
+            </Route>
+            <Route exact path="/AddPayment">
+            <AddPayment />
           </Route>
           <Route exact path="/EditExpense/:id">
             <EditExpenses />
