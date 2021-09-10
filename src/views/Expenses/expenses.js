@@ -2,6 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
+import AddIcon from '@material-ui/icons/Add';
+import Searchbar from "../../components/Searchbar/Searchbar";
+
 
 //fetch
 function Expenses() {
@@ -35,6 +40,7 @@ function Expenses() {
   return (
     <div className="container">
       <h1>Expense management</h1>
+      <Searchbar />
       <table className="table">
         <thead>
             <th scope="col">ID</th>
@@ -51,17 +57,17 @@ function Expenses() {
                   <td>{expenses.amount}</td>
                   <td>{expenses.description}</td> 
                   <Link to= {`/EditExpense/${expenses._id}`} className="btn btn-success btn-sm">
-                    EDIT
+                    EDIT<EditIcon />
                   </Link>
                   &nbsp;
                   <button className="btn btn-danger btn-sm" onClick={() => deleteExpense(expenses._id)}>
-                    DELETE
+                    DELETE<DeleteIcon />
                   </button>
                 </tr>
               ))}    
       </table>
-      <Link to={"/AddExpense"} className="btn btn-warning btn-sm" href="#">
-        ADD EXPENSE
+      <Link to={"/AddExpense"} className="btn btn-warning btn-sm">
+        ADD EXPENSE <AddIcon />
       </Link>
     </div>
   );

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Expenses.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function AddExpenses() {
 
@@ -80,7 +81,9 @@ function AddExpenses() {
           Submit
         </button>
         &nbsp;
+        <Link to="/Expenses">
         <button className="btn btn-danger">CANCEL</button> 
+        </Link>
       </form>
     </div>
   );
