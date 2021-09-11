@@ -7,6 +7,9 @@ import MyAccount from "../views/myAccount/myAccount";
 import Expenses from "../views/Expenses/Expenses";
 import Payment from "../views/Payment/Payment";
 import AddExpenses from "../views/Expenses/AddExpenses";
+import AllProduct from "../views/Product/AllProduct";
+import AddProduct from "../views/Product/AddProduct";
+import EditProduct from "../views/Product/EditProduct";
 
 function App() {
   return (
@@ -31,6 +34,15 @@ function App() {
           </Route>
           <Route exact path="/AddExpense">
             <AddExpenses />
+          </Route>
+          <Route exact path="/Product">
+            <AllProduct/>
+          </Route>
+          <Route exact path="/AddProduct">
+          <AddProduct/>
+          </Route>
+          <Route exact path="/EditProduct">
+          <EditProduct/>
           </Route>
         </Switch>
       </Router>
