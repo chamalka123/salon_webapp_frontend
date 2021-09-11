@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from "./Header/Header";
+import ButtonAppBar from "./Header/Header";
 import Footer from "./Footer/Footer";
 import Home from "../views/Home/Home";
 import Admin from "../views/adminPanel/adminPanel";
@@ -10,12 +10,15 @@ import AddExpenses from "../views/Expenses/AddExpenses";
 import AllProduct from "../views/Product/AllProduct";
 import AddProduct from "../views/Product/AddProduct";
 import EditProduct from "../views/Product/EditProduct";
+import EditExpenses from "../views/Expenses/EditExpenses";
+import AddPayment from "../views/Payment/AddPayment";
+
 
 function App() {
   return (
     <div>
       <Router>
-        <Header />
+        <ButtonAppBar />
         <Switch>
           <Route exact path="/">
             <Home />
@@ -34,6 +37,12 @@ function App() {
           </Route>
           <Route exact path="/AddExpense">
             <AddExpenses />
+            </Route>
+            <Route exact path="/AddPayment">
+            <AddPayment />
+          </Route>
+          <Route exact path="/EditExpense/:id">
+            <EditExpenses />
           </Route>
           <Route exact path="/Product">
             <AllProduct/>
@@ -41,7 +50,7 @@ function App() {
           <Route exact path="/AddProduct">
           <AddProduct/>
           </Route>
-          <Route exact path="/EditProduct">
+          <Route exact path="/EditProduct/:id">
           <EditProduct/>
           </Route>
         </Switch>

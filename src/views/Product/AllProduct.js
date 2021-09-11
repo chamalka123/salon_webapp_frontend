@@ -59,16 +59,14 @@ export default function AllProduct() {
                     <td>{products.category_id}</td>
                     <td>{products.category_name}</td>
                     <td>{products.quantity}</td>
-
-                    <div class ="btn">
                     
-                    <Link to={"/EditProduct"}className="btn btn-success btn-sm">Update</Link>
-                    
+                    <div class="btn">
+                    <Link to={`/EditProduct/${products._id}`} class="btn btn-success btn-sm">
+                        Update</Link>
                     &nbsp;
                     <button type="button" class="btn btn-danger btn-sm" onClick={() => deleteProduct(products._id)}>Delete</button>
                     </div>
 
-                
                 </tr> 
                
             ))}

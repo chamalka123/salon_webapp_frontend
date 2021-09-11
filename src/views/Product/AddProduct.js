@@ -4,6 +4,7 @@ import "./AddProduct.css";
 
 
 
+
 export default function AddProduct(){
 
   const [product_id, setProduct_id] = useState("");
@@ -38,13 +39,13 @@ export default function AddProduct(){
   }
 
     return(
-     <div className="container"> 
+      <center>
+     <div className="product-container" > 
      <h1>Add New Product</h1>
-      <form onSubmit={sendData}>
+      <form onSubmit={sendData} className="add-product">
 
   <div class="col-md-12">
-    <label for="product_id">Product ID</label>
-    <input type="text" class="form-control" id="product_id" required
+    <input type="text" class="form-control" id="product_id" placeholder="Product ID" required
     onChange={(e)=>{
 
       setProduct_id(e.target.value);
@@ -53,8 +54,7 @@ export default function AddProduct(){
   </div>
   
   <div class="col-md-12">
-    <label for="product_name">Product Name</label>
-    <input type="text" class="form-control" id="product_name" required
+    <input type="text" class="form-control" id="product_name" placeholder="Product Name" required
     onChange={(e)=>{
 
       setProduct_name(e.target.value);
@@ -63,7 +63,6 @@ export default function AddProduct(){
   </div>
 
   <div class="col-md-12">
-    <label for="description">Description</label>
     <input type="text" class="form-control" id="description" placeholder="Enter Product Description" required
     onChange={(e)=>{
 
@@ -73,8 +72,7 @@ export default function AddProduct(){
   </div>
 
   <div class="col-md-12">
-    <label for="price">Price</label>
-    <input type="text" class="form-control" id="price" placeholder="Enter Price" required
+    <input type="text" class="form-control" id="price" placeholder="Enter Price" placeholder="Price" required
     onChange={(e)=>{
 
       setPrice(e.target.value);
@@ -83,8 +81,7 @@ export default function AddProduct(){
   </div>
 
   <div class="col-md-12">
-    <label for="category_id">Product Category ID</label>
-    <input type="text" class="form-control" id="category_id" required
+    <input type="text" class="form-control" id="category_id" placeholder="Product Category ID" required
     onChange={(e)=>{
 
       setCategory_id(e.target.value);
@@ -93,8 +90,7 @@ export default function AddProduct(){
   </div>
 
   <div class="col-md-12" >
-    <label for="catergory_name">Product Category Name</label>
-    <input type="text" class="form-control" id="category_name" required
+    <input type="text" class="form-control" id="category_name"  placeholder="Product Category Name" required
     onChange={(e)=>{
 
       setCategory_name(e.target.value);
@@ -103,8 +99,7 @@ export default function AddProduct(){
   </div>
 
   <div class="col-md-12">
-    <label for="quantity">Quantity</label>
-    <input type="text" class="form-control" id="quantity" required
+    <input type="text" class="form-control" id="quantity" placeholder="Quantity" required
     onChange={(e)=>{
 
       setQuantity(e.target.value);
@@ -119,5 +114,6 @@ export default function AddProduct(){
   </center>
 </form>
 </div>  
+</center>
     )
 }

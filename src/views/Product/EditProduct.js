@@ -1,6 +1,8 @@
 import React,{useState, useEffect} from "react";
 import axios from "axios";
 import { useParams } from "react-router";
+import "./AddProduct.css";
+
 
 
 function EditProduct(){
@@ -19,7 +21,7 @@ function EditProduct(){
       axios.get(`http://localhost:8070/product/get/${id}`)
       .then((res) => {
 
-        console.log(res.data);
+        console.log(res.data.product);
         setProduct_id(res.data.product.product_id);
         setProduct_name(res.data.product.product_name);
         setDescription(res.data.product.description);
@@ -61,13 +63,14 @@ function EditProduct(){
   }
 
     return(
-     <div className="container"> 
+      <center>
+     <div className="product-container"> 
      <h1>Edit Product</h1>
-      <form onSubmit={sendUpdateProduct}>
+      <form onSubmit={sendUpdateProduct} className="add-product">
 
   <div class="col-md-12">
-    <label for="product_id">Product ID</label>
-    <input type="text" class="form-control" id="product_id" 
+  
+    <input type="text" class="form-control" id="product_id" placeholder="Product ID" readOnly= {true}
     value={product_id}
     onChange={(e)=>{
 
@@ -77,8 +80,7 @@ function EditProduct(){
   </div>
   
   <div class="col-md-12">
-    <label for="product_name">Product Name</label>
-    <input type="text" class="form-control" id="product_name" 
+    <input type="text" class="form-control" id="product_name" placeholder="Product Name"
     value={product_name}
     onChange={(e)=>{
 
@@ -88,7 +90,6 @@ function EditProduct(){
   </div>
 
   <div class="col-md-12">
-    <label for="description">Description</label>
     <input type="text" class="form-control" id="description" placeholder="Enter Product Description" 
     value={description}
     onChange={(e)=>{
@@ -99,7 +100,6 @@ function EditProduct(){
   </div>
 
   <div class="col-md-12">
-    <label for="price">Price</label>
     <input type="text" class="form-control" id="price" placeholder="Enter Price" 
     value={price}
     onChange={(e)=>{
@@ -110,8 +110,7 @@ function EditProduct(){
   </div>
 
   <div class="col-md-12">
-    <label for="category_id">Product Category ID</label>
-    <input type="text" class="form-control" id="category_id"  
+    <input type="text" class="form-control" id="category_id" placeholder="Product Category ID"
     value={category_id}
     onChange={(e)=>{
 
@@ -121,8 +120,7 @@ function EditProduct(){
   </div>
 
   <div class="col-md-12" >
-    <label for="catergory_name">Product Category Name</label>
-    <input type="text" class="form-control" id="category_name" 
+    <input type="text" class="form-control" id="category_name" placeholder="Product Category Name"
     value={category_name}
     onChange={(e)=>{
 
@@ -132,8 +130,7 @@ function EditProduct(){
   </div>
 
   <div class="col-md-12">
-    <label for="quantity">Quantity</label>
-    <input type="text" class="form-control" id="quantity" 
+    <input type="text" class="form-control" id="quantity" placeholder="Quantity"
     value={quantity}
     onChange={(e)=>{
 
@@ -148,7 +145,8 @@ function EditProduct(){
   </div>
   </center>
 </form>
-</div>  
+</div> 
+</center>
     );
 }
 export default EditProduct;
