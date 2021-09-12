@@ -6,6 +6,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import AddIcon from "@material-ui/icons/Add";
 import "./Expenses.css";
+import Navbar from "../../components/Navbar/Navbar";
 
 //fetch all expense collections
 function Expenses() {
@@ -39,7 +40,9 @@ function Expenses() {
   }
  
   return (
-    <div className="container">
+    <div className="expenseBody">
+                <Navbar />
+    <div className="containerExpenses">
       <h1>Expense management</h1>
       <table className="table">
         <thead>
@@ -60,18 +63,18 @@ function Expenses() {
             <td>{expenses.description}</td>
             <Link
               to={`/EditExpense/${expenses._id}`}
-              className="btn btn-success btn-sm"
+              className="btn btn-success btn-sm expenseButton"
             >
               EDIT
-              <EditIcon />
+              <EditIcon className="btn-icon"/>
             </Link>
             &nbsp;
             <button
-              className="btn btn-danger btn-sm"
+              className="btn btn-danger btn-sm expenseButton"
               onClick={() => deleteExpense(expenses._id)}
             >
               DELETE
-              <DeleteIcon />
+              <DeleteIcon className="btn-icon"/>
             </button>
           </tr>
         ))}
@@ -79,6 +82,7 @@ function Expenses() {
       <Link to={"/AddExpense"} className="btn btn-warning btn-sm">
         ADD EXPENSE <AddIcon />
       </Link>
+    </div>
     </div>
   );
 }

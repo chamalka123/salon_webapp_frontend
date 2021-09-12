@@ -33,32 +33,32 @@ export default function AllProduct() {
 
 
     return (
-    <div className>
-        <h1>All Products Details</h1>
+    <div className="productContainer">
+        <h1 className="product">All Products Details</h1>
         <table class="table">
             <thead>
-                <tr>
-                <th scope="col">Product ID</th>
-                <th scope="col">Product Name</th>
-                <th scope="col">Description</th>
-                <th scope="col">Price</th>
-                <th scope="col">Category ID</th>
-                <th scope="col">Category Name</th>
-                <th scope="col">Quantity</th>
-                <th scope="col"></th>
+                <tr className="productRow">
+                <th clasName="addProductTable" scope="col">Product ID</th>
+                <th clasName="addProductTable" scope="col">Product Name</th>
+                <th clasName="addProductTable" scope="col">Description</th>
+                <th clasName="addProductTable" scope="col">Price</th>
+                <th clasName="addProductTable" scope="col">Category ID</th>
+                <th clasName="addProductTable" scope="col">Category Name</th>
+                <th clasName="addProductTable" scope="col">Quantity</th>
+                <th clasName="addProductTable" scope="col"></th>
                 </tr>
             </thead>
            
             {products.map((products) => (
         
-                <tr>
-                    <td>{products.product_id}</td>
-                    <td>{products.product_name}</td>
-                    <td>{products.description}</td>
-                    <td>{products.price}</td>
-                    <td>{products.category_id}</td>
-                    <td>{products.category_name}</td>
-                    <td>{products.quantity}</td>
+                <tr className="productRow">
+                    <td clasName="addProductTable" >{products.product_id}</td>
+                    <td clasName="addProductTable" >{products.product_name}</td>
+                    <td clasName="addProductTable" >{products.description}</td>
+                    <td clasName="addProductTable" >{products.price}</td>
+                    <td clasName="addProductTable" >{products.category_id}</td>
+                    <td clasName="addProductTable" >{products.category_name}</td>
+                    <td clasName="addProductTable" >{products.quantity}</td>
                     
                     <div class="btn">
                     <Link to={`/EditProduct/${products._id}`} class="btn btn-success btn-sm">

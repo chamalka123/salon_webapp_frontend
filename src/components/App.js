@@ -13,7 +13,9 @@ import EditExpenses from "../views/Expenses/EditExpenses";
 import AddPayment from "../views/Payment/AddPayment";
 import SideDrawer from "./Header/SideDrawer";
 import AdminLogin from "../views/AdminLogin/AdminLogin";
-
+import BudgetPlans from "../views/BudgetPlans/BudgetPlans";
+import Income from "../views/Income/Income";
+import Navbar from "./Navbar/Navbar";
 
 function App() {
   return (
@@ -34,28 +36,36 @@ function App() {
             <Admin />
           </Route>
           <Route exact path="/Expenses">
+            <Navbar />
             <Expenses />
+          </Route>
+          <Route exact path="/budgetPlans">
+            <Navbar />
+            <BudgetPlans />
+          </Route>
+          <Route exact path="/budgetPlans">
+            <Income />
           </Route>
           <Route exact path="/Payment">
             <Payment />
           </Route>
           <Route exact path="/AddExpense">
             <AddExpenses />
-            </Route>
-            <Route exact path="/AddPayment">
+          </Route>
+          <Route exact path="/AddPayment">
             <AddPayment />
           </Route>
           <Route exact path="/EditExpense/:id">
             <EditExpenses />
           </Route>
           <Route exact path="/Product">
-            <AllProduct/>
+            <AllProduct />
           </Route>
           <Route exact path="/AddProduct">
-          <AddProduct/>
+            <AddProduct />
           </Route>
           <Route exact path="/EditProduct/:id">
-          <EditProduct/>
+            <EditProduct />
           </Route>
         </Switch>
       </Router>
