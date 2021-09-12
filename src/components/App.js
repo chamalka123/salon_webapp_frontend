@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import ButtonAppBar from "./Header/Header";
 import Footer from "./Footer/Footer";
 import Home from "../views/Home/Home";
 import Admin from "../views/adminPanel/adminPanel";
@@ -9,15 +8,20 @@ import Payment from "../views/Payment/Payment";
 import AddExpenses from "../views/Expenses/AddExpenses";
 import EditExpenses from "../views/Expenses/EditExpenses";
 import AddPayment from "../views/Payment/AddPayment";
+import SideDrawer from "./Header/SideDrawer";
+import AdminLogin from "../views/AdminLogin/AdminLogin";
 
 function App() {
   return (
     <div>
       <Router>
-        <ButtonAppBar />
+        <SideDrawer />
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/admin-login">
+            <AdminLogin />
           </Route>
           <Route exact path="/myAccount">
             <MyAccount />
