@@ -6,10 +6,14 @@ import MyAccount from "../views/myAccount/myAccount";
 import Expenses from "../views/Expenses/Expenses";
 import Payment from "../views/Payment/Payment";
 import AddExpenses from "../views/Expenses/AddExpenses";
+import AllProduct from "../views/Product/AllProduct";
+import AddProduct from "../views/Product/AddProduct";
+import EditProduct from "../views/Product/EditProduct";
 import EditExpenses from "../views/Expenses/EditExpenses";
 import AddPayment from "../views/Payment/AddPayment";
 import SideDrawer from "./Header/SideDrawer";
 import AdminLogin from "../views/AdminLogin/AdminLogin";
+
 
 function App() {
   return (
@@ -43,6 +47,15 @@ function App() {
           </Route>
           <Route exact path="/EditExpense/:id">
             <EditExpenses />
+          </Route>
+          <Route exact path="/Product">
+            <AllProduct/>
+          </Route>
+          <Route exact path="/AddProduct">
+          <AddProduct/>
+          </Route>
+          <Route exact path="/EditProduct/:id">
+          <EditProduct/>
           </Route>
         </Switch>
       </Router>
