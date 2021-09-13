@@ -1,0 +1,23 @@
+.budgetContainer{
+    width: 250px;
+    margin: 1%;
+    border-radius: 1%;
+    background-color: rgb(42, 141, 255);
+    display: flex;
+    flex-direction: row;
+    float: left;
+}
+.budgetDetails{
+    text-align: right;
+}
+.btnBudget{
+    border-radius: 50%;
+    float: right;
+    margin: 4%;
+}
+.budgetDetails{
+    text-align: left;
+}
+.planText{
+    margin: 0 30px 0 30px;
+}

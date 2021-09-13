@@ -27,7 +27,8 @@ function AddExpenses() {
   }
 
   return (
-    <div className="container" onSubmit = {sendExpenseData}>
+    <div className="expenseBody">
+    <div className="container col-6" onSubmit = {sendExpenseData}>
       <form className="addExpense">
         <div className="form-group">
           <label for="exampleInputCategory">Expense Category</label>
@@ -85,6 +86,7 @@ function AddExpenses() {
         <button className="btn btn-danger">CANCEL</button> 
         </Link>
       </form>
+    </div>
     </div>
   );
 }

@@ -14,6 +14,7 @@ import AddPayment from "../views/Payment/AddPayment";
 import SideDrawer from "./Header/SideDrawer";
 import AdminLogin from "../views/AdminLogin/AdminLogin";
 import BudgetPlans from "../views/BudgetPlans/BudgetPlans";
+import Ledgers from "../views/Ledgers/Ledgers";
 import Income from "../views/Income/Income";
 import Navbar from "./Navbar/Navbar";
 
@@ -45,6 +46,9 @@ function App() {
           </Route>
           <Route exact path="/budgetPlans">
             <Income />
+          </Route>
+          <Route exact path="/ledgers">
+            <Ledgers />
           </Route>
           <Route exact path="/Payment">
             <Payment />

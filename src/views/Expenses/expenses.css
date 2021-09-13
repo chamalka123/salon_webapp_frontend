@@ -1,9 +1,9 @@
 .expenseBody{
-    margin: 4% 4% 0 8%;
+    margin: 4% 8% 0 10%;
 }
 .addExpense{
-    padding: 1%;
-    margin-top: 2%;
+    padding: 10%;
+    margin-top: 16%;
 }
 .search-form{
     float: right;
@@ -15,13 +15,10 @@ input{
     border-style: solid;
     border-color: #503ddd;
 }
-.containerExpenses{
-    padding: 30px;
+.expenseButton{
+    border-radius: 50%;
 }
 .btn-icon{
-    size: 0.25rem;
-    color: rgb(255, 255, 255);
+    border-radius: 50%;
 }
-.expenseButton{
-    margin-top: 2px;
-}
+

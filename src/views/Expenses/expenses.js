@@ -8,8 +8,8 @@ import AddIcon from "@material-ui/icons/Add";
 import "./Expenses.css";
 import Navbar from "../../components/Navbar/Navbar";
 
-//fetch all expense collections
 function Expenses() {
+  //fetch all expense collections
   const [expenses, setExpenses] = useState([]);
   useEffect(() => {
     function getExpenses() {
@@ -41,31 +41,33 @@ function Expenses() {
  
   return (
     <div className="expenseBody">
-                <Navbar />
+      <Navbar />
     <div className="containerExpenses">
       <h1>Expense management</h1>
-      <table className="table">
-        <thead>
-          <tr>
+      <table className="table table-striped expenseTable">
+        <thead className="thead-dark">
+          <tr className="expenseRaw">
           <th scope="col">ID</th>
           <th scope="col">Entry Date</th>
           <th scope="col">Expense Cetogory</th>
           <th scope="col">Amount</th>
           <th scope="col">description</th>
+          <th scope="col"></th>
           </tr>
         </thead>
+        <tbody>
         {expenses.map((expenses) => (
           <tr>
-            <td>{expenses._id}</td>
-            <td>{expenses.date}</td>
-            <td>{expenses.expenseCategory}</td>
-            <td>{expenses.amount}</td>
-            <td>{expenses.description}</td>
+            <td className="expenseTableDate">{expenses._id}</td>
+            <td className="expenseTableDate">{expenses.date}</td>
+            <td className="expenseTableDate">{expenses.expenseCategory}</td>
+            <td className="expenseTableDate">{expenses.amount}</td>
+            <td className="expenseTableDate">{expenses.description}</td>
+            <td>
             <Link
               to={`/EditExpense/${expenses._id}`}
               className="btn btn-success btn-sm expenseButton"
             >
-              EDIT
               <EditIcon className="btn-icon"/>
             </Link>
             &nbsp;
@@ -73,11 +75,12 @@ function Expenses() {
               className="btn btn-danger btn-sm expenseButton"
               onClick={() => deleteExpense(expenses._id)}
             >
-              DELETE
               <DeleteIcon className="btn-icon"/>
             </button>
+            </td>
           </tr>
         ))}
+        </tbody>
       </table>
       <Link to={"/AddExpense"} className="btn btn-warning btn-sm">
         ADD EXPENSE <AddIcon />
