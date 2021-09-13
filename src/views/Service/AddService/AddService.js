@@ -10,6 +10,7 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import { TextField } from '@material-ui/core';
 
 
+
 function AddService() {
     const[service_id, setservice_id]=useState("");
     const[title,setTitle]=useState("");
@@ -112,11 +113,12 @@ function AddService() {
                                         />
                                     </div>
                                 </div>
-                            </div>                     
+                            </div>   
+                                         
                             <div className="col-md-10 mb-4">
                                 <div className="form-content">
                                     <TextField
-                                        multiline rows={3}
+                                        multiline rows={1}
                                         id="content" placeholder="Service Description" 
                                         required fullWidth variant="outlined" 
                                         onChange={(e)=>setContent(e.target.value)}

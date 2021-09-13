@@ -7,16 +7,16 @@ import MyAccount from "../views/myAccount/myAccount";
 import Expenses from "../views/Expenses/Expenses";
 import Payment from "../views/Payment/Payment";
 import AddExpenses from "../views/Expenses/AddExpenses";
-<<<<<<< HEAD
+
 import Service from "../views/Service/Services/Service";
 import AddService from "../views/Service/AddService/AddService";
 import SingleItem from "../views/Service/SingleItem/SingleItem";
+import UpdateService from "../views/Service/UpdateService/UpdateService";
 
-
-=======
 import EditExpenses from "../views/Expenses/EditExpenses";
 import AddPayment from "../views/Payment/AddPayment";
->>>>>>> 8502d03aab83c8c807a4b4057bc5c589e4f65b3d
+
+
 
 function App() {
   return (
@@ -54,13 +54,12 @@ function App() {
           <Route exact path="/AddService">
             <AddService />
           </Route>
-          <Route exact path="/SingleItem">
-            <SingleItem />
-          </Route>
-      
+          <Route path="/salon/item/:id" exact component={SingleItem}/>
+          <Route path="/salon/item/update/:id" exact component={UpdateService}>
+            </Route>
         </Switch>
       </Router>
-      <Footer />
+  
     </div>
   );
 }

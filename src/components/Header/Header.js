@@ -1,4 +1,4 @@
-/*import React from "react";
+import React from "react";
 import "./Header.css";
 import {Link} from 'react-router-dom';
 
@@ -24,8 +24,8 @@ function Header(){
     );
 }
 
-export default Header;*/
-import React from 'react';
+export default Header;
+/*import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -65,3 +65,4 @@ export default function ButtonAppBar() {
     </div>
   );
 }
+*/

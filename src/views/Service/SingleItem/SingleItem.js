@@ -1,18 +1,42 @@
 import React,{useEffect, useState} from 'react'
+import { useHistory } from 'react-router';
 import '../Services/Service.css'
 import './SingleItem.css'
 import axios from 'axios'
 import {useParams, Link} from 'react-router-dom'
-import { orange, green, red } from '@material-ui/core/colors';
-
+import { orange, green, red, blue} from '@material-ui/core/colors';
+import EditIcon from '@material-ui/icons/Edit';
 
 
 function ServiceDetails(props) {
+    const[id,setId]=useState("");
     const[title,setTitle]=useState("");
     const[price,setPrice]=useState("");
     const[duration,setDuration]=useState("");
     const[content,setContent]=useState("");
-    const [services, setServices] = useState([])
+    const [services, setServices] = useState([]);
+  const history=useHistory()
+    const config = {
+        headers: {
+            "content-Type": "application/json"
+        }
+    };
+    useEffect(() => {
+    async function getServiceDetails() {
+      axios.get(`http://localhost:8070/service/item/${props.match.params.id}`).then((res) => {
+        setId(res.data.service._id)  
+          setTitle(res.data.service.title)
+        setPrice(res.data.service.price)
+        setDuration(res.data.service.duration)
+        setContent(res.data.service.content)
+        console.log(res)   
+      }).catch((err) => {
+        alert(err)
+      })
+    }
+    getServiceDetails();
+
+  }, [props])
 
     useEffect(() => {
       async function getServices() {
@@ -24,24 +48,20 @@ function ServiceDetails(props) {
         })
       }
       getServices();
-      async function getServiceDetails() {
-        axios.get(`http://localhost:8070/service/item/${props.match.params.id}`).then((res) => {
-            setTitle(res.data.service.title)
-          setPrice(res.data.service.price)
-          setDuration(res.data.service.duration)
-          setContent(res.data.service.content)
-          console.log(res)   
-        }).catch((err) => {
-          alert(err)
-        })
-      }
-      getServiceDetails();
-
-    }, [props])
+    }, [])
+    function view(id){
+        history.push(`/salon/item/${id}`)
+    }
     
+    function update(uid){
+        history.push(`/salon/item/update/${uid}`)
+    }
+
       
     return (
+      
         <div className="container">
+          <br></br>
             <div className="detailproductcard">     
                 <div className="detailproduct">
                                 <img src="/images/d.jpg " alt="productdeatils" />
@@ -49,29 +69,17 @@ function ServiceDetails(props) {
                         <div className="row">
                             <h2>{title}</h2>
                         </div>
-                                <span>
-                                    $ {price}
-                                </span>
-                                <div>
-                                <p>
-                                    {duration}
-                                </p>
-                            </div>  
-                            <div>
-                                <p>
-                                    {content}
-                                </p>
-                            </div>  
+                        <h5>Rs.{price}.00</h5>
+                              
+                        <h5>{duration}</h5> 
+                        <p className="text-muted">{content}</p>
                             <table className="singleitembtns">  
                         <div align="right">
                             <span> 
-                                <button class="productbtn" style={{backgroundColor:red[400]}} >
-                                   
-                                </button>
                                     &nbsp;&nbsp;&nbsp; &nbsp;
-                                <button class="productbtn" style={{backgroundColor:red[400]}} >
-                                   Book Now
-                                </button>
+                                    <button className="mx-2 productbtn" style={{backgroundColor:green[400]}} onClick={()=>update(id)}>
+                                        Update <EditIcon/>
+                                        </button>
                             </span> 
                         </div>
                         </table>
@@ -83,7 +91,7 @@ function ServiceDetails(props) {
             <br></br>
         <div>
             <div> 
-            <h2> &nbsp;&nbsp;&nbsp;&nbsp;
+            <h2 align="left"> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               Related 
               <br></br>
               <br></br>
@@ -92,7 +100,7 @@ function ServiceDetails(props) {
                <table className="relatedproduct">
             <div className="products">
                 <div className="container productGridr" > 
-                    {services.map((Service,key)=>( 
+                {services.slice(0, 5).map((Service,key)=>( 
                         <div key={key}> 
                             <div class="productcard">
                                     <div class="imgBx">
@@ -107,7 +115,7 @@ function ServiceDetails(props) {
                                              
                                             </button>
                                                          &nbsp;&nbsp;&nbsp;
-                                            <button class="productbtn" style={{backgroundColor:red[400]}} > View Item </button>
+                                            <button class="productbtn" style={{backgroundColor:red[400]}} onClick={()=>view(Service._id)}> View Item </button>
                                         </span> 
                                     </div>
                                 </div>
@@ -119,7 +127,7 @@ function ServiceDetails(props) {
             </table>
         </div>
         </div> 
-                
+        
     )
 }
 
