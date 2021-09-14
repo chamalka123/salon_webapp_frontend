@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import "./Expenses.css";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
-import AddIcon from "@material-ui/icons/Add";
-import "./Expenses.css";
 import Navbar from "../../components/Navbar/Navbar";
+import { green, red } from "@material-ui/core/colors";
+import AddCircleIcon from '@material-ui/icons/AddCircle';
 
 function Expenses() {
   //fetch all expense collections
@@ -58,24 +59,24 @@ function Expenses() {
         <tbody>
         {expenses.map((expenses) => (
           <tr>
-            <td className="expenseTableDate">{expenses._id}</td>
-            <td className="expenseTableDate">{expenses.date}</td>
-            <td className="expenseTableDate">{expenses.expenseCategory}</td>
-            <td className="expenseTableDate">{expenses.amount}</td>
-            <td className="expenseTableDate">{expenses.description}</td>
+            <td className="expenseTableData">{expenses._id}</td>
+            <td className="expenseTableData">{expenses.date}</td>
+            <td className="expenseTableData">{expenses.expenseCategory}</td>
+            <td className="expenseTableData">{expenses.amount}</td>
+            <td className="expenseTableData">{expenses.description}</td>
             <td>
             <Link
               to={`/EditExpense/${expenses._id}`}
-              className="btn btn-success btn-sm expenseButton"
+              className="btn btn-sm expenseButton"
             >
-              <EditIcon className="btn-icon"/>
+              <EditIcon className="btn-icon" style={{color:green[600]}} fontSize="small"/>
             </Link>
             &nbsp;
             <button
-              className="btn btn-danger btn-sm expenseButton"
+              className="btn btn-sm expenseButton"
               onClick={() => deleteExpense(expenses._id)}
             >
-              <DeleteIcon className="btn-icon"/>
+              <DeleteIcon className="btn-icon" style={{color:red[600]}} fontSize="small"/>
             </button>
             </td>
           </tr>
@@ -83,7 +84,7 @@ function Expenses() {
         </tbody>
       </table>
       <Link to={"/AddExpense"} className="btn btn-warning btn-sm">
-        ADD EXPENSE <AddIcon />
+        ADD EXPENSE <AddCircleIcon />
       </Link>
     </div>
     </div>

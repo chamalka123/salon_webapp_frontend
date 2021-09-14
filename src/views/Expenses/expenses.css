@@ -5,20 +5,7 @@
     padding: 10%;
     margin-top: 16%;
 }
-.search-form{
-    float: right;
-    width: 20rem;
-}
-
-input{
-    margin: 1.5%;
-    border-style: solid;
-    border-color: #503ddd;
-}
 .expenseButton{
-    border-radius: 50%;
-}
-.btn-icon{
     border-radius: 50%;
 }
 

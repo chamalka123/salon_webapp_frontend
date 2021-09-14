@@ -3,6 +3,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "../../components/Navbar/Navbar";
 import "./BudgetPlans.css";
+import DeleteIcon from '@material-ui/icons/Delete';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+import { red } from "@material-ui/core/colors";
+
 function BudgetPlans() {
   //fetch all expense collections
   const [budgetPlans, setBudgetPlans] = useState([]);
@@ -33,7 +37,6 @@ function BudgetPlans() {
   return (
     <div className="expenseBody">
       <Navbar />
-      <h1>Budget Plans</h1>
       {budgetPlans.map((budgetPlans) => (
         <div className="budgetContainer">
           <div className="budgetCard">
@@ -46,13 +49,13 @@ function BudgetPlans() {
               <div className="planText">{budgetPlans.estimate}</div>
               <div className="planText">{budgetPlans.actual}</div>
               <div className="planText">{budgetPlans.balance}</div>
-              <button className="btn btn-dark btn-sm btnBudget">+</button>
+              <button className="btn btn-sm btnBudget"><AddCircleIcon fontSize="small"/></button>
               &nbsp;
               <button
-              className="btn btn-danger btn-sm btnBudget"
+              className="btn btn-sm btnBudget"
               onClick={() => deleteBudgetPlans(budgetPlans._id)}
               >
-              -
+              <DeleteIcon fontSize="small" style={{color: red[600]}}/>
             </button>
             </div>
           </div>
