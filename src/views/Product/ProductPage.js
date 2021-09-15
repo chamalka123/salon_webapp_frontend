@@ -36,11 +36,11 @@ export default function ProductPage() {
 
 
     return (
-        <><div>
+        <><div className="productpage">
             <h1>Product Page</h1>
             <hr />
             <input className="search1"
-            style={{ width:"12%" ,height:"30px"}}
+            style={{ width:"18%" ,height:"30px"}}
             type="text"
             placeholder="  Enter Product Category"
             onChange={(e) => setSearchName(e.target.value)}/>

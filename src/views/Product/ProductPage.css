@@ -1,14 +1,15 @@
 .productContainer {
-  width: 320px;
+  width: 300px;
   height: 200px;
   margin: 2%;
   border-radius: 1%;
   background-color: rgb(250, 249, 249)(100, 237, 191);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   flex-direction: row;
-  float: left;
+  float: right;
   text-align: center;
   font-family: serif;
+  
  
   }
 
@@ -57,4 +58,8 @@
 
   .product-btn:hover {
     opacity: 0.8;
+  }
+
+  .productpage{
+    margin: 4% 8% 0 7%;
   }
