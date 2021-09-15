@@ -47,7 +47,8 @@ function sendUpdateExpense(e){
 }
 
   return (
-    <div className="container" onSubmit = {sendUpdateExpense}>
+    <div className="expenseBody">
+    <div className= "container col-6" onSubmit = {sendUpdateExpense}>
       <form className="addExpense">
         <div className="form-group">
           <label htmlFor="exampleInputCategory">Expense Category</label>
@@ -111,6 +112,7 @@ function sendUpdateExpense(e){
         <button className="btn btn-danger">CANCEL</button> 
         </Link>
       </form>
+    </div>
     </div>
   );
 }

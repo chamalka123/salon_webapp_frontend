@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import axios from "axios";
 import "./AddProduct.css";
+import { Link } from "react-router-dom";
 
 
 
@@ -109,8 +110,18 @@ export default function AddProduct(){
 <br></br>
   <center>
   <div class="col-md-12">
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </div>
+    <button type="submit" class="btn btn-warning ">Submit</button>
+
+        &nbsp;
+        &nbsp;
+
+        <Link to="/Product">
+        <button className="btn btn-danger">Cancel</button> 
+        </Link>
+        
+        
+        </div>
+
   </center>
 </form>
 </div>  

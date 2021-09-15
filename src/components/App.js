@@ -7,6 +7,7 @@ import Expenses from "../views/Expenses/Expenses";
 import Payment from "../views/Payment/Payment";
 import AddExpenses from "../views/Expenses/AddExpenses";
 
+
 import Service from "../views/Service/Services/Service";
 import AddService from "../views/Service/AddService/AddService";
 import SingleItem from "../views/Service/SingleItem/SingleItem";
@@ -14,18 +15,24 @@ import CustomerView from "../views/Service/CustomerView/CustomerView";
 import CustomerSingleItem from "../views/Service/CustomerView/CustomerSingleItem";
 import UpdateService from "../views/Service/UpdateService/UpdateService";
 
+import Appointment from "../views/Appointment/Appointment";
+import AddAppointment from "../views/Appointment/AddAppointment";
+import EditAppointment from "../views/Appointment/EditAppointment";
+
+
 import AllProduct from "../views/Product/AllProduct";
 import AddProduct from "../views/Product/AddProduct";
 import EditProduct from "../views/Product/EditProduct";
 
 import EditExpenses from "../views/Expenses/EditExpenses";
 import AddPayment from "../views/Payment/AddPayment";
+import ProductPage from "../views/Product/ProductPage";
 import SideDrawer from "./Header/SideDrawer";
 import AdminLogin from "../views/AdminLogin/AdminLogin";
 import BudgetPlans from "../views/BudgetPlans/BudgetPlans";
+import Ledgers from "../views/Ledgers/Ledgers";
 import Income from "../views/Income/Income";
 import Navbar from "./Navbar/Navbar";
-
 
 
 function App() {
@@ -57,12 +64,26 @@ function App() {
           <Route exact path="/budgetPlans">
             <Income />
           </Route>
+          <Route exact path="/ledgers">
+            <Ledgers />
+          </Route>
           <Route exact path="/Payment">
             <Payment />
           </Route>
           <Route exact path="/AddExpense">
             <AddExpenses />
           </Route>
+
+          <Route exact path="/Appointment">
+            <Appointment />
+          </Route>
+          <Route exact path="/AddAppointment">
+            <AddAppointment />
+          </Route>
+          <Route exact path="/EditAppointment/:id">
+            <EditAppointment />
+          </Route>
+
           <Route exact path="/AddPayment">
             <AddPayment />
           </Route>
@@ -94,7 +115,13 @@ function App() {
           <Route exact path="/EditProduct/:id">
             <EditProduct />
           </Route>
+
           
+
+          <Route exact path="/ProductPage">
+          <ProductPage/>
+          </Route>
+
 
         </Switch>
       </Router>
