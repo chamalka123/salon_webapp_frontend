@@ -44,6 +44,7 @@ function AddExpenses() {
           <div className="form-group">
             <label for="exampleInputEntryDate1">Entry Date</label>
             <input
+              required ={true}
               type="text"
               className="form-control"
               id="exampleInputEntryDate1"
@@ -56,6 +57,7 @@ function AddExpenses() {
           <div className="form-group">
             <label for="exampleInputEntryDate1">Amount</label>
             <input
+              required ={true}
               type="text"
               className="form-control"
               id="exampleInputEntryDate1"
@@ -68,6 +70,7 @@ function AddExpenses() {
           <div className="form-group">
             <label for="exampleInputEntryDate1">Description</label>
             <input
+              required ={true}
               type="text"
               className="form-control"
               id="exampleInputEntryDate1"
