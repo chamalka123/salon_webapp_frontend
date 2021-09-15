@@ -1,10 +1,10 @@
 .product-container {
     border-radius: 10px;
-    background-color: grey;
+    background-color: cadetblue;
     padding: 10px;
-    margin-top: 10px;
     width: 600px;
     height: 500px;
+    margin: 8% 8% 0 10%;
   }
 .add-product{
   margin: 2%;

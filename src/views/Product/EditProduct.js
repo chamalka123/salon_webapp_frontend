@@ -2,6 +2,7 @@ import React,{useState, useEffect} from "react";
 import axios from "axios";
 import { useParams } from "react-router";
 import "./AddProduct.css";
+import { Link } from "react-router-dom";
 
 
 
@@ -141,7 +142,14 @@ function EditProduct(){
 <br></br>
   <center>
   <div class="col-md-12">
-    <button type="submit" class="btn btn-success btn-sm">Update</button>
+    <button type="submit" class="btn btn-success">Update</button>
+
+    &nbsp;
+    &nbsp;
+
+  <Link to="/Product">
+        <button className="btn btn-danger">Cancel</button> 
+        </Link>
   </div>
   </center>
 </form>

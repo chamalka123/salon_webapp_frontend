@@ -11,6 +11,7 @@ import AddProduct from "../views/Product/AddProduct";
 import EditProduct from "../views/Product/EditProduct";
 import EditExpenses from "../views/Expenses/EditExpenses";
 import AddPayment from "../views/Payment/AddPayment";
+import ProductPage from "../views/Product/ProductPage";
 import SideDrawer from "./Header/SideDrawer";
 import AdminLogin from "../views/AdminLogin/AdminLogin";
 import BudgetPlans from "../views/BudgetPlans/BudgetPlans";
@@ -70,6 +71,9 @@ function App() {
           </Route>
           <Route exact path="/EditProduct/:id">
             <EditProduct />
+          </Route>
+          <Route exact path="/ProductPage">
+          <ProductPage/>
           </Route>
         </Switch>
       </Router>
