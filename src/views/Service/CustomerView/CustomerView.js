@@ -1,13 +1,12 @@
 import React,{useEffect, useState} from 'react'
 import { useHistory } from 'react-router';
 import ReactDOM from "react-dom";
+import "../Services/Service.css";
 import axios from 'axios';
 import {useParams, Link} from 'react-router-dom'
-import '../Services/Service.css';
 
 import {green, red, blue } from '@material-ui/core/colors';
-import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
-import { ListItem } from '@material-ui/core';
+
 
 function Services() {
   const[id,setId]=useState("");
@@ -20,7 +19,7 @@ const[searchtitle,setSearchtitle]=useState("");
 useEffect(()=>{
 const loadPosts = async()=>{
   setLoading(true);
-  const response = await axios.get("http://localhost:3000/Service");
+  const response = await axios.get("http://localhost:8070/service/");
 
 setPosts(response.data);
 setLoading(false);
@@ -67,7 +66,7 @@ return(
     <header>
     <div className="logo">
                 <h1>
-                    <Link to={"/Service"}>{'SERVICES MANAGEMENT'}</Link>
+                    <Link to={"/CustomerView"}>{'SERVICES MANAGEMENT'}</Link>
                 </h1>
             </div>
             <ul>
@@ -76,53 +75,53 @@ return(
                 </ul>
 </header>
 <div className="filter-menu">
-<input type="text"  placeholder="Enter your search" onChange={(e)=>setSearchtitle(e.target.value)}/>
+<input type="text"style={{width:"16%", height:"25%"}}  placeholder="Enter your search" onChange={(e)=>setSearchtitle(e.target.value)}/> </div>
 {loading ?(
   <h4>Loading...</h4>
 ) : (
   posts
   .filter((value)=>{
     if(searchtitle === ""){
-      return value
+      return value;
     }else if(value.title.toLowerCase().includes(searchtitle.toLowerCase())){
       return value;
     }
   })
-  .map((item)=> <h5 key={item.id}>{item.titie}</h5>)
-)
-}
-</div>
-        <div className="container productGrid" > 
-       {services.map((Service,key)=>( 
-            <div key={key}> 
+.map((services)=>
+<div key={services.title}>
+       
+<div class="column">
                 <div class="productcard">
                     <div class="imgBx">
                         <img  src="./image/d.jpg" alt="service"/>
                     </div>
                     <div class="p-3">
                      
-                        <h7>{Service.title}</h7>
-                        <h6>Rs.{Service.price}.00</h6>
+                        <h7>{services.title}</h7>
+                        <h6>Rs.{services.price}.00</h6>
                        
                           <span> 
                           
-                          <button className="mx-2 productbtn" style={{backgroundColor:red[500]}} onClick={()=>deleteService(Service._id)} >
-                                       Add To Favourites
+                          <button className="mx-2 productbtn" style={{backgroundColor:red[500]}} >
+                                        Add To Favourites
                                         </button>
-                              &nbsp;&nbsp;&nbsp;
-                              <Link to="/CustomerSingleItem">
-                              <button class="productbtn" style={{backgroundColor:blue[400]}} onClick={()=>view(Service._id)}>
+                              
+                              <button class="productbtn" style={{backgroundColor:blue[400]}} onClick={()=>view(services._id)}>
                                         VIEW
-                                    </button></Link>
+                                    </button>
                               
                           </span> 
                         
                     </div>
                 </div>
+                </div>
             </div>
         ))}
-        </div>
+       
         </div>
   )
-}
-export default Services
+  
+      
+       
+
+       }export default Services
