@@ -7,6 +7,9 @@ import MyAccount from "../views/myAccount/myAccount";
 import Expenses from "../views/Expenses/Expenses";
 import Payment from "../views/Payment/Payment";
 import AddExpenses from "../views/Expenses/AddExpenses";
+import Appointment from "../views/Appointment/Appointment";
+import AddAppointment from "../views/Appointment/AddAppointment";
+import EditAppointment from "../views/Appointment/EditAppointment";
 
 function App() {
   return (
@@ -32,6 +35,16 @@ function App() {
           <Route exact path="/AddExpense">
             <AddExpenses />
           </Route>
+          <Route exact path="/Appointment">
+            <Appointment />
+          </Route>
+          <Route exact path="/AddAppointment">
+            <AddAppointment />
+          </Route>
+          <Route exact path="/EditAppointment/:id">
+            <EditAppointment />
+          </Route>
+
         </Switch>
       </Router>
       <Footer />
