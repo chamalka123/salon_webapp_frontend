@@ -43,15 +43,16 @@ export default function Appointment() {
     }
 
     return (
-        <><div>
-            <input className="search1"
-            style={{ width:"15%" ,height:"25px"}}
-            type="text"
-            placeholder="Search Appointment"
-            onChange={(e) => setSearchName(e.target.value)}/>
+        <><div className ="appointmentBody">
+           
             
         </div><div className ="container">
         <h1>All Appointments</h1>
+        <input className="searchappointment"
+            style={{ width:"15%" ,height:"30px"}}
+            type="text"
+            placeholder="Search Appointment"
+            onChange={(e) => setSearchName(e.target.value)}/>
         <table class="table">
             <thead>
                 <tr>
