@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import axios from "axios";
-
+import "./AddEmployee.css";
 
 
 export default function AddEmployee(){
@@ -39,13 +39,14 @@ export default function AddEmployee(){
   }
 
     return(
-     <div className="container"> 
+        <center>
+     <div className="employee-container"> 
      <h1>Add New Employee</h1>
-      <form onSubmit={sendData}>
+     <form onSubmit={sendData} className="add-employee">
 
   <div class="form-group">
-    <label for="empId">Employee ID</label>
-    <input type="text" class="form-control" id="empId"
+
+    <input type="text" class="form-control" id="empId" placeholder="Employee ID" required
     onChange={(e)=>{
 
         setEmployee_id(e.target.value);
@@ -54,8 +55,8 @@ export default function AddEmployee(){
   </div>
   
   <div class="form-group">
-    <label for="empName">Employee Name</label>
-    <input type="text" class="form-control" id="empName"
+    
+    <input type="text" class="form-control" id="empName"placeholder="Employee Name" required
     onChange={(e)=>{
 
         setEmployee_name(e.target.value);
@@ -64,8 +65,8 @@ export default function AddEmployee(){
   </div>
 
   <div class="form-group">
-    <label for="age">Age</label>
-    <input type="text" class="form-control" id="age" placeholder="Enter the age"
+    
+    <input type="text" class="form-control" id="age" placeholder="Enter the Age"
     onChange={(e)=>{
 
         setAge(e.target.value);
@@ -74,7 +75,7 @@ export default function AddEmployee(){
   </div>
 
   <div class="form-group">
-    <label for="contactNumber">Contact Number</label>
+     
     <input type="text" class="form-control" id="contactNumber" placeholder="Enter the contact Number"
     onChange={(e)=>{
 
@@ -84,8 +85,8 @@ export default function AddEmployee(){
   </div>
 
   <div class="form-group">
-    <label for="gender">Gender</label>
-    <input type="text" class="form-control" id="gender"
+    
+    <input type="text" class="form-control" id="gender" placeholder="Gender"
     onChange={(e)=>{
 
         setGender(e.target.value);
@@ -94,8 +95,8 @@ export default function AddEmployee(){
   </div>
 
   <div class="form-group">
-    <label for="jobTitle">Job Title</label>
-    <input type="text" class="form-control" id="jobTitle"
+    
+    <input type="text" class="form-control" id="jobTitle" placeholder="Job TItle"
     onChange={(e)=>{
 
         setJobTitle (e.target.value);
@@ -103,8 +104,9 @@ export default function AddEmployee(){
     }}/>
   </div>
   <div class="form-group">
-    <label for="bilalableHours">Billable Hours</label>
-    <input type="text" class="form-control" id="billableHours"
+    
+    
+    <input type="text" class="form-control" id="billableHours" placeholder="Billable Hours"
     onChange={(e)=>{
 
         setBillableHours (e.target.value);
@@ -112,8 +114,8 @@ export default function AddEmployee(){
     }}/>
   </div>
   <div class="form-group">
-    <label for="availableHours">AvailaHours Hours</label>
-    <input type="text" class="form-control" id="availableHours"
+    
+    <input type="text" class="form-control" id="availableHours"  placeholder="Available Hours"
     onChange={(e)=>{
 
         setAvailabelHours (e.target.value);
@@ -129,6 +131,7 @@ export default function AddEmployee(){
   </div>
   </center>
 </form>
-</div>  
+</div>
+</center>  
     )
 }

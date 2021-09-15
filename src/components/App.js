@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from "./Header/Header";
+import ButtonAppBar from "./Header/Header";
 import Footer from "./Footer/Footer";
 import Home from "../views/Home/Home";
 import Admin from "../views/adminPanel/adminPanel";
@@ -7,15 +7,28 @@ import MyAccount from "../views/myAccount/myAccount";
 import Expenses from "../views/Expenses/Expenses";
 import Payment from "../views/Payment/Payment";
 import AddExpenses from "../views/Expenses/AddExpenses";
+
 import AllEmployee from "../views/Employee/AllEmployee";
 import AddEmployee from "../views/Employee/AddEmployee";
 import EditEmployee from "../views/Employee/EditEmployee";
+import Allsalary from "../views/Employee/AllSalary";
+import AddEmployeeSalary from "../views/Employee/AddEmployeeSalary";
+import EmployeeSalaryCalculator from "../views/Employee/EmployeeSalaryCalculator";
+
+import AllProduct from "../views/Product/AllProduct";
+import AddProduct from "../views/Product/AddProduct";
+import EditProduct from "../views/Product/EditProduct";
+import EditExpenses from "../views/Expenses/EditExpenses";
+import AddPayment from "../views/Payment/AddPayment";
+
+
+
 
 function App() {
   return (
     <div>
       <Router>
-        <Header />
+        <ButtonAppBar />
         <Switch>
           <Route exact path="/">
             <Home />
@@ -34,6 +47,21 @@ function App() {
           </Route>
           <Route exact path="/AddExpense">
             <AddExpenses />
+            </Route>
+            <Route exact path="/AddPayment">
+            <AddPayment />
+          </Route>
+          <Route exact path="/EditExpense/:id">
+            <EditExpenses />
+          </Route>
+          <Route exact path="/Product">
+            <AllProduct/>
+          </Route>
+          <Route exact path="/AddProduct">
+          <AddProduct/>
+          </Route>
+          <Route exact path="/EditProduct/:id">
+          <EditProduct/>
           </Route>
           <Route exact path="/Employee">
             <AllEmployee />
@@ -43,6 +71,15 @@ function App() {
           </Route>
           <Route exact path="/EditEmployee/:id">
             <EditEmployee />
+          </Route>
+          <Route exact path="/AllSalary">
+            <Allsalary />
+          </Route>
+          <Route exact path="/EmployeeSalaryCalculator">
+            <EmployeeSalaryCalculator />
+          </Route>
+          <Route exact path="/AddEmployeeSalary">
+            <AddEmployeeSalary/>
           </Route>
         </Switch>
       </Router>

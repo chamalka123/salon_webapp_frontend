@@ -1,6 +1,8 @@
 import React,{useState, useEffect} from "react";
 import axios from "axios";
 import { useParams } from "react-router";
+import "./AddEmployee.css";
+
 
 
 function EditEmployee(){
@@ -65,13 +67,15 @@ function EditEmployee(){
   }
 
     return(
-     <div className="container"> 
+        <center>
+     <div className="employee-container"> 
      <h1>EDIT EMPLOYEE</h1>
-      <form onSubmit={sendUpdateEmployee}>
+      <form onSubmit={sendUpdateEmployee}  className="add-employee">
+
 
   <div class="col-md-12">
-    <label for="empId">Employee ID</label>
-    <input type="text" class="form-control" id="empId" 
+   
+    <input type="text" class="form-control" id="empId"placeholder="Employee ID"  
     value={empId}
     onChange={(e)=>{
 
@@ -81,8 +85,8 @@ function EditEmployee(){
   </div>
   
   <div class="col-md-12">
-    <label for="empName">Employee Name</label>
-    <input type="text" class="form-control" id="empName" 
+    
+    <input type="text" class="form-control" id="empName" placeholder="Employee Name" 
     value={empName}
     onChange={(e)=>{
 
@@ -92,8 +96,8 @@ function EditEmployee(){
   </div>
 
   <div class="col-md-12">
-    <label for="age">Age</label>
-    <input type="text" class="form-control" id="age" placeholder="Enter the age in years" 
+    
+    <input type="text" class="form-control" id="age" placeholder="Age" 
     value={age}
     onChange={(e)=>{
 
@@ -103,8 +107,8 @@ function EditEmployee(){
   </div>
 
   <div class="col-md-12">
-    <label for="contactNumber">Contact Number</label>
-    <input type="text" class="form-control" id="contactNumber" placeholder="enter only one" 
+    
+    <input type="text" class="form-control" id="contactNumber" placeholder="Contact Number" 
     value={contactNumber}
     onChange={(e)=>{
 
@@ -114,8 +118,8 @@ function EditEmployee(){
   </div>
 
   <div class="col-md-12">
-    <label for="gender">Gender</label>
-    <input type="text" class="form-control" id="gender"  
+   
+    <input type="text" class="form-control" id="gender"  placeholder="Gender" 
     value={gender}
     onChange={(e)=>{
 
@@ -125,8 +129,8 @@ function EditEmployee(){
   </div>
 
   <div class="col-md-12" >
-    <label for="jobTitle">Job Title</label> 
-    <input type="text" class="form-control" id="jobTitle" 
+   
+    <input type="text" class="form-control" id="jobTitle" placeholder="Job Title" 
     value={jobTitle}
     onChange={(e)=>{
 
@@ -136,8 +140,8 @@ function EditEmployee(){
   </div>
 
   <div class="col-md-12">
-    <label for="billableHours">Billable  Hours</label>
-    <input type="text" class="form-control" id="billableHours" 
+   
+    <input type="text" class="form-control" id="billableHours" placeholder="Billable Hours" 
     value={billableHours}
     onChange={(e)=>{
 
@@ -147,8 +151,8 @@ function EditEmployee(){
   </div>
 
   <div class="col-md-12">
-    <label for="availableHours">Available  Hours</label>
-    <input type="text" class="form-control" id="availableHours" 
+    
+    <input type="text" class="form-control" id="availableHours" placeholder="Available Hours" 
     value={availableHours}
     onChange={(e)=>{
 
@@ -162,7 +166,9 @@ function EditEmployee(){
   </div>
   
 </form>
-</div>  
+</div>
+</center>
+
     );
 }
 export default EditEmployee;
