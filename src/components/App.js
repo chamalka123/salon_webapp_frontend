@@ -8,6 +8,8 @@ import Expenses from "../views/Expenses/Expenses";
 import Payment from "../views/Payment/Payment";
 import AddExpenses from "../views/Expenses/AddExpenses";
 import AddPayment from "../views/Payment/AddPayment";
+import EditPayment from "../views/Payment/EditPayment";
+
 
 function App() {
   return (
@@ -33,9 +35,16 @@ function App() {
           <Route exact path="/AddExpense">
             <AddExpenses />
             </Route>
+           
             <Route exact path="/AddPayment">
             <AddPayment />
+            
           </Route>
+          <Route exact path="/update/:id" component={EditPayment}>
+            
+            
+          </Route>
+          
         </Switch>
       </Router>
       <Footer />
