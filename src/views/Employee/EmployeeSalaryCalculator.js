@@ -1,4 +1,5 @@
 import React from "react";
+import "./EmployeeSalaryCalculator.css";
 
 class Calculation extends React.Component{
     constructor(){
@@ -39,31 +40,45 @@ class Calculation extends React.Component{
     render(){
        return( 
              <center>
-            <div>
+            <div className="cal-container">
             <h1>SALARY CALCULATOR</h1>
-            <form onSubmit={this.exe}>
-            <div>
-            Basic Salary:
+            <h2>===============================</h2>
+            <hr />
+            <form onSubmit={this.exe} >
+            <div >
+            
+
+            BASIC SALARY:
             <input type="text" value={this.state.num1}onChange={this.handlenum1}/>
             </div>
-            <div>
-            OT Rate per Hour:
+            <br>
+            </br>
+            <div >
+            OT RATE PER HOUR:
             <input type="text" value={this.state.num2}onChange={this.handlenum2}/>
             </div>
-            <div>
-            OT Hours:
+            <br>
+            </br>
+            <div >
+            OT HOURS:
             <input type="text" value={this.state.num3}onChange={this.handlenum3}/>
             </div>
+            <br>
+            </br>
             <div>
-            Deductions:
+            DEDUCTIONS:
             <input type="text" value={this.state.num4}onChange={this.handlenum4}/>
             </div>
+            <br>
+            </br>
             <div>
-            Total Net Salary:
+            TOTAL NET SALARY:
             <input type="text"  value={this.state.total} onChange={this.handletotal}/>
             </div>
+            <br>
+            </br>
             <div>   
-            <button type="submit">CALCULATE</button>
+            <button type="submit" class="btn btn-primary " >CALCULATE</button>
         
             </div>
             </form>

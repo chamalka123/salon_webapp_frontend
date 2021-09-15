@@ -83,7 +83,8 @@ function EditEmployee(){
 
     }}/>
   </div>
-  
+  <br>
+  </br>
   <div class="col-md-12">
     
     <input type="text" class="form-control" id="empName" placeholder="Employee Name" 
@@ -94,7 +95,8 @@ function EditEmployee(){
 
     }}/>
   </div>
-
+  <br>
+  </br>
   <div class="col-md-12">
     
     <input type="text" class="form-control" id="age" placeholder="Age" 
@@ -105,7 +107,8 @@ function EditEmployee(){
 
     }}/>
   </div>
-
+  <br>
+  </br>
   <div class="col-md-12">
     
     <input type="text" class="form-control" id="contactNumber" placeholder="Contact Number" 
@@ -116,7 +119,8 @@ function EditEmployee(){
 
     }}/>
   </div>
-
+  <br>
+  </br>
   <div class="col-md-12">
    
     <input type="text" class="form-control" id="gender"  placeholder="Gender" 
@@ -127,7 +131,8 @@ function EditEmployee(){
 
     }}/>
   </div>
-
+  <br>
+  </br>
   <div class="col-md-12" >
    
     <input type="text" class="form-control" id="jobTitle" placeholder="Job Title" 
@@ -138,7 +143,8 @@ function EditEmployee(){
 
     }}/>
   </div>
-
+  <br>
+  </br>
   <div class="col-md-12">
    
     <input type="text" class="form-control" id="billableHours" placeholder="Billable Hours" 
@@ -149,7 +155,8 @@ function EditEmployee(){
 
     }}/>
   </div>
-
+  <br>
+  </br>
   <div class="col-md-12">
     
     <input type="text" class="form-control" id="availableHours" placeholder="Available Hours" 
@@ -160,9 +167,10 @@ function EditEmployee(){
 
     }}/>
   </div>
-  
+  <br>
+  </br>
   <div class="col-md-12">
-    <button type="submit" class="btn btn-success btn-sm">Update</button>
+    <button type="submit" class="btn btn-success ">Update</button>
   </div>
   
 </form>

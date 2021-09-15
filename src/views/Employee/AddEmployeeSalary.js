@@ -67,7 +67,7 @@ export default function AddEmployeeSalary(){
 
   <div class="form-group">
     
-    <input type="text" class="form-control" id="jobTitle" placeholder="Enter the Job Title"
+    <input type="text" class="form-control" id="jobTitle" placeholder="Enter the Job Title"required
     onChange={(e)=>{
 
         setJobTitle(e.target.value);
@@ -77,7 +77,7 @@ export default function AddEmployeeSalary(){
 
   <div class="form-group">
      
-    <input type="text" class="form-control" id="basicSalary" placeholder="Enter the Basic-Salary"
+    <input type="text" class="form-control" id="basicSalary" placeholder="Enter the Basic-Salary"required
     onChange={(e)=>{
 
         setBasicsalary(e.target.value);
@@ -87,7 +87,7 @@ export default function AddEmployeeSalary(){
 
   <div class="form-group">
     
-    <input type="text" class="form-control" id="month" placeholder="Enter the Month"
+    <input type="text" class="form-control" id="month" placeholder="Enter the Month"required 
     onChange={(e)=>{
 
         setMonth(e.target.value);
@@ -138,7 +138,7 @@ export default function AddEmployeeSalary(){
 
   <center>
   <div class="form-group">
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
   </div>
   </center>
 </form>

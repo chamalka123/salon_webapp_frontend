@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from "react";
 import axios from "axios";
 import {Link} from 'react-router-dom';
+import "./AllEmployee.css";
 
 
 
@@ -57,8 +58,8 @@ export default function AllEmployee() {
     }
 
     return (
-              <><div>
-            <input className="searchemp"
+              <><div className="allemployee">
+            <input className="searche"
             style={{ width:"15%" ,height:"25px"}}
             type="text"
             placeholder="search..."
@@ -67,15 +68,15 @@ export default function AllEmployee() {
 
     <div className="container">
         <h1>All Employee Details</h1>
-        <table class="table">
+        <table class="mye-table">
             <thead>
-                <tr>
-                <th scope="col">Employee ID</th>
-                <th scope="col">Employee Name</th>
-                <th scope="col">Age</th>
-                <th scope="col">Contact Number</th>
-                <th scope="col">Gender</th>
-                <th scope="col">Job Title</th>
+                <tr className="mye-tr">
+                <th className="mye-th" scope="col">Employee ID</th>
+                <th className="mye-th" scope="col">Employee Name</th>
+                <th className="mye-th" scope="col">Age</th>
+                <th className="mye-th" scope="col">Contact Number</th>
+                <th className="mye-th" scope="col">Gender</th>
+                <th className="mye-th" scope="col">Job Title</th>
                
                 </tr>
             </thead>
@@ -99,13 +100,13 @@ export default function AllEmployee() {
 
                }).map((employees) => 
 
-                    <tr key={employees._id}>
-                    <td>{employees.empId}</td>
-                    <td>{employees.empName}</td>
-                    <td>{employees.age}</td>
-                    <td>{employees.contactNumber}</td>
-                    <td>{employees.gender}</td>
-                    <td>{employees.jobTitle}</td>
+                    <tr className="mye-tr" key={employees._id}>
+                    <td className="mye-td">{employees.empId}</td>
+                    <td className="mye-td">{employees.empName}</td>
+                    <td className="mye-td">{employees.age}</td>
+                    <td className="mye-td">{employees.contactNumber}</td>
+                    <td className="mye-td">{employees.gender}</td>
+                    <td className="mye-td">{employees.jobTitle}</td>
                     
                     <div class="btn">
                     <Link to={`/Editemployee/${employees._id}`} class="btn btn-success btn-sm">
@@ -122,7 +123,10 @@ export default function AllEmployee() {
 
      
         </table>
+        <br>
+        </br>
        <Link to={"/add"} className="btn btn-warning btn-sm">Add New Employee</Link>
+       &nbsp;
        &nbsp;
        <Link to={"/AllSalary"} className="btn btn-warning btn-sm">SALARY</Link>
 

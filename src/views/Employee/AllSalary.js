@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from "react";
 import axios from "axios";
 import {Link} from 'react-router-dom';
-
+import "./AllEmployee.css";
 
 
 export default function AllEmployeeSalary() {
@@ -57,8 +57,8 @@ export default function AllEmployeeSalary() {
     }
 
     return (
-              <><div>
-            <input className="search1"
+              <><div className="allemployee">
+            <input className="searche"
             style={{ width:"15%" ,height:"25px"}}
             type="text"
             placeholder="search..."
@@ -67,18 +67,18 @@ export default function AllEmployeeSalary() {
 
     <div className="container">
         <h1>EMPLOYEE SALARY DASHBOARD</h1>
-        <table class="table">
+        <table class="mye-table">
             <thead>
-                <tr>
-                <th scope="col">Employee ID</th>
-                <th scope="col">Employee Name</th>
-                <th scope="col">Job Title</th>
-                <th scope="col">Basic Salary</th>
-                <th scope="col">Month</th>
-                <th scope="col">OT Rate</th>
-                <th scope="col">OT HOurs</th>
-                <th scope="col">Deductions</th>
-                <th scope="col">Total salary</th>
+                <tr  className="mye-tr" >
+                <th  className="mye-th"scope="col">Employee ID</th>
+                <th className="mye-th" scope="col">Employee Name</th>
+                <th className="mye-th" scope="col">Job Title</th>
+                <th className="mye-th" scope="col">Basic Salary</th>
+                <th className="mye-th" scope="col">Month</th>
+                <th className="mye-th" scope="col">OT Rate</th>
+                <th className="mye-th" scope="col">OT HOurs</th>
+                <th className="mye-th"scope="col">Deductions</th>
+                <th className="mye-th"scope="col">Total salary</th>
                 </tr>
             </thead>
             {loading ? (
@@ -101,17 +101,17 @@ export default function AllEmployeeSalary() {
 
                }).map((employeeSalarys) => 
 
-                    <tr key={employeeSalarys._id}>
-                    <td>{employeeSalarys.empId}</td>
-                    <td>{employeeSalarys.empName}</td>
-                    <td>{employeeSalarys.jobTitle}</td>
-                    <td>{employeeSalarys.basicSalary}</td>
-                    <td>{employeeSalarys.month}</td>
-                    <td>{employeeSalarys.payOTRate}</td>
-                    <td>{employeeSalarys.payOTHours}</td>
-                    <td>{employeeSalarys.deductions}</td>
-                    <td>{employeeSalarys.totalSalary}</td>
-
+                    <tr className="mye-tr" key={employeeSalarys._id}>
+                    <td className="mye-td">{employeeSalarys.empId}</td>
+                    <td className="mye-td" >{employeeSalarys.empName}</td>
+                    <td className="mye-td" >{employeeSalarys.jobTitle}</td>
+                    <td className="mye-td">{employeeSalarys.basicSalary}</td>
+                    <td className="mye-td" >{employeeSalarys.month}</td>
+                    <td className="mye-td">{employeeSalarys.payOTRate}</td>
+                    <td className="mye-td" >{employeeSalarys.payOTHours}</td>
+                    <td className="mye-td" >{employeeSalarys.deductions}</td>
+                    <td className="mye-td" >{employeeSalarys.totalSalary}</td>
+                    <br></br>
                     <div class="btn">
                     <Link to={`/Editemployee/${employeeSalarys._id}`} class="btn btn-success btn-sm">
 
@@ -127,6 +127,8 @@ export default function AllEmployeeSalary() {
 
      
         </table>
+        <br>
+        </br>
        <Link to={"/EmployeeSalaryCalculator"} className="btn btn-warning btn-sm">SALARY CALCULATOR</Link>
        &nbsp;
        <Link to={"/AddEmployeeSalary"} className="btn btn-warning btn-sm">ADD NEW RECORD</Link>
