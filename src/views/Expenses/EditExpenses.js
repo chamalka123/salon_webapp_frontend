@@ -14,7 +14,6 @@ function EditExpenses() {
 //const [expense, setExpense] = useState("");
 const {id} = useParams();
 useEffect(() => {
-  function getExpenses() {
     axios.get(`http://localhost:8070/expense/get/${id}`)
       .then((res) => {
        // setExpense(res.data);
@@ -27,8 +26,7 @@ useEffect(() => {
       .catch((err) => {
         console.log(err.message);
       });
-  }
-  getExpenses();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
 }, []);
 
 //update data 
@@ -49,10 +47,11 @@ function sendUpdateExpense(e){
 }
 
   return (
-    <div className="container" onSubmit = {sendUpdateExpense}>
+    <div className="expenseBody">
+    <div className= "container col-6" onSubmit = {sendUpdateExpense}>
       <form className="addExpense">
         <div className="form-group">
-          <label for="exampleInputCategory">Expense Category</label>
+          <label htmlFor="exampleInputCategory">Expense Category</label>
           <input
             type="text"
             className="form-control"
@@ -65,7 +64,7 @@ function sendUpdateExpense(e){
           />
         </div>
         <div className="form-group">
-          <label for="exampleInputEntryDate1">Entry Date</label>
+          <label htmlFor="exampleInputEntryDate1">Entry Date</label>
           <input
             type="text"
             className="form-control"
@@ -79,7 +78,7 @@ function sendUpdateExpense(e){
           />
         </div>
         <div className="form-group">
-          <label for="exampleInputEntryDate1">Amount</label>
+          <label htmlFor="exampleInputEntryDate1">Amount</label>
           <input
             type="number"
             className="form-control"
@@ -93,7 +92,7 @@ function sendUpdateExpense(e){
           />
         </div>
         <div className="form-group">
-          <label for="exampleInputEntryDate1">Description</label>
+          <label htmlFor="exampleInputEntryDate1">Description</label>
           <input
             type="text"
             className="form-control"
@@ -113,6 +112,7 @@ function sendUpdateExpense(e){
         <button className="btn btn-danger">CANCEL</button> 
         </Link>
       </form>
+    </div>
     </div>
   );
 }
