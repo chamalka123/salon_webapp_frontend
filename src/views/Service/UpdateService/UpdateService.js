@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
 import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 import OutlinedInput from "@material-ui/core/OutlinedInput";
 import { TextField } from '@material-ui/core';
-
+import { Link } from 'react-router-dom';
 
 
 function UpdateService(props){
@@ -84,15 +84,24 @@ async function sendUpdateService(e){
     
 
     return (
-    <div className="container" align="center">
-        <div class="row">
-            <div class="col-12">
-                <div class="pb-2 px-3 d-flex flex-wrap align-items-center justify-content-between">
-                    <h2>Update Service</h2>
-                </div>
+    <div className="container">
+          <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <header>
+       <div className="logo">
+                <h1>
+                    UPDATE
+                </h1>
             </div>
-        </div>
-        <div className="update_product">
+            <ul>
+                <li><Link to="/AddService">{'CREATE NEW'}</Link></li>
+                <li><Link to="/Service">SERVICES & PACKAGES</Link></li>
+                </ul>
+</header>
+<br></br>
+        <div className="update_product" align="center">
             <form onSubmit={sendUpdateService} class="updateService">
                 <div className="row">
                     <div className="col-8">
@@ -156,41 +165,24 @@ async function sendUpdateService(e){
                                 </div>
                             </div>
                         </div>
-                        <div className="row">
-                            <div className="col-md-12 mb-4">
-                                <div className="form-group">
-                                 <div>
-                                    <label><h6>Category</h6></label> &nbsp;
-                                </div>
-                                    <div className="form-check form-check-inline">
-                                            <input 
-                                                class="form-check-input" type="radio" name="Category" id="Our_Packages" value={category} required 
-                                                onChange={(e)=> {setCategory(e.target.value)}}
-                                            />
-                                            <label className="form-check-label" for="Our_Packages">
-                                                OTC
-                                            </label>
-                                    </div>
-                                    <div className="form-check form-check-inline">
-                                            <input 
-                                                className="form-check-input" type="radio" name="Category" id="Non-OTC" value={category}
-                                                required 
-                                                onChange={(e)=> {setCategory(e.target.value)}}
-                                            />
-                                            <label className="form-check-label" for="Non-OTC">
-                                                Non-OTC
-                                            </label>
-                                    </div>
+                        <div className="col-md-8 mb-4">
+                                <div className="form-category">
+                                    <OutlinedInput
+                                        type="text" id="category" placeholder="CATEGORY" 
+                                        required fullWidth 
+                                        value={category}
+                                        onChange={(e)=> {setCategory(e.target.value)}}
+                                        inputProps={{style: {padding: 12}}}disabled
+                                    />
                                 </div>
                             </div>
-                        </div>
                     </div>
                     <div className="col-4 d-flex justify-content-center">
                         <div>
                             {previewSource ? 
                                 <img src={previewSource} alt="preview" className="previewImgservice"/>
                             :
-                                <img src="/images/d.png" className="updatepreviewImgservice" alt="service pic"/>
+                                <img src="/image/d.png" className="updatepreviewImgservice" alt="service pic"/>
                             }
                             <div className="form-group">
                                 <label htmlFor="productimg">
@@ -211,9 +203,9 @@ async function sendUpdateService(e){
                 </div>
                 <div className="row">
                     <div className="col-md-12">
-                        <div className="form-group">
-                            <input className="form-submit-btn" type="submit" value="Update Service" />
-                        </div>
+                    <button type="submit" className="btn btn-success">
+          Update
+        </button>
                     </div>
                 </div>
             </form>             

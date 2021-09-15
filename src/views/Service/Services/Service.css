@@ -1,3 +1,32 @@
+
+header{
+    min-height: 70px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 12px solid #ddd;
+}
+header .logo{
+    flex: 6;
+}
+header a{
+    text-transform: uppercase;
+    color: #555;
+}
+header ul li{
+    display: inline-block;
+    opacity: 0.7;
+    padding: 0 20px;
+}
+header ul li:hover{
+    opacity: 1;
+}
+.menu{
+    display: none;
+}
 .filter-menu{
    
     min-height: 50px;
@@ -12,11 +41,27 @@
     flex: 1;
     margin: 0 10px;
 }
+.column {
+    float: left;
+    width: 20%;
+    padding: 0 10px;
+  }
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .productcard{  
     max-height: 351px;
     width: 200px;
-    background: #ffffff;
+    background: #d6d7db;
     border-radius: 15px;
+    position:static;
     border: none;
     overflow: hidden;
     box-shadow:0px 24px 48px 0 rgba(0,0,0,0.1);
@@ -41,7 +86,7 @@
 }
 .productGrid{
     display: grid;
-    grid-gap: 2rem;
+    grid-gap: 3rem;
     padding: 1rem;
     max-width: 1150px;
     margin: 0 auto;

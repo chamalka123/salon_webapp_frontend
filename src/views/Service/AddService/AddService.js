@@ -8,7 +8,7 @@ import { Link, useHistory } from 'react-router-dom';
 import IconButton from "@material-ui/core/IconButton";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import { TextField } from '@material-ui/core';
-
+import {green, red, blue } from '@material-ui/core/colors';
 
 
 function AddService() {
@@ -21,6 +21,7 @@ function AddService() {
     const[category,setCategory]=useState("");
     const [previewSource, setPreviewSource] = useState();
 
+  
     //handling the image uploading
     const handleFileInputChange = (event) => {
         const file = event.target.files[0]
@@ -59,13 +60,21 @@ function AddService() {
  
     return (
     <div className="container" >
-        <div class="row">
-            <div class="col-12">
-                <div class="pb-2 px-3 d-flex flex-wrap align-items-center justify-content-between">
-                    <h2>Create New</h2>
-                </div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+      <header>
+    <div className="logo">
+                <h1>
+                    <Link to={"/AddService"}>{'CREATE NEW'}</Link>
+                </h1>
             </div>
-        </div>
+            <ul>
+                <li><Link to="/AddService">{'CREATE NEW'}</Link></li>
+                <li><Link to="/Service">SERVICES&PACKAGES</Link></li>
+                </ul>
+</header>
         <div className="create_service">
             <form onSubmit={add} class="addService">
                 <div className="row">
@@ -127,40 +136,25 @@ function AddService() {
                                 </div>
                             </div>
                         </div>
-                        <div className="row">
-                            <div className="col-md-12 mb-4">
-                                <div className="form-group">
-                                 <div>
-                                    <label><h6>Category</h6></label> &nbsp;
-                                </div>
-                                    <div className="form-check form-check-inline">
-                                            <input 
-                                                class="form-check-input" type="radio" name="Category" id="Our_Packages" value="Our_Packages" required
-                                                onChange={(e)=>setCategory(e.target.value)}
-                                            />
-                                            <label className="form-check-label" for="Our_Packages">
-                                                OTC
-                                            </label>
-                                    </div>
-                                    <div className="form-check form-check-inline">
-                                            <input 
-                                                className="form-check-input" type="radio" name="Category" id="Non-OTC" value="Non-OTC" required
-                                                onChange={(e)=>setCategory(e.target.value)}
-                                            />
-                                            <label className="form-check-label" for="Non-OTC">
-                                                Non-OTC
-                                            </label>
-                                    </div>
+                        <div className="col-md-8 mb-4">
+                                <div className="form-category">
+                                    <label for="inputCategory">Category</label>
+                                    <select id="inputState"className="form-control"onChange={(e)=>setCategory(e.target.value)}>
+                                  <option selected>Hair Treatements</option>
+                                  <option selected>Nail Treatements</option>
+                                  <option selected>Body Treatements</option>
+                                  <option selected>Our Packages</option>
+                                  <option selected>Our Offers</option>
+                                    </select>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                            </div>
                     <div className="col-4 d-flex justify-content-center">
                         <div>
                             {previewSource ? 
                                 <img src={previewSource} alt="preview" className="previewImgservice"/>
                             :
-                                <img src="/images/d.jpg" className="previewImgservice" alt="service pic"/>
+                                <img src="/image/d.jpg" className="previewImgservice" alt="service pic"/>
                             }
                             <div className="form-group">
                                 <label htmlFor="serviceimg">
@@ -183,7 +177,11 @@ function AddService() {
                 <div className="row">
                     <div className="col-md-12">
                         <div className="form-group">
-                            <input className="form-submit-btn" type="submit" value="CREATE" />
+                        <button type="submit" className="btn btn-primary">CREATE</button>
+                        &nbsp;
+        <Link to="/Service">
+        <button className="btn btn-danger">CANCEL</button> 
+        </Link>
                         </div>
                     </div>
                 </div>

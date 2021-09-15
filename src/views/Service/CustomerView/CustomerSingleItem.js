@@ -1,9 +1,9 @@
 import React,{useEffect, useState} from 'react'
 import { useHistory } from 'react-router';
 import '../Services/Service.css'
-import './SingleItem.css'
+import '../SingleItem/SingleItem.css'
 import axios from 'axios'
-import {useParams, Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import { orange, green, red, blue} from '@material-ui/core/colors';
 import EditIcon from '@material-ui/icons/Edit';
 
@@ -55,10 +55,7 @@ function ServiceDetails(props) {
         history.push(`/salon/item/${id}`)
     }
     
-    function update(uid){
-        history.push(`/salon/item/update/${uid}`)
-    }
-
+   
       
     return (
       
@@ -93,8 +90,8 @@ function ServiceDetails(props) {
                         <div align="right">
                             <span> 
                                     &nbsp;&nbsp;&nbsp; &nbsp;
-                                    <button className="mx-2 productbtn" style={{backgroundColor:green[400]}} onClick={()=>update(id)}>
-                                        Update <EditIcon/>
+                                    <button className="mx-2 productbtn" style={{backgroundColor:green[400]}} >
+                                       BOOK NOW
                                         </button>
                             </span> 
                         </div>
@@ -129,7 +126,7 @@ function ServiceDetails(props) {
                                         <span> 
                                           
                                                          &nbsp;&nbsp;&nbsp;
-                                            <button class="productbtn" style={{backgroundColor:blue[400]}} onClick={()=>view(Service._id)}> View</button>
+                                            <button class="productbtn" style={{backgroundColor:red[400]}} onClick={()=>view(Service._id)}> View</button>
                                         </span> 
                                     </div>
                                 </div>

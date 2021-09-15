@@ -1,9 +1,9 @@
 import React,{useEffect, useState} from 'react'
 import { useHistory } from 'react-router';
 import ReactDOM from "react-dom";
-import "./Service.css";
 import axios from 'axios';
 import {useParams, Link} from 'react-router-dom'
+import '../Services/Service.css';
 
 import {green, red, blue } from '@material-ui/core/colors';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
@@ -20,7 +20,7 @@ const[searchtitle,setSearchtitle]=useState("");
 useEffect(()=>{
 const loadPosts = async()=>{
   setLoading(true);
-  const response = await axios.get("http://localhost:8070/service/");
+  const response = await axios.get("http://localhost:3000/Service");
 
 setPosts(response.data);
 setLoading(false);
@@ -67,7 +67,7 @@ return(
     <header>
     <div className="logo">
                 <h1>
-                    <Link to={"/CustomerView"}>{'SERVICES MANAGEMENT'}</Link>
+                    <Link to={"/Service"}>{'SERVICES MANAGEMENT'}</Link>
                 </h1>
             </div>
             <ul>
@@ -76,53 +76,53 @@ return(
                 </ul>
 </header>
 <div className="filter-menu">
-<input type="text"style={{width:"16%", height:"25%"}}  placeholder="Enter your search" onChange={(e)=>setSearchtitle(e.target.value)}/> </div>
+<input type="text"  placeholder="Enter your search" onChange={(e)=>setSearchtitle(e.target.value)}/>
 {loading ?(
   <h4>Loading...</h4>
 ) : (
   posts
   .filter((value)=>{
     if(searchtitle === ""){
-      return value;
+      return value
     }else if(value.title.toLowerCase().includes(searchtitle.toLowerCase())){
       return value;
     }
   })
-.map((services)=>
-<div key={services.title}>
-       
-<div class="column">
+  .map((item)=> <h5 key={item.id}>{item.titie}</h5>)
+)
+}
+</div>
+        <div className="container productGrid" > 
+       {services.map((Service,key)=>( 
+            <div key={key}> 
                 <div class="productcard">
                     <div class="imgBx">
                         <img  src="./image/d.jpg" alt="service"/>
                     </div>
                     <div class="p-3">
                      
-                        <h7>{services.title}</h7>
-                        <h6>Rs.{services.price}.00</h6>
+                        <h7>{Service.title}</h7>
+                        <h6>Rs.{Service.price}.00</h6>
                        
                           <span> 
                           
-                          <button className="mx-2 productbtn" style={{backgroundColor:red[500]}} onClick={()=>deleteService(services._id)} >
-                                        DELETE <DeleteForeverIcon/>
+                          <button className="mx-2 productbtn" style={{backgroundColor:red[500]}} onClick={()=>deleteService(Service._id)} >
+                                       Add To Favourites
                                         </button>
                               &nbsp;&nbsp;&nbsp;
-                              <button class="productbtn" style={{backgroundColor:blue[400]}} onClick={()=>view(services._id)}>
+                              <Link to="/CustomerSingleItem">
+                              <button class="productbtn" style={{backgroundColor:blue[400]}} onClick={()=>view(Service._id)}>
                                         VIEW
-                                    </button>
+                                    </button></Link>
                               
                           </span> 
                         
                     </div>
                 </div>
-                </div>
             </div>
         ))}
-       
+        </div>
         </div>
   )
-  
-      
-       
-
-       }export default Services
+}
+export default Services
