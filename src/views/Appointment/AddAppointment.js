@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import axios from "axios";
-
+import "./Appointment.css";
 
 
 export default function AddAppointment(){
@@ -35,6 +35,7 @@ export default function AddAppointment(){
   }
 
     return(
+      <div className="appointmentBody">
      <div className="container"> 
      <h1>Add New Appointment</h1>
       <form onSubmit={sendData}>
@@ -108,5 +109,6 @@ export default function AddAppointment(){
   </center>
 </form>
 </div>  
+</div>
     )
 }
