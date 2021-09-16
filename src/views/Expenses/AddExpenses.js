@@ -71,6 +71,7 @@ function AddExpenses() {
             <label for="exampleInputEntryDate1">Description</label>
             <input
               required ={true}
+              maxLength ={40}
               type="text"
               className="form-control"
               id="exampleInputEntryDate1"

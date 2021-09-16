@@ -43,8 +43,8 @@ function Expenses() {
   return (
     <div className="expenseBody">
       <Navbar />
+      <br />
     <div className="containerExpenses">
-      <h1>Expense management</h1>
       <table className="table table-striped expenseTable">
         <thead className="thead-dark">
           <tr className="expenseRaw">

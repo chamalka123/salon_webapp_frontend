@@ -12,24 +12,18 @@ import EditEmployee from "../views/Employee/EditEmployee";
 import Allsalary from "../views/Employee/AllSalary";
 import AddEmployeeSalary from "../views/Employee/AddEmployeeSalary";
 import EmployeeSalaryCalculator from "../views/Employee/EmployeeSalaryCalculator";
-
-
 import Service from "../views/Service/Services/Service";
 import AddService from "../views/Service/AddService/AddService";
 import SingleItem from "../views/Service/SingleItem/SingleItem";
 import CustomerView from "../views/Service/CustomerView/CustomerView";
 import CustomerSingleItem from "../views/Service/CustomerView/CustomerSingleItem";
 import UpdateService from "../views/Service/UpdateService/UpdateService";
-
 import Appointment from "../views/Appointment/Appointment";
 import AddAppointment from "../views/Appointment/AddAppointment";
 import EditAppointment from "../views/Appointment/EditAppointment";
-
-
 import AllProduct from "../views/Product/AllProduct";
 import AddProduct from "../views/Product/AddProduct";
 import EditProduct from "../views/Product/EditProduct";
-
 import EditExpenses from "../views/Expenses/EditExpenses";
 import AddPayment from "../views/Payment/AddPayment";
 import ProductPage from "../views/Product/ProductPage";
@@ -39,10 +33,6 @@ import BudgetPlans from "../views/BudgetPlans/BudgetPlans";
 import Ledgers from "../views/Ledgers/Ledgers";
 import Income from "../views/Income/Income";
 import Navbar from "./Navbar/Navbar";
-
-
-
-
 
 function App() {
   return (
@@ -82,7 +72,6 @@ function App() {
           <Route exact path="/AddExpense">
             <AddExpenses />
           </Route>
-
           <Route exact path="/Appointment">
             <Appointment />
           </Route>
@@ -92,14 +81,12 @@ function App() {
           <Route exact path="/EditAppointment/:id">
             <EditAppointment />
           </Route>
-
           <Route exact path="/AddPayment">
             <AddPayment />
           </Route>
           <Route exact path="/EditExpense/:id">
             <EditExpenses />
           </Route>
-
           <Route exact path="/Service">
             <Service />
           </Route>
@@ -124,9 +111,6 @@ function App() {
           <Route exact path="/EditProduct/:id">
             <EditProduct />
           </Route>
-
-          
-
           <Route exact path="/ProductPage">
           <ProductPage/>
           </Route>
@@ -148,9 +132,6 @@ function App() {
           <Route exact path="/AddEmployeeSalary">
             <AddEmployeeSalary/>
           </Route>
-
-
-
         </Switch>
       </Router>
   <Footer />
