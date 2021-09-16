@@ -48,8 +48,12 @@ export default function AllProduct() {
 
     return (
         <><div className="allproduct">
-            <h1>Product Management</h1>
             <hr />
+            <center>
+            <h1>PRODUCT MANAGEMENT</h1>
+           </center>
+            <hr />
+            
             <input className="search1"
                 style={{ width: "10%", height: "30px" }}
                 type="text"
@@ -124,6 +128,9 @@ export default function AllProduct() {
 
                 <center>
                     <Link to={"/AddProduct"} className="btn btn-warning">Add New Product</Link>
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
                     &nbsp;
                     <Link to={"/ProductPage"} className="btn btn-warning">Product Page</Link>
                 </center>
