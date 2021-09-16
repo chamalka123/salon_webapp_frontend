@@ -2,14 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import "./Expenses.css";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
-import AddIcon from "@material-ui/icons/Add";
-import "./Expenses.css";
 import Navbar from "../../components/Navbar/Navbar";
+import { green, red } from "@material-ui/core/colors";
+import AddCircleIcon from '@material-ui/icons/AddCircle';
 
-//fetch all expense collections
 function Expenses() {
+  //fetch all expense collections
   const [expenses, setExpenses] = useState([]);
   useEffect(() => {
     function getExpenses() {
@@ -41,46 +42,49 @@ function Expenses() {
  
   return (
     <div className="expenseBody">
-                <Navbar />
+      <Navbar />
     <div className="containerExpenses">
       <h1>Expense management</h1>
-      <table className="table">
-        <thead>
-          <tr>
+      <table className="table table-striped expenseTable">
+        <thead className="thead-dark">
+          <tr className="expenseRaw">
           <th scope="col">ID</th>
           <th scope="col">Entry Date</th>
           <th scope="col">Expense Cetogory</th>
           <th scope="col">Amount</th>
           <th scope="col">description</th>
+          <th scope="col"></th>
           </tr>
         </thead>
+        <tbody>
         {expenses.map((expenses) => (
           <tr>
-            <td>{expenses._id}</td>
-            <td>{expenses.date}</td>
-            <td>{expenses.expenseCategory}</td>
-            <td>{expenses.amount}</td>
-            <td>{expenses.description}</td>
+            <td className="expenseTableData">{expenses._id}</td>
+            <td className="expenseTableData">{expenses.date}</td>
+            <td className="expenseTableData">{expenses.expenseCategory}</td>
+            <td className="expenseTableData">{expenses.amount}</td>
+            <td className="expenseTableData">{expenses.description}</td>
+            <td>
             <Link
               to={`/EditExpense/${expenses._id}`}
-              className="btn btn-success btn-sm expenseButton"
+              className="btn btn-sm expenseButton"
             >
-              EDIT
-              <EditIcon className="btn-icon"/>
+              <EditIcon className="btn-icon" style={{color:green[600]}} fontSize="small"/>
             </Link>
             &nbsp;
             <button
-              className="btn btn-danger btn-sm expenseButton"
+              className="btn btn-sm expenseButton"
               onClick={() => deleteExpense(expenses._id)}
             >
-              DELETE
-              <DeleteIcon className="btn-icon"/>
+              <DeleteIcon className="btn-icon" style={{color:red[600]}} fontSize="small"/>
             </button>
+            </td>
           </tr>
         ))}
+        </tbody>
       </table>
       <Link to={"/AddExpense"} className="btn btn-warning btn-sm">
-        ADD EXPENSE <AddIcon />
+        ADD EXPENSE <AddCircleIcon />
       </Link>
     </div>
     </div>
