@@ -42,7 +42,7 @@ import BudgetPlans from "../views/BudgetPlans/BudgetPlans";
 import Ledgers from "../views/Ledgers/Ledgers";
 import Income from "../views/Income/Income";
 import Navbar from "./Navbar/Navbar";
-
+import CustomerList from "../views/customer/customerList";
 
 
 
@@ -165,6 +165,9 @@ function App() {
           </Route>
           <Route exact path="/AddEmployeeSalary">
             <AddEmployeeSalary/>
+          </Route>
+          <Route exact path="/Client">
+              <CustomerList/>
           </Route>
 
 
