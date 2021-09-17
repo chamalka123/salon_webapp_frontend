@@ -43,7 +43,7 @@ import Ledgers from "../views/Ledgers/Ledgers";
 import Income from "../views/Income/Income";
 import Navbar from "./Navbar/Navbar";
 import CustomerList from "../views/customer/customerList";
-
+import CustomerLogin from "../views/CustomerLogin/CustomerLogin";
 
 
 
@@ -56,6 +56,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/login">
+            <CustomerLogin />
           </Route>
           <Route exact path="/admin-login">
             <AdminLogin />
