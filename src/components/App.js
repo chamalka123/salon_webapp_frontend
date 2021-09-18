@@ -34,6 +34,9 @@ import BudgetPlans from "../views/BudgetPlans/BudgetPlans";
 import Ledgers from "../views/Ledgers/Ledgers";
 import Income from "../views/Income/Income";
 import Navbar from "./Navbar/Navbar";
+import CustomerList from "../views/customer/customerList";
+import CustomerLogin from "../views/CustomerLogin/CustomerLogin";
+
 function App() {
   return (
     <div>
@@ -42,6 +45,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/login">
+            <CustomerLogin />
           </Route>
           <Route exact path="/admin-login">
             <AdminLogin />
@@ -71,10 +77,8 @@ function App() {
           </Route>
           <Route exact path="/AddExpense">
             <AddExpenses />
-            </Route>
-            <Route exact path="/AddPayment">
-
           </Route>
+          <Route exact path="/AddPayment"></Route>
           <Route exact path="/Appointment">
             <Appointment />
           </Route>
@@ -87,8 +91,7 @@ function App() {
           <Route exact path="/AddPayment">
             <AddPayment />
           </Route>
-          <Route exact path="/update/:id" component={EditPayment}>
-          </Route>
+          <Route exact path="/update/:id" component={EditPayment}></Route>
           <Route exact path="/EditExpense/:id">
             <EditExpenses />
           </Route>
@@ -98,10 +101,13 @@ function App() {
           <Route exact path="/AddService">
             <AddService />
           </Route>
-          <Route path="/salon/item/:id" exact component={SingleItem}/>
-          <Route path="/salon/item/update/:id" exact component={UpdateService}>
-            </Route>
-            <Route exact path="/CustomerView">
+          <Route path="/salon/item/:id" exact component={SingleItem} />
+          <Route
+            path="/salon/item/update/:id"
+            exact
+            component={UpdateService}
+          ></Route>
+          <Route exact path="/CustomerView">
             <CustomerView />
           </Route>
           <Route exact path="/CustomerSingleItem">
@@ -117,7 +123,7 @@ function App() {
             <EditProduct />
           </Route>
           <Route exact path="/ProductPage">
-          <ProductPage/>
+            <ProductPage />
           </Route>
           <Route exact path="/Employee">
             <AllEmployee />
@@ -135,11 +141,14 @@ function App() {
             <EmployeeSalaryCalculator />
           </Route>
           <Route exact path="/AddEmployeeSalary">
-            <AddEmployeeSalary/>
+            <AddEmployeeSalary />
+          </Route>
+          <Route exact path="/Client">
+            <CustomerList />
           </Route>
         </Switch>
       </Router>
-  <Footer />
+      <Footer />
     </div>
   );
 }

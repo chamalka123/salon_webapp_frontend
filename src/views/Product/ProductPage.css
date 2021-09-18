@@ -1,16 +1,15 @@
 .productContainer {
-  width: 300px;
+  width: 280px;
   height: 200px;
-  margin: 2%;
-  border-radius: 1%;
-  background-color: rgb(250, 249, 249)(100, 237, 191);
+  margin-top: 1%;
+  border-radius: 2%;
+  background-color: rgb(240, 240, 240)(100, 237, 191);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   flex-direction: row;
-  float: right;
+  float: left;
   text-align: center;
   font-family: serif;
-  
- 
+  margin-left: 98px;;
   }
 
   .productDetails{
@@ -47,7 +46,8 @@
   .product-btn {
     border: none;
     outline: 0;
-    padding: 8px;
+    margin-top: 4%;
+    padding: 6px;
     color: white;
     background-color: rgb(37, 204, 79);
     text-align: center;
@@ -61,5 +61,5 @@
   }
 
   .productpage{
-    margin: 4% 8% 0 7%;
+    margin: 4% 8% 0 8%;
   }
