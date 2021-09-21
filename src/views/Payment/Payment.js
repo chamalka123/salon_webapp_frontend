@@ -2,8 +2,24 @@
 import React,{useState,  useEffect} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
+import "./Allpayment.css";
 
  export default function Payment(){
+
+
+  const [loading, setLoading] = useState(false);
+    const [posts, setPosts] = useState([]);
+    const [searchName, setSearchName] = useState("");
+
+    useEffect(() => {
+        const loadPosts =async () =>{
+            setLoading(true);
+            const response =await axios.get("http://localhost:8070/payment/");
+            setPosts(response.data);
+            setLoading(false);
+        }
+        loadPosts();
+    }, []);
   
   const[payments, setPayments]= useState([]);
     
@@ -40,8 +56,18 @@ import {Link} from "react-router-dom";
 
   }
     return(
-        <div className="container">
-            <h1>Payment management</h1>
+
+      <><div className="allpayment">
+      <input className="searche"
+      style={{ width:"15%" ,height:"25px"}}
+      type="text"
+      placeholder="search payment ID"
+      onChange={(e) => setSearchName(e.target.value)}/>
+      </div>
+
+        <div className="paycontainer">
+          
+            <h1>All Payment Details</h1>
             <table class="table">
         <thead>
           <tr>
@@ -54,8 +80,22 @@ import {Link} from "react-router-dom";
             
           </tr>
           </thead>
+          {loading ? (
+                    <button class="btn-btn-primary" type="button" disabled>
+                        <span class="spinner-border spinner-border-sm" role="status" aris-hidden="true"></span>
+                        Loading </button>
+                ) : (
+                    posts
+                        .filter((value) => {
+                            if (searchName === "") {
+                                return value;
+                            } else if (
+                                value.paymentId.includes(searchName.toUpperCase())
+                            ){
+                                return value;
+                            }
 
-           {payments.map((payments)=>(
+                          }).map((payments)=>
            <tr>
         <td>{payments.paymentId}</td>
         <td>{payments.customername}</td>
@@ -77,9 +117,12 @@ import {Link} from "react-router-dom";
           </tr>
         
         
-        ))}
-        </table>
-        <Link to={"/AddPayment"} className="btn btn-success btn-sm">ADD PAYMENT</Link>
+       ))}
+
+       </table>
+
+        <Link to="/AddPayment" className="btn btn-success btn-sm">ADD PAYMENT</Link>
     </div>
+    </>
     )
 }

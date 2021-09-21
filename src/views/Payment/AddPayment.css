@@ -5,11 +5,15 @@ input[type=text]{
     resize: vertical;
 }
 
-.container{
-    border-radius: 10px;
+.paycontainer{
+    border-radius: 20px;
     background-color: beige;
-    background-image: ".public/image/payimage.jpg";
-    padding: 10px;
-    margin-top: 10px;
-    width: 900px;
+    /*background-image: ".public/image/payimage.jpg";*/
+    padding: 100px;
+    margin-top: 5px;
+    width: 1300px;
+}
+.cont{
+    /* position: relative; */
+    margin-top: 5rem;
 }

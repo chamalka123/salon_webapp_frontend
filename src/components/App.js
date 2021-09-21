@@ -52,8 +52,9 @@ function App() {
   return (
     <div>
       <Router>
-        <SideDrawer />
+      <SideDrawer /> 
         <Switch>
+         
           <Route exact path="/">
             <Home />
           </Route>
@@ -87,10 +88,6 @@ function App() {
             <AddExpenses />
 
             </Route>
-           
-            <Route exact path="/AddPayment">
-
-          </Route>
 
           <Route exact path="/Appointment">
             <Appointment />
@@ -102,9 +99,9 @@ function App() {
             <EditAppointment />
           </Route>
 
-          <Route exact path="/AddPayment">
+          <Route exact path="/AddPayment" component={AddPayment}>
 
-            <AddPayment />
+            
             
           </Route>
           <Route exact path="/update/:id" component={EditPayment}>

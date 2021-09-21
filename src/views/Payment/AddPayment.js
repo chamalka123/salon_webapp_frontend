@@ -38,12 +38,16 @@ export default function AddPayment() {
 
     
   return (
- 
-    <div className="container">
+     
+    <div className="paycontainer">
+      <br></br>
+      <br></br>
+      
+      <h1>Add New Payment</h1>
     <form onSubmit={sendData}>
       <div className="form-group">
         <label for="paymentId">Payment ID</label>
-        <input type="text" class="form-control" id="paymentId" required placeholder="Enter Payment ID"
+        <input type="text" class="form-control" id="paymentId"  placeholder="Enter Payment ID"
         onChange={(e)=>{
           setPaymentID(e.target.value);
         }} />
@@ -53,7 +57,7 @@ export default function AddPayment() {
   
       <div className="form-group">
         <label for="customername">Client Name</label>
-        <input type="text" class="form-control" id="customername" required placeholder="Enter Client Name"
+        <input type="text" class="form-control" id="customername"  placeholder="Enter Client Name"
         onChange={(e)=>{
           setName(e.target.value);
         }} />

@@ -95,13 +95,18 @@ function sendUpdatePayment(e){
    
   return (
  
-    <div className="container">
+    <div className="paycontainer">
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <h1>Edit Payment</h1>
     <form onSubmit={sendUpdatePayment}>
 
     <div className="form-group">
 
   
-<label for="paymentId">Client Name</label>
+<label for="paymentId">PaymentID</label>
 <input type="text" class="form-control" id="paymentId" value={paymentId} placeholder="Enter Payment ID"
 onChange={(e)=>{
   setPaymentID(e.target.value);
