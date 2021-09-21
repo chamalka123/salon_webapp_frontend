@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import axios from "axios";
 import {useParams} from "react-router";
@@ -66,7 +65,7 @@ function sendUpdateExpense(e){
         <div className="form-group">
           <label htmlFor="exampleInputEntryDate1">Entry Date</label>
           <input
-            type="text"
+            type="date"
             className="form-control"
             id="exampleInputEntryDate1"
             placeholder="Enter Entry Date"
@@ -80,7 +79,7 @@ function sendUpdateExpense(e){
         <div className="form-group">
           <label htmlFor="exampleInputEntryDate1">Amount</label>
           <input
-            type="number"
+            type="number" min={0}
             className="form-control"
             id="exampleInputEntryDate1"
             placeholder="Amount"

@@ -74,7 +74,7 @@ function Expenses() {
             &nbsp;
             <button
               className="btn btn-sm expenseButton"
-              onClick={() => deleteExpense(expenses._id)}
+              onClick={() => {if (window.confirm('Are you sure you wish to delete this record?')) deleteExpense(expenses._id)}}
             >
               <DeleteIcon className="btn-icon" style={{color:red[600]}} fontSize="small"/>
             </button>

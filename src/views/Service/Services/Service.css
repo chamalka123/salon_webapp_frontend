@@ -1,5 +1,5 @@
 
-header{
+.serviceHeader{
     min-height: 70px;
     width: 100%;
     overflow: hidden;
@@ -9,19 +9,19 @@ header{
     align-items: center;
     border-bottom: 12px solid #ddd;
 }
-header .logo{
+.serviceHeader .logo{
     flex: 6;
 }
-header a{
+.serviceHeader a{
     text-transform: uppercase;
     color: #555;
 }
-header ul li{
+.serviceHeader ul li{
     display: inline-block;
     opacity: 0.7;
     padding: 0 20px;
 }
-header ul li:hover{
+.serviceHeader ul li:hover{
     opacity: 1;
 }
 .menu{

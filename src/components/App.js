@@ -66,11 +66,11 @@ function App() {
             <Navbar />
             <BudgetPlans />
           </Route>
-          <Route exact path="/budgetPlans">
-            <Income />
-          </Route>
           <Route exact path="/ledgers">
             <Ledgers />
+          </Route>
+          <Route exact path="/income">
+            <Income />
           </Route>
           <Route exact path="/Payment">
             <Payment />
