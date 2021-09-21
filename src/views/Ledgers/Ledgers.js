@@ -44,7 +44,7 @@ function Ledgers() {
   //delete
   function deleteLedger(_id) {
     axios
-      .delete(`http://localhost:8070/ledger/${_id}`)
+      .delete(`http://localhost:8070/ledger/delete/${_id}`)
       .then((res) => {
         //console.log(res.data);
       })
@@ -80,7 +80,7 @@ function Ledgers() {
           {loading ? (
             <button className="btn-btn-primary" type="button" disabled>
               <span
-                class="spinner-border spinner-border-sm"
+                className="spinner-border spinner-border-sm"
                 role="status"
                 aris-hidden="true"
               ></span>
@@ -91,7 +91,7 @@ function Ledgers() {
               .filter((value) => {
                 if (searchName === "") {
                   return value;
-                } else if (value.date.includes(searchName.toUpperCase())) {
+                } else if (value.date.includes(searchName)) {
                   return value;
                 }
               })
@@ -104,7 +104,7 @@ function Ledgers() {
                     <button
                       className="btn btn-sm ledgerButton"
                       id="deleteNote"
-                      onClick={() => deleteLedger(ledger._id)}
+                      onClick={() => {if (window.confirm('Are you sure you wish to delete this record?'))deleteLedger(ledger._id)}}
                     >
                       <DeleteIcon
                         fontSize="small"

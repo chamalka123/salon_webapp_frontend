@@ -53,7 +53,7 @@ function BudgetPlans() {
               &nbsp;
               <button
               className="btn btn-sm btnBudget"
-              onClick={() => deleteBudgetPlans(budgetPlans._id)}
+              onClick={() => {if (window.confirm('Are you sure you wish to delete this record?'))deleteBudgetPlans(budgetPlans._id)}}
               >
               <DeleteIcon fontSize="small" style={{color: red[600]}}/>
             </button>

@@ -43,8 +43,8 @@ function Expenses() {
   return (
     <div className="expenseBody">
       <Navbar />
+      <br />
     <div className="containerExpenses">
-      <h1>Expense management</h1>
       <table className="table table-striped expenseTable">
         <thead className="thead-dark">
           <tr className="expenseRaw">
@@ -74,7 +74,7 @@ function Expenses() {
             &nbsp;
             <button
               className="btn btn-sm expenseButton"
-              onClick={() => deleteExpense(expenses._id)}
+              onClick={() => {if (window.confirm('Are you sure you wish to delete this record?')) deleteExpense(expenses._id)}}
             >
               <DeleteIcon className="btn-icon" style={{color:red[600]}} fontSize="small"/>
             </button>

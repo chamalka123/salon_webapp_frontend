@@ -12,29 +12,21 @@ import EditEmployee from "../views/Employee/EditEmployee";
 import Allsalary from "../views/Employee/AllSalary";
 import AddEmployeeSalary from "../views/Employee/AddEmployeeSalary";
 import EmployeeSalaryCalculator from "../views/Employee/EmployeeSalaryCalculator";
-
-
 import Service from "../views/Service/Services/Service";
 import AddService from "../views/Service/AddService/AddService";
 import SingleItem from "../views/Service/SingleItem/SingleItem";
 import CustomerView from "../views/Service/CustomerView/CustomerView";
 import CustomerSingleItem from "../views/Service/CustomerView/CustomerSingleItem";
 import UpdateService from "../views/Service/UpdateService/UpdateService";
-
 import Appointment from "../views/Appointment/Appointment";
 import AddAppointment from "../views/Appointment/AddAppointment";
 import EditAppointment from "../views/Appointment/EditAppointment";
-
-
 import AllProduct from "../views/Product/AllProduct";
 import AddProduct from "../views/Product/AddProduct";
 import EditProduct from "../views/Product/EditProduct";
-
 import EditExpenses from "../views/Expenses/EditExpenses";
 import AddPayment from "../views/Payment/AddPayment";
-
 import EditPayment from "../views/Payment/EditPayment";
-
 import ProductPage from "../views/Product/ProductPage";
 import SideDrawer from "./Header/SideDrawer";
 import AdminLogin from "../views/AdminLogin/AdminLogin";
@@ -42,11 +34,8 @@ import BudgetPlans from "../views/BudgetPlans/BudgetPlans";
 import Ledgers from "../views/Ledgers/Ledgers";
 import Income from "../views/Income/Income";
 import Navbar from "./Navbar/Navbar";
-
-
-
-
-
+import CustomerList from "../views/customer/customerList";
+import CustomerLogin from "../views/CustomerLogin/CustomerLogin";
 
 function App() {
   return (
@@ -57,6 +46,9 @@ function App() {
          
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/login">
+            <CustomerLogin />
           </Route>
           <Route exact path="/admin-login">
             <AdminLogin />
@@ -75,11 +67,11 @@ function App() {
             <Navbar />
             <BudgetPlans />
           </Route>
-          <Route exact path="/budgetPlans">
-            <Income />
-          </Route>
           <Route exact path="/ledgers">
             <Ledgers />
+          </Route>
+          <Route exact path="/income">
+            <Income />
           </Route>
           <Route exact path="/Payment">
             <Payment />
@@ -87,7 +79,14 @@ function App() {
           <Route exact path="/AddExpense">
             <AddExpenses />
 
+
             </Route>
+
+
+          
+          <Route exact path="/AddPayment">
+            <AddPayment />
+          </Route>
 
           <Route exact path="/Appointment">
             <Appointment />
@@ -99,32 +98,33 @@ function App() {
             <EditAppointment />
           </Route>
 
-          <Route exact path="/AddPayment" component={AddPayment}>
-
-            
-            
-          </Route>
-          <Route exact path="/update/:id" component={EditPayment}>
-            
-            
-          </Route>
 
           
 
+            
+            
+
+          <Route exact path="/AddPayment">
+            <AddPayment />
+
+          </Route>
+          <Route exact path="/update/:id" component={EditPayment}></Route>
           <Route exact path="/EditExpense/:id">
             <EditExpenses />
           </Route>
-
           <Route exact path="/Service">
             <Service />
           </Route>
           <Route exact path="/AddService">
             <AddService />
           </Route>
-          <Route path="/salon/item/:id" exact component={SingleItem}/>
-          <Route path="/salon/item/update/:id" exact component={UpdateService}>
-            </Route>
-            <Route exact path="/CustomerView">
+          <Route path="/salon/item/:id" exact component={SingleItem} />
+          <Route
+            path="/salon/item/update/:id"
+            exact
+            component={UpdateService}
+          ></Route>
+          <Route exact path="/CustomerView">
             <CustomerView />
           </Route>
           <Route exact path="/CustomerSingleItem">
@@ -139,11 +139,8 @@ function App() {
           <Route exact path="/EditProduct/:id">
             <EditProduct />
           </Route>
-
-          
-
           <Route exact path="/ProductPage">
-          <ProductPage/>
+            <ProductPage />
           </Route>
           <Route exact path="/Employee">
             <AllEmployee />
@@ -161,14 +158,14 @@ function App() {
             <EmployeeSalaryCalculator />
           </Route>
           <Route exact path="/AddEmployeeSalary">
-            <AddEmployeeSalary/>
+            <AddEmployeeSalary />
           </Route>
-
-
-
+          <Route exact path="/Client">
+            <CustomerList />
+          </Route>
         </Switch>
       </Router>
-  <Footer />
+      <Footer />
     </div>
   );
 }
