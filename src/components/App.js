@@ -165,11 +165,9 @@ function App() {
           </Route>
         </Switch>
       </Router>
-<<<<<<< HEAD
 
-=======
       <Footer />
->>>>>>> a06d58b5e4d9c4a25f6bc9d344e04b1a98f770c8
+
     </div>
   );
 }
