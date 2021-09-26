@@ -3,11 +3,10 @@ import { useHistory } from 'react-router';
 import ReactDOM from "react-dom";
 import "./Service.css";
 import axios from 'axios';
-import {useParams, Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
-import {green, red, blue } from '@material-ui/core/colors';
+import { red, blue } from '@material-ui/core/colors';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
-import { ListItem } from '@material-ui/core';
 
 function Services() {
   const[id,setId]=useState("");
@@ -64,7 +63,7 @@ return(
     <br></br>
     <br></br>
     <br></br>
-    <header>
+    <header className="serviceHeader">
     <div className="logo">
                 <h1>
                     <Link to={"/CustomerView"}>{'SERVICES MANAGEMENT'}</Link>
