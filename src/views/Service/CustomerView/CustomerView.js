@@ -66,13 +66,10 @@ return(
     <header>
     <div className="logo">
                 <h1>
-                    <Link to={"/CustomerView"}>{'SERVICES MANAGEMENT'}</Link>
+                    <Link to={"/CustomerView"}>{'OUR SERVICES & PACKAGES'}</Link>
                 </h1>
             </div>
-            <ul>
-                <li><Link to="/AddService">{'CREATE NEW'}</Link></li>
-                <li><Link to="/Service">SERVICES & PACKAGES</Link></li>
-                </ul>
+           
 </header>
 <div className="filter-menu">
 <input type="text"style={{width:"16%", height:"25%"}}  placeholder="Enter your search" onChange={(e)=>setSearchtitle(e.target.value)}/> </div>

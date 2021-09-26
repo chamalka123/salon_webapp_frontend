@@ -182,7 +182,7 @@ async function sendUpdateService(e){
                             {previewSource ? 
                                 <img src={previewSource} alt="preview" className="previewImgservice"/>
                             :
-                                <img src="/image/d.png" className="updatepreviewImgservice" alt="service pic"/>
+                                <img src="/image/d.jpg" className="updatepreviewImgservice" alt="service pic"/>
                             }
                             <div className="form-group">
                                 <label htmlFor="productimg">
