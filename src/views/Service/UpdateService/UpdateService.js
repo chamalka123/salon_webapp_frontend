@@ -89,10 +89,10 @@ async function sendUpdateService(e){
         <br></br>
         <br></br>
         <br></br>
-        <header>
+        <header className="serviceHeader">
        <div className="logo">
                 <h1>
-                    UPDATE
+                    UPDATE SERVICE
                 </h1>
             </div>
             <ul>

@@ -5,8 +5,6 @@ import Button from "@material-ui/core/Button";
 import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 import OutlinedInput from "@material-ui/core/OutlinedInput";
 import { Link, useHistory } from 'react-router-dom';
-import IconButton from "@material-ui/core/IconButton";
-import InputAdornment from "@material-ui/core/InputAdornment";
 import { TextField } from '@material-ui/core';
 import {green, red, blue } from '@material-ui/core/colors';
 
@@ -64,7 +62,7 @@ function AddService() {
         <br></br>
         <br></br>
         <br></br>
-      <header>
+        <header className="serviceHeader">
     <div className="logo">
                 <h1>
                     <Link to={"/AddService"}>{'CREATE NEW'}</Link>
@@ -75,6 +73,7 @@ function AddService() {
                 <li><Link to="/Service">SERVICES&PACKAGES</Link></li>
                 </ul>
 </header>
+<br></br>
         <div className="create_service">
             <form onSubmit={add} class="addService">
                 <div className="row">

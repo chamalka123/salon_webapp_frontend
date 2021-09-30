@@ -61,20 +61,18 @@ function ServiceDetails(props) {
 
       
     return (
-      
-        <div className="container">
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <header>
-    <div className="logo">
-            <ul>
-               
-                <li><Link to="/Service">SERVICES & PACKAGES</Link></li>
-                </ul></div>
-</header>
-<div className="detail">
+      <div>
+      <header className="serviceHeader">
+              <ul>
+                  <li><Link to="/AddService">{'CREATE NEW'}</Link></li>
+                  <li><Link to="/Service">SERVICES&PACKAGES</Link></li>
+                  </ul>
+  </header>
+  <br></br>
+  <br></br>
+        <div className="container" align="center">
+        
+<div className="detailcard">
             <div className="detail">
                        <img src="/image/d.jpg " alt="" />
                  
@@ -84,31 +82,29 @@ function ServiceDetails(props) {
                             <h6>#id: {id}</h6>
                         </div>
                         <br></br>
-                        <h5>Rs.{price}.00</h5>
-                              
+                        <h5>Rs.{price}.00</h5>    
                         <h5>{duration} mins</h5> 
                         <p className="text-muted">{content}</p>
-                        <h5>Category : {category}</h5> 
+                        <h5>Category : {category}</h5>
+                       
+                        </div>
                             <table className="singleitembtns">  
-                        <div align="right">
-                            <span> 
+                        <div> 
                                     &nbsp;&nbsp;&nbsp; &nbsp;
                                     <button className="mx-2 productbtn" style={{backgroundColor:green[400]}} onClick={()=>update(id)}>
                                         Update <EditIcon/>
                                         </button>
-                            </span> 
+                             
                         </div>
-                        </table>
-                    </div>
-                            
-                </div>                
+                        </table>               
             </div>
-           
+           </div>
+           </div>
             <br></br>
         <div>
             <div> 
             <h2 align="left"> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              Related 
+              Related Services & Packages
               <br></br>
               <br></br>
             </h2>
@@ -140,8 +136,8 @@ function ServiceDetails(props) {
             </div>
             </table>
         </div>
-        </div> 
-        
+       </div>
+      
     )
 }
 
