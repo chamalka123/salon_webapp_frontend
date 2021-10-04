@@ -39,14 +39,60 @@ function Expenses() {
         alert(err);
       });
   }
- 
+
+  //total expenses
+   let sumOfExpense =0;
+    expenses.reduce(function(accumulator,currentValue){
+    //console.log(typeof currentValue.amount);
+    //console.log(typeof accumulator);
+    sumOfExpense = accumulator + currentValue.amount;
+    return sumOfExpense;
+  },0)
+  {expenses.map((expense) => (
+    sumOfExpense
+  ))}
+  //console.log(sum);
+
+      //fetch all income records in payment collections
+      const [income, setIncome] = useState([]);
+      useEffect(() => {
+        function getIncome() {
+          axios
+            .get("http://localhost:8070/payment/")
+            .then((res) => {
+              setIncome(res.data);
+              //console.log(res.data);
+            })
+            .catch((err) => {
+              alert(err.message);
+            });
+        }
+        getIncome();
+    
+      }, [income]);
+  
+      //total income
+     let sumOfIncome =0;
+     income.reduce(function(accumulator,currentValue){
+      sumOfIncome = accumulator + currentValue.amount;
+      return sumOfIncome;
+   },0)
+   {income.map((income) => (
+     sumOfIncome
+   ))}
+
+  //profit calculation
+  let profit = sumOfIncome - sumOfExpense;
+  //console.log(sumOfExpense);
+
   return (
     <div className="expenseBody">
-      <Navbar />
-      <br />
+      <Navbar />     
     <div className="containerExpenses">
-      <table className="table table-striped expenseTable">
-        <thead className="thead-dark">
+    <div className="total">Total Expenses: Rs.{sumOfExpense}</div>
+    <div className="total">Profit: Rs.{profit}</div>
+      <table className="table table-bordered expenseTable">
+        <thead className="bg-dark text-light">
           <tr className="expenseRaw">
           <th scope="col">ID</th>
           <th scope="col">Entry Date</th>
@@ -56,7 +102,6 @@ function Expenses() {
           <th scope="col"></th>
           </tr>
         </thead>
-        <tbody>
         {expenses.map((expenses) => (
           <tr>
             <td className="expenseTableData">{expenses._id}</td>
@@ -81,11 +126,33 @@ function Expenses() {
             </td>
           </tr>
         ))}
-        </tbody>
       </table>
       <Link to={"/AddExpense"} className="btn btn-warning btn-sm">
         ADD EXPENSE <AddCircleIcon />
       </Link>
+    </div>
+    <div className="incomeBody">
+          <div className="total">Total Income: Rs.{sumOfIncome}</div>
+          <div className="containerIncome">
+      <table className="table table-bordered incomeTable">
+        <thead className="thead-dark">
+          <tr className="incomeRaw">
+          <th scope="col">ID</th>
+          <th scope="col">Entry Date</th>
+          <th scope="col">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+        {income.map((income) => (
+          <tr>
+            <td className="expenseTableData">{income._id}</td>
+            <td className="expenseTableData">{income.date}</td>
+            <td className="expenseTableData">{income.amount}</td>
+          </tr>
+        ))}
+        </tbody>
+      </table>
+    </div>
     </div>
     </div>
   );

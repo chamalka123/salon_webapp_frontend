@@ -24,9 +24,7 @@
     text-align: center;
     font-size: 1.5rem;
 }
-.loginInput{
-    margin: 1% 15%;
-}
+
 .loginBtn{
     margin: 4% 15%;
 }
@@ -40,4 +38,7 @@ background-color: aqua;
 #login{
     color: black;
     background-color: blanchedalmond;
+}
+.inputLogin{
+    padding: 0 0 0 12%;
 }

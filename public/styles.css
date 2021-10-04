@@ -5,10 +5,13 @@
 }
 
 body{
-    background: rgba(255, 255, 255, 0.932);
     padding: 0;
+}
+
+#root{
     min-height: 180vh;
 }
+
 .welcomePicture{
     background-image: url(./image/welcomeScreenImage.jpg);
     height:60vh;

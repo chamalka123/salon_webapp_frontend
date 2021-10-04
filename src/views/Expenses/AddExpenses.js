@@ -37,7 +37,7 @@ function AddExpenses() {
             <select id="inputState" className="form-control" onChange={(e) => {
                 setCategory(e.target.value);
               }}>
-              <option>Product</option>
+              <option defaultValue>Product</option>
               <option>Service</option>
             </select>
           </div>
@@ -71,7 +71,7 @@ function AddExpenses() {
             <label for="exampleInputEntryDate1">Description</label>
             <textarea
               required ={true}
-              maxLength = {40}
+              maxLength = {100}
               type="text"
               className="form-control"
               id="exampleInputEntryDate1"

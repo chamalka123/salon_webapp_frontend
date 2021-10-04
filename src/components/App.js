@@ -32,7 +32,6 @@ import SideDrawer from "./Header/SideDrawer";
 import AdminLogin from "../views/AdminLogin/AdminLogin";
 import BudgetPlans from "../views/BudgetPlans/BudgetPlans";
 import Ledgers from "../views/Ledgers/Ledgers";
-import Income from "../views/Income/Income";
 import Navbar from "./Navbar/Navbar";
 import CustomerList from "../views/customer/customerList";
 import CustomerLogin from "../views/CustomerLogin/CustomerLogin";
@@ -43,7 +42,6 @@ function App() {
       <Router>
       <SideDrawer /> 
         <Switch>
-         
           <Route exact path="/">
             <Home />
           </Route>
@@ -70,24 +68,15 @@ function App() {
           <Route exact path="/ledgers">
             <Ledgers />
           </Route>
-          <Route exact path="/income">
-            <Income />
-          </Route>
           <Route exact path="/Payment">
             <Payment />
           </Route>
           <Route exact path="/AddExpense">
             <AddExpenses />
-
-
             </Route>
-
-
-          
           <Route exact path="/AddPayment">
             <AddPayment />
           </Route>
-
           <Route exact path="/Appointment">
             <Appointment />
           </Route>
@@ -97,13 +86,6 @@ function App() {
           <Route exact path="/EditAppointment/:id">
             <EditAppointment />
           </Route>
-
-
-          
-
-            
-            
-
           <Route exact path="/AddPayment">
             <AddPayment />
 

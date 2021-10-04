@@ -14,9 +14,11 @@ function CustomerLogin(){
           <div className="welcomePicture">
           <div className="loginContainer">
       <div className="headingLogin">Login</div>
+      <div className="inputLogin">
       <div className="loginInput">
         <FormControl>
           <InputLabel htmlFor="my-input">User Name</InputLabel>
+          <br/><br/>
           <Input id="my-input" aria-describedby="my-helper-text" />
         </FormControl>
       </div>
@@ -24,8 +26,11 @@ function CustomerLogin(){
       <div className="loginInput">
         <FormControl>
           <InputLabel htmlFor="my-input">Password</InputLabel>
-          <Input id="my-input" aria-describedby="my-helper-text" />
+          <br/><br/>
+          <Input id="my-input" aria-describedby="my-helper-text" 
+          />
         </FormControl>
+      </div>
       </div>
       <div className="loginBtn">
       <Button variant="contained" className="loginBtn" id="login">
