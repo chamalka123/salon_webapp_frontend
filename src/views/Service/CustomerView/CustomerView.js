@@ -1,11 +1,9 @@
 import React,{useEffect, useState} from 'react'
 import { useHistory } from 'react-router';
-import ReactDOM from "react-dom";
-import "../Services/Service.css";
 import axios from 'axios';
 import {useParams, Link} from 'react-router-dom'
-
-import {green, red, blue } from '@material-ui/core/colors';
+import './Customerview.css';
+import {blue, orange, red, yellow} from '@material-ui/core/colors';
 
 
 function Services() {
@@ -27,11 +25,6 @@ setLoading(false);
 loadPosts();
 }, []);
 
- const config = {
-  headers: {
-      "content-Type": "application/json"
-  }
-};
 
 
   useEffect(() => {
@@ -47,16 +40,9 @@ loadPosts();
   }, [])
   
   function view(id){
-    history.push(`/salon/item/${id}`)
+    history.push(`/salons/item/${id}`)
   }
-  async function deleteService(id){        
-    await axios.delete(`http://localhost:8070/service/delete/${id}`,config).then(() => {
-        alert("Item deleted successfully")
-      
-    }).catch((error) => {
-        alert(`Failed to delete the product\n${error.message}`)
-    }) 
-} 
+
 return(
   <div className="container">
     <br></br>
@@ -94,21 +80,17 @@ return(
                     </div>
                     <div class="p-3">
                      
-                        <h7>{services.title}</h7>
+                        <h6>{services.title}</h6>
                         <h6>Rs.{services.price}.00</h6>
-                       
-                          <span> 
                           
-                          <button className="mx-2 productbtn" style={{backgroundColor:red[500]}} >
-                                        Add To Favourites
-                                        </button>
-                              
-                              <button class="productbtn" style={{backgroundColor:blue[400]}} onClick={()=>view(services._id)}>
-                                        VIEW
+                        <span>
+                        &nbsp;&nbsp;
+                         <button class="viewbtn" style={{backgroundColor:blue[400]}}  onClick={()=>view(services._id)}>
+                                VIEW
                                     </button>
-                              
-                          </span> 
-                        
+                                    <button class="viewbookbtn" style={{backgroundColor:yellow[800]}}> <Link to={"/AddAppointment"} >BOOK NOW</Link>
+                     
+                                    </button></span>
                     </div>
                 </div>
                 </div>

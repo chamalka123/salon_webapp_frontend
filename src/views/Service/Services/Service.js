@@ -72,6 +72,7 @@ return(
             <ul>
                 <li><Link to="/AddService">{'CREATE NEW'}</Link></li>
                 <li><Link to="/Service">SERVICES & PACKAGES</Link></li>
+                <li><Link to="/">SERVICES REPORTS</Link></li>
                 </ul>
 </header>
 <div className="filter-menu">
@@ -107,7 +108,7 @@ return(
                                         DELETE <DeleteForeverIcon/>
                                         </button>
                               &nbsp;&nbsp;&nbsp;
-                              <button class="productbtn" style={{backgroundColor:blue[400]}} onClick={()=>view(services._id)}>
+                              <button class="productviewbtn" style={{backgroundColor:blue[400]}} onClick={()=>view(services._id)}>
                                         VIEW
                                     </button>
                               
@@ -121,8 +122,4 @@ return(
        
         </div>
   )
-  
-      
-       
-
        }export default Services

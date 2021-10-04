@@ -1,11 +1,11 @@
 import React,{useEffect, useState} from 'react'
 import { useHistory } from 'react-router';
-import '../Services/Service.css'
-import '../SingleItem/SingleItem.css'
+//import '../Services/Service.css'
+//import '../SingleItem/SingleItem.css'
+import './Customerview.css';
 import axios from 'axios'
-import {Link} from 'react-router-dom'
-import { orange, green, red, blue} from '@material-ui/core/colors';
-import EditIcon from '@material-ui/icons/Edit';
+import '../../Appointment/AddAppointment';
+import { Link } from '@material-ui/core';
 
 
 function ServiceDetails(props) {
@@ -64,13 +64,7 @@ function ServiceDetails(props) {
           <br></br>
           <br></br>
           <br></br>
-          <header>
-    <div className="logo">
-            <ul>
-               
-                <li><Link to="/Service">SERVICES & PACKAGES</Link></li>
-                </ul></div>
-</header>
+  
 <div className="detail">
             <div className="detail">
                        <img src="/image/d.jpg " alt="" />
@@ -81,62 +75,21 @@ function ServiceDetails(props) {
                             <h6>#id: {id}</h6>
                         </div>
                         <br></br>
-                        <h5>Rs.{price}.00</h5>
-                              
-                        <h5>{duration} mins</h5> 
-                        <p className="text-muted">{content}</p>
-                        <h5>Category : {category}</h5> 
-                            <table className="singleitembtns">  
-                        <div align="right">
-                            <span> 
-                                    &nbsp;&nbsp;&nbsp; &nbsp;
-                                    <button className="mx-2 productbtn" style={{backgroundColor:green[400]}} >
-                                       BOOK NOW
-                                        </button>
-                            </span> 
-                        </div>
-                        </table>
-                    </div>
-                            
-                </div>                
+                        <br></br>
+                        <h3>Price : Rs.{price}.00</h3>  
+                        <br></br> 
+                        <h4>Time : {duration} mins</h4> 
+                        <br></br>
+                        <h4>{content}</h4>
+                        <br></br>
+                        <h4>Category : {category}</h4>
+                       
+                       </div>
+                     </div>                
             </div>
-           
+            
             <br></br>
-        <div>
-            <div> 
-            <h2 align="left"> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              Related 
-              <br></br>
-              <br></br>
-            </h2>
-            </div>
-               <table className="relatedproduct">
-            <div className="products">
-                <div className="container productGridr" > 
-                {services.slice(0, 5).map((Service,key)=>( 
-                        <div key={key}> 
-                            <div class="productcard">
-                                    <div class="imgBx">
-                                        <img  src="/image/d.jpg" alt="service"/>
-                                    </div>
-                                    <div class="p-3">
-                                        <h7>{Service.title}</h7>
-                                        <h6>{Service.price}</h6>
-                                    <div align="right">
-                                        <span> 
-                                          
-                                                         &nbsp;&nbsp;&nbsp;
-                                            <button class="productbtn" style={{backgroundColor:red[400]}} onClick={()=>view(Service._id)}> View</button>
-                                        </span> 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-            </table>
-        </div>
+       
         </div> 
         
     )
