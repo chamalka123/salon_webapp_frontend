@@ -102,7 +102,8 @@ return(
                        
                           <span> 
                           
-                          <button className="mx-2 productbtn" style={{backgroundColor:red[500]}} onClick={()=>deleteService(services._id)} >
+                          <button className="mx-2 productbtn" style={{backgroundColor:red[500]}} 
+                          onClick={()=>{if (window.confirm('Are you sure you want to delete this record?'))deleteService(services._id)}} >
                                         DELETE <DeleteForeverIcon/>
                                         </button>
                               &nbsp;&nbsp;&nbsp;

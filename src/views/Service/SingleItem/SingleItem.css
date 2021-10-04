@@ -15,27 +15,36 @@
     margin-left: 20px;
 }
 
+.detailcard{
+    width: 100%;
+    max-height: 40%;
+    padding: 30px;
+    text-align: left;
+    background: rgb(223, 219, 219);
+    border-radius: 50px;
+}
 .detail{
     width: 100%;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding: 50px;
-    font-size: 150%;
-    background-color: rgb(164, 160, 175);
+    padding: 20px;
 }
 .detail img{
-    max-width: 300px;
+    margin-top: 1px;
+    max-height: 350px;
+    max-width: 350px;
+    border-radius: 5px;
+    margin-left: 4%;
     width: 100%;
-    margin: 20px;
-    height: 400px;
+    height: 100%;
     object-fit: cover;
     display: block;
 }.box-detail{
     max-width: 500px;
     width: 100%;
-    margin: 5px 20px;
 }
+
 .box-detail .row{
     display: flex;
     justify-content: space-between;
@@ -48,12 +57,15 @@
     letter-spacing: 2px;
     font-weight: 2rem;
 }
-.box-detail p{
-    line-height: 1.5;
-    margin: 5px 0;
-    opacity: 0.8;
-}
+.singleItemBtn{
+    border: none;
+    margin-top: 20px;
 
+}
+.productbtn{
+    align-items: center;
+margin-bottom: 1px;
+}
 .productGridr{
     display: grid;
     grid-gap: 2rem;

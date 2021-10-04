@@ -89,10 +89,10 @@ async function sendUpdateService(e){
         <br></br>
         <br></br>
         <br></br>
-        <header>
+        <header className="serviceHeader">
        <div className="logo">
                 <h1>
-                    UPDATE
+                    UPDATE SERVICE
                 </h1>
             </div>
             <ul>
@@ -182,7 +182,7 @@ async function sendUpdateService(e){
                             {previewSource ? 
                                 <img src={previewSource} alt="preview" className="previewImgservice"/>
                             :
-                                <img src="/image/d.png" className="updatepreviewImgservice" alt="service pic"/>
+                                <img src="/image/d.jpg" className="updatepreviewImgservice" alt="service pic"/>
                             }
                             <div className="form-group">
                                 <label htmlFor="productimg">
