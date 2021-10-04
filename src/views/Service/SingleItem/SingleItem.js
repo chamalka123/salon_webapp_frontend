@@ -82,10 +82,14 @@ function ServiceDetails(props) {
                             <h6>#id: {id}</h6>
                         </div>
                         <br></br>
-                        <h5>Rs.{price}.00</h5>    
-                        <h5>{duration} mins</h5> 
-                        <p className="text-muted">{content}</p>
-                        <h5>Category : {category}</h5>
+                        <br></br>
+                        <h3>Price : Rs.{price}.00</h3>  
+                        <br></br>  
+                        <h4>Time : {duration} mins</h4> 
+                        <br></br>
+                        <h4>{content}</h4>
+                        <br></br>
+                        <h4>Category : {category}</h4>
                        
                         </div>
                             <table className="singleitembtns">  
@@ -119,13 +123,13 @@ function ServiceDetails(props) {
                                         <img  src="/image/d.jpg" alt="service"/>
                                     </div>
                                     <div class="p-3">
-                                        <h7>{Service.title}</h7>
-                                        <h6>{Service.price}</h6>
+                                        <h6>{Service.title}</h6>
+                                        <h6>Rs.{Service.price}.00</h6>
                                     <div align="right">
                                         <span> 
                                           
                                                          &nbsp;&nbsp;&nbsp;
-                                            <button class="productbtn" style={{backgroundColor:blue[400]}} onClick={()=>view(Service._id)}> View</button>
+                                            <button class="relatdbtn" style={{backgroundColor:blue[400]}} onClick={()=>view(Service._id)}> View</button>
                                         </span> 
                                     </div>
                                 </div>

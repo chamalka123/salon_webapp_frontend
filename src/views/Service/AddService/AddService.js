@@ -95,8 +95,10 @@ function AddService() {
                                     <OutlinedInput
                                         type="text" id="title" placeholder="Service Name" 
                                         required fullWidth
+                                       
                                         onChange={(e)=>setTitle(e.target.value)}
                                         inputProps={{style: {padding: 12}}}
+                                        inputProps={{maxLength:20}}
                                     />
                                 </div>
                             </div>
@@ -104,9 +106,10 @@ function AddService() {
                                 <div className="col-md-8 mb-4">
                                     <div className="form-price">
                                         <OutlinedInput 
-                                            type="price" id="price" placeholder="Service Price" required fullWidth
+                                            type="number"  id="price" placeholder="Service Price" required fullWidth
                                             onChange={(e)=>setPrice(e.target.value)}
                                             inputProps={{style: {padding: 12}}}
+                                            inputProps={{ min: "0" }}
                                         />
                                     </div>
                                 </div>
@@ -115,9 +118,10 @@ function AddService() {
                                 <div className="col-md-8 mb-4">
                                     <div className="form-duration">
                                         <OutlinedInput 
-                                            type="text" id="duration" placeholder="Service Duration" required fullWidth
+                                            type="number" id="duration" placeholder="Duration" required fullWidth
                                             onChange={(e)=>setDuration(e.target.value)}
                                             inputProps={{style: {padding: 12}}}
+                                            inputProps={{ min: "0" }}
                                         />
                                     </div>
                                 </div>
@@ -128,9 +132,10 @@ function AddService() {
                                     <TextField
                                         multiline rows={1}
                                         id="content" placeholder="Service Description" 
-                                        required fullWidth variant="outlined" 
+                                        required fullWidth variant="outlined"
                                         onChange={(e)=>setContent(e.target.value)}
                                         inputProps={{style: {padding: 12}}}
+                                        inputProps={{maxLength:70}}
                                     />
                                 </div>
                             </div>

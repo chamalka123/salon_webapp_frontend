@@ -109,9 +109,8 @@ function App() {
           <Route exact path="/CustomerView">
             <CustomerView />
           </Route>
-          <Route exact path="/CustomerSingleItem">
-            <CustomerSingleItem />
-          </Route>
+          <Route path="/salons/item/:id" exact component={CustomerSingleItem}/>
+            
           <Route exact path="/Product">
             <AllProduct />
           </Route>
