@@ -35,6 +35,8 @@ import Ledgers from "../views/Ledgers/Ledgers";
 import Navbar from "./Navbar/Navbar";
 import CustomerList from "../views/customer/customerList";
 import CustomerLogin from "../views/CustomerLogin/CustomerLogin";
+import DetailsPage from "../views/Service/ServiceReports/DetailsPage";
+import AddReport from "../views/Service/ServiceReports/AddReport";
 
 function App() {
   return (
@@ -110,7 +112,12 @@ function App() {
             <CustomerView />
           </Route>
           <Route path="/salons/item/:id" exact component={CustomerSingleItem}/>
-            
+          <Route exact path="/DetailsPage">
+            <DetailsPage />
+          </Route>
+          <Route exact path="/AddReport">
+            <AddReport />
+          </Route>
           <Route exact path="/Product">
             <AllProduct />
           </Route>

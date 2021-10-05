@@ -72,7 +72,7 @@ return(
             <ul>
                 <li><Link to="/AddService">{'CREATE NEW'}</Link></li>
                 <li><Link to="/Service">SERVICES & PACKAGES</Link></li>
-                <li><Link to="/">SERVICES REPORTS</Link></li>
+                <li><Link to="/DetailsPage">SERVICES REPORTS</Link></li>
                 </ul>
 </header>
 <div className="filter-menu">
