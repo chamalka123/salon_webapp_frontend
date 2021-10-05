@@ -35,6 +35,7 @@ import Ledgers from "../views/Ledgers/Ledgers";
 import Navbar from "./Navbar/Navbar";
 import CustomerList from "../views/customer/customerList";
 import CustomerLogin from "../views/CustomerLogin/CustomerLogin";
+import CreateBudgetPlan from "../views/BudgetPlans/CreateBudgetPlan";
 
 function App() {
   return (
@@ -65,6 +66,9 @@ function App() {
             <Navbar />
             <BudgetPlans />
           </Route>
+          <Route exact path="/add/budgetplans">
+            <CreateBudgetPlan />
+          </Route>
           <Route exact path="/ledgers">
             <Ledgers />
           </Route>
@@ -88,7 +92,6 @@ function App() {
           </Route>
           <Route exact path="/AddPayment">
             <AddPayment />
-
           </Route>
           <Route exact path="/update/:id" component={EditPayment}></Route>
           <Route exact path="/EditExpense/:id">
@@ -109,8 +112,7 @@ function App() {
           <Route exact path="/CustomerView">
             <CustomerView />
           </Route>
-          <Route path="/salons/item/:id" exact component={CustomerSingleItem}/>
-            
+          <Route path="/salons/item/:id" exact component={CustomerSingleItem}/>   
           <Route exact path="/Product">
             <AllProduct />
           </Route>
@@ -146,7 +148,6 @@ function App() {
           </Route>
         </Switch>
       </Router>
-
       <Footer />
 
     </div>
