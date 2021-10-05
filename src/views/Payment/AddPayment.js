@@ -10,6 +10,8 @@ export default function AddPayment() {
   const[paymentId, setPaymentID]= useState("");
   const[customername, setName]= useState("");
   const[paymentType, setPaytype]= useState("");
+  const[service_type, setServicetype]= useState("");
+  const[price, setPrice]= useState("");
   const[discount, setDiscounts]= useState("");
   const[date, setDate]= useState("");
   const[amount, setAmounts]= useState("");
@@ -21,6 +23,8 @@ export default function AddPayment() {
       paymentId,
       customername,
       paymentType,
+      service_type,
+      price,
       discount,
       date,
       amount
@@ -57,7 +61,7 @@ export default function AddPayment() {
   
       <div className="form-group">
         <label for="customername">Client Name</label>
-        <input type="text" class="form-control" id="customername"  placeholder="Enter Client Name"
+        <input  required={true} type="text" class="form-control" id="customername"  placeholder="Enter Client Name"
         onChange={(e)=>{
           setName(e.target.value);
         }} />
@@ -66,9 +70,27 @@ export default function AddPayment() {
 
         <div className="form-group">
         <label for="paymentType">Payment Type</label>
-        <input type="text" class="form-control" id="paymentType" placeholder="Enter Payment Type"
+        <input  required={true} type="text" class="form-control" id="paymentType" placeholder="Enter Payment Type"
         onChange={(e)=>{
           setPaytype(e.target.value);
+        }} />
+
+        </div>
+
+        <div className="form-group">
+        <label for="service_type">Service Type</label>
+        <input required={true}  type="text" class="form-control" id="service_type" placeholder="Enter Service Type"
+        onChange={(e)=>{
+          setServicetype(e.target.value);
+        }} />
+
+        </div>
+
+        <div className="form-group">
+        <label for="price"> Price</label>
+        <input required={true}  type="text" class="form-control" id="price" placeholder="Enter Price"
+        onChange={(e)=>{
+          setPrice(e.target.value);
         }} />
 
         </div>
@@ -81,6 +103,8 @@ export default function AddPayment() {
         }} />
         
         </div>
+
+        <button type="calculate" class="btn btn-primary">Calculate</button>
 
         <div className="form-group">
         <label for="date">Entry Date</label>

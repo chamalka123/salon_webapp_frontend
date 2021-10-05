@@ -12,6 +12,14 @@ import EditEmployee from "../views/Employee/EditEmployee";
 import Allsalary from "../views/Employee/AllSalary";
 import AddEmployeeSalary from "../views/Employee/AddEmployeeSalary";
 import EmployeeSalaryCalculator from "../views/Employee/EmployeeSalaryCalculator";
+
+import AddCalSalary from "../views/Employee/AddCalSalary";
+import EditSalary from "../views/Employee/EditSalary";
+import AddempAt from "../views/Employee/AddempAt";
+import AllempAt from "../views/Employee/AllempAt";
+import EditempAt from "../views/Employee/EditempAt";
+
+
 import Service from "../views/Service/Services/Service";
 import AddService from "../views/Service/AddService/AddService";
 import SingleItem from "../views/Service/SingleItem/SingleItem";
@@ -151,6 +159,24 @@ function App() {
           <Route exact path="/Client">
             <CustomerList />
           </Route>
+
+          <Route exact path="/AddCalSalary">
+            <AddCalSalary/>
+          </Route>
+          <Route exact path="/AddempAt">
+            <AddempAt/>
+          </Route>
+          <Route exact path="/AllempAt">
+            <AllempAt/>
+          </Route>
+          <Route exact path="/EditSalary/:id">
+            <EditSalary/>
+          </Route>
+          <Route exact path="/EditempAt/:id">
+            <EditempAt/>
+          </Route>
+
+
         </Switch>
       </Router>
 

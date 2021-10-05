@@ -7,7 +7,7 @@ input[type=text]{
 
 .paycontainer{
     border-radius: 20px;
-    background-color: beige;
+    background-color: #f5f5f5;
     /*background-image: ".public/image/payimage.jpg";*/
     padding: 100px;
     margin-top: 5px;

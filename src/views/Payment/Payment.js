@@ -74,6 +74,8 @@ import "./Allpayment.css";
             <th scope="col">PaymentID</th>
             <th scope="col">ClientName</th>
             <th scope="col">PaymentType</th>
+            <th scope="col">Service Type</th>
+            <th scope="col">Price</th>
             <th scope="col">Discount</th>
             <th scope="col">Entry Date</th>
             <th scope="col">Amount</th>
@@ -100,6 +102,8 @@ import "./Allpayment.css";
         <td>{payments.paymentId}</td>
         <td>{payments.customername}</td>
         <td>{payments.paymentType}</td>
+        <td>{payments.service_type}</td>
+        <td>{payments.price}</td>
         <td>{payments.discount}</td>
         <td>{payments.date}</td>
         <td>{payments.amount}</td>
@@ -110,10 +114,10 @@ import "./Allpayment.css";
             &nbsp;
             
 
-                    
+           
 
                 
-            <Link to="#" className="btn btn-danger btn-sm"onClick={() => deletePayment(payments._id)} >DELETE</Link>
+            <Link to="#" className="btn btn-danger btn-sm"onClick={() => {if (window.confirm('Are you sure you wish to delete this record?')) deletePayment(payments._id)}} >DELETE</Link>
           </tr>
         
         
