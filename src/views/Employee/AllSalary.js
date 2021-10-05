@@ -130,6 +130,7 @@ export default function AllEmployeeSalary() {
                 <th className="mye-th" scope="col">Hours</th>
                 <th className="mye-th" scope="col">Advance</th>
                 <th className="mye-th"scope="col">Total salary</th>
+                <th className="mye-th"scope="col"></th>
                 </tr>
             </thead>
             {loading ? (

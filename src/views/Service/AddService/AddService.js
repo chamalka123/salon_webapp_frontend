@@ -5,8 +5,6 @@ import Button from "@material-ui/core/Button";
 import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 import OutlinedInput from "@material-ui/core/OutlinedInput";
 import { Link, useHistory } from 'react-router-dom';
-import IconButton from "@material-ui/core/IconButton";
-import InputAdornment from "@material-ui/core/InputAdornment";
 import { TextField } from '@material-ui/core';
 import {green, red, blue } from '@material-ui/core/colors';
 
@@ -64,7 +62,7 @@ function AddService() {
         <br></br>
         <br></br>
         <br></br>
-      <header>
+        <header className="serviceHeader">
     <div className="logo">
                 <h1>
                     <Link to={"/AddService"}>{'CREATE NEW'}</Link>
@@ -75,6 +73,7 @@ function AddService() {
                 <li><Link to="/Service">SERVICES&PACKAGES</Link></li>
                 </ul>
 </header>
+<br></br>
         <div className="create_service">
             <form onSubmit={add} class="addService">
                 <div className="row">
@@ -96,8 +95,10 @@ function AddService() {
                                     <OutlinedInput
                                         type="text" id="title" placeholder="Service Name" 
                                         required fullWidth
+                                       
                                         onChange={(e)=>setTitle(e.target.value)}
                                         inputProps={{style: {padding: 12}}}
+                                        inputProps={{maxLength:20}}
                                     />
                                 </div>
                             </div>
@@ -105,9 +106,10 @@ function AddService() {
                                 <div className="col-md-8 mb-4">
                                     <div className="form-price">
                                         <OutlinedInput 
-                                            type="price" id="price" placeholder="Service Price" required fullWidth
+                                            type="number"  id="price" placeholder="Service Price" required fullWidth
                                             onChange={(e)=>setPrice(e.target.value)}
                                             inputProps={{style: {padding: 12}}}
+                                            inputProps={{ min: "0" }}
                                         />
                                     </div>
                                 </div>
@@ -116,9 +118,10 @@ function AddService() {
                                 <div className="col-md-8 mb-4">
                                     <div className="form-duration">
                                         <OutlinedInput 
-                                            type="text" id="duration" placeholder="Service Duration" required fullWidth
+                                            type="number" id="duration" placeholder="Duration" required fullWidth
                                             onChange={(e)=>setDuration(e.target.value)}
                                             inputProps={{style: {padding: 12}}}
+                                            inputProps={{ min: "0" }}
                                         />
                                     </div>
                                 </div>
@@ -129,9 +132,10 @@ function AddService() {
                                     <TextField
                                         multiline rows={1}
                                         id="content" placeholder="Service Description" 
-                                        required fullWidth variant="outlined" 
+                                        required fullWidth variant="outlined"
                                         onChange={(e)=>setContent(e.target.value)}
                                         inputProps={{style: {padding: 12}}}
+                                        inputProps={{maxLength:70}}
                                     />
                                 </div>
                             </div>

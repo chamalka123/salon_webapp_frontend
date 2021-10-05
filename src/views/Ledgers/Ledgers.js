@@ -44,7 +44,7 @@ function Ledgers() {
   //delete
   function deleteLedger(_id) {
     axios
-      .delete(`http://localhost:8070/ledger/${_id}`)
+      .delete(`http://localhost:8070/ledger/delete/${_id}`)
       .then((res) => {
         //console.log(res.data);
       })
@@ -68,7 +68,7 @@ function Ledgers() {
       </div>
       <div>
         <table className="table table-striped ledgerTable">
-          <thead className="thead-dark">
+          <thead>
             <tr className="ledgerRaw">
               <th scope="col">Ledger ID</th>
               <th scope="col">Date</th>
@@ -77,10 +77,11 @@ function Ledgers() {
               <th scope="col">Payment Method</th>
             </tr>
           </thead>
+          <tbody>
           {loading ? (
             <button className="btn-btn-primary" type="button" disabled>
               <span
-                class="spinner-border spinner-border-sm"
+                className="spinner-border spinner-border-sm"
                 role="status"
                 aris-hidden="true"
               ></span>
@@ -91,7 +92,7 @@ function Ledgers() {
               .filter((value) => {
                 if (searchName === "") {
                   return value;
-                } else if (value.date.includes(searchName.toUpperCase())) {
+                } else if (value.date.includes(searchName)) {
                   return value;
                 }
               })
@@ -104,7 +105,7 @@ function Ledgers() {
                     <button
                       className="btn btn-sm ledgerButton"
                       id="deleteNote"
-                      onClick={() => deleteLedger(ledger._id)}
+                      onClick={() => {if (window.confirm('Are you sure you wish to delete this record?'))deleteLedger(ledger._id)}}
                     >
                       <DeleteIcon
                         fontSize="small"
@@ -118,6 +119,7 @@ function Ledgers() {
                 </tr>
               ))
           )}
+          </tbody>
         </table>
       </div>
     </div>

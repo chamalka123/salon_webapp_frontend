@@ -134,7 +134,7 @@ export default function AllEmpAt() {
                 <th className="mye-th" scope="col">Time In</th>
                 <th className="mye-th" scope="col">Time Out</th>
                 <th className="mye-th" scope="col">Total Hours</th>
-                
+                <th className="mye-th"scope="col"></th>
                 </tr>
             </thead>
             {loading ? (

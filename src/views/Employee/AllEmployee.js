@@ -79,7 +79,7 @@ export default function AllEmployee() {
             placeholder="search..."
             onChange={(e) => setSearchName(e.target.value)}/>
         <table class="mye-table">
-            <thead>
+            <thead class="table-light">
                 <tr className="mye-tr">
                 <th className="mye-th" scope="col">Employee ID</th>
                 <th className="mye-th" scope="col">Employee NIC </th>
@@ -89,9 +89,11 @@ export default function AllEmployee() {
                 <th className="mye-th" scope="col">Gender</th>
                 <th className="mye-th" scope="col">Job Title</th>
                 <th className="mye-th" scope="col">Email</th>
+                <th className="mye-th" scope="col"></th>
                
                 </tr>
             </thead>
+            <tbody>
             {loading ? (
                     <button class="btn-btn-primary" type="button" disabled>
                         <span class="spinner-border spinner-border-sm" role="status" aris-hidden="true"></span>
@@ -136,8 +138,9 @@ export default function AllEmployee() {
                
             ))}
 
-     
+        </tbody>
         </table>
+        
         <br>
         </br>
         <Link to={"/add"} className="btn btn-warning btn-sm">Add New Employee </Link>

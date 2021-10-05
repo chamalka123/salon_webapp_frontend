@@ -89,10 +89,10 @@ async function sendUpdateService(e){
         <br></br>
         <br></br>
         <br></br>
-        <header>
+        <header className="serviceHeader">
        <div className="logo">
                 <h1>
-                    UPDATE
+                    UPDATE SERVICE
                 </h1>
             </div>
             <ul>
@@ -126,33 +126,36 @@ async function sendUpdateService(e){
                                         value={title}
                                         onChange={(e)=> {setTitle(e.target.value)}}
                                         inputProps={{style: {padding: 12}}}
+                                        inputProps={{maxLength:20}}
                                     />
                                 </div>
                             </div>
-                            <div> 
+                            
                                 <div className="col-md-8 mb-4">
                                     <div className="form-price">
                                         <OutlinedInput 
-                                            type="price" id="price" placeholder="Service Price"
+                                            type="number" id="price" placeholder="Service Price"
                                             required fullWidth value={price}
                                             onChange={(e)=> {setPrice(e.target.value)}}
                                             inputProps={{style: {padding: 12}}}
+                                            inputProps={{ min: "0" }}
                                         />
                                     </div>
                                 </div>
-                            </div>       
-                            <div> 
+                                  
+                        
                                 <div className="col-md-8 mb-4">
                                     <div className="form-duration">
                                         <OutlinedInput 
-                                            type="text" id="duration" placeholder="Service Duration" 
+                                            type="number" id="duration" placeholder="Service Duration" 
                                             required fullWidth value={duration}
                                             onChange={(e)=> {setDuration(e.target.value)}}
                                             inputProps={{style: {padding: 12}}}
+                                            inputProps={{ min: "0" }}
                                         />   
                                         </div>
                                      </div>
-                                 </div>           
+                                      
                             <div className="col-md-10 mb-4">
                                 <div className="form-content">
                                     <TextField
@@ -161,10 +164,11 @@ async function sendUpdateService(e){
                                         required fullWidth variant="outlined" value={content}
                                         onChange={(e)=> {setContent(e.target.value)}}
                                         inputProps={{style: {padding: 12}}}
+                                        inputProps={{maxLength:50}}
                                     />
                                 </div>
                             </div>
-                        </div>
+                       
                         <div className="col-md-8 mb-4">
                                 <div className="form-category">
                                     <OutlinedInput
@@ -177,12 +181,13 @@ async function sendUpdateService(e){
                                 </div>
                             </div>
                     </div>
+                    </div>
                     <div className="col-4 d-flex justify-content-center">
                         <div>
                             {previewSource ? 
                                 <img src={previewSource} alt="preview" className="previewImgservice"/>
                             :
-                                <img src="/image/d.png" className="updatepreviewImgservice" alt="service pic"/>
+                                <img src="/image/d.jpg" className="updatepreviewImgservice" alt="service pic"/>
                             }
                             <div className="form-group">
                                 <label htmlFor="productimg">
@@ -204,8 +209,12 @@ async function sendUpdateService(e){
                 <div className="row">
                     <div className="col-md-12">
                     <button type="submit" className="btn btn-success">
-          Update
+          UPDATE
         </button>
+        &nbsp;
+        <Link to="/Service">
+        <button className="btn btn-danger">CANCEL</button> 
+        </Link>
                     </div>
                 </div>
             </form>             

@@ -61,20 +61,18 @@ function ServiceDetails(props) {
 
       
     return (
-      
-        <div className="container">
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <header>
-    <div className="logo">
-            <ul>
-               
-                <li><Link to="/Service">SERVICES & PACKAGES</Link></li>
-                </ul></div>
-</header>
-<div className="detail">
+      <div>
+      <header className="serviceHeader">
+              <ul>
+                  <li><Link to="/AddService">{'CREATE NEW'}</Link></li>
+                  <li><Link to="/Service">SERVICES&PACKAGES</Link></li>
+                  </ul>
+  </header>
+  <br></br>
+  <br></br>
+        <div className="container" align="center">
+        
+<div className="detailcard">
             <div className="detail">
                        <img src="/image/d.jpg " alt="" />
                  
@@ -84,31 +82,33 @@ function ServiceDetails(props) {
                             <h6>#id: {id}</h6>
                         </div>
                         <br></br>
-                        <h5>Rs.{price}.00</h5>
-                              
-                        <h5>{duration} mins</h5> 
-                        <p className="text-muted">{content}</p>
-                        <h5>Category : {category}</h5> 
+                        <br></br>
+                        <h3>Price : Rs.{price}.00</h3>  
+                        <br></br>  
+                        <h4>Time : {duration} mins</h4> 
+                        <br></br>
+                        <h4>{content}</h4>
+                        <br></br>
+                        <h4>Category : {category}</h4>
+                       
+                        </div>
                             <table className="singleitembtns">  
-                        <div align="right">
-                            <span> 
+                        <div> 
                                     &nbsp;&nbsp;&nbsp; &nbsp;
                                     <button className="mx-2 productbtn" style={{backgroundColor:green[400]}} onClick={()=>update(id)}>
                                         Update <EditIcon/>
                                         </button>
-                            </span> 
+                             
                         </div>
-                        </table>
-                    </div>
-                            
-                </div>                
+                        </table>               
             </div>
-           
+           </div>
+           </div>
             <br></br>
         <div>
             <div> 
             <h2 align="left"> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              Related 
+              Related Services & Packages
               <br></br>
               <br></br>
             </h2>
@@ -123,13 +123,13 @@ function ServiceDetails(props) {
                                         <img  src="/image/d.jpg" alt="service"/>
                                     </div>
                                     <div class="p-3">
-                                        <h7>{Service.title}</h7>
-                                        <h6>{Service.price}</h6>
+                                        <h6>{Service.title}</h6>
+                                        <h6>Rs.{Service.price}.00</h6>
                                     <div align="right">
                                         <span> 
                                           
                                                          &nbsp;&nbsp;&nbsp;
-                                            <button class="productbtn" style={{backgroundColor:blue[400]}} onClick={()=>view(Service._id)}> View</button>
+                                            <button class="relatdbtn" style={{backgroundColor:blue[400]}} onClick={()=>view(Service._id)}> View</button>
                                         </span> 
                                     </div>
                                 </div>
@@ -140,8 +140,8 @@ function ServiceDetails(props) {
             </div>
             </table>
         </div>
-        </div> 
-        
+       </div>
+      
     )
 }
 
