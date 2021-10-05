@@ -13,8 +13,7 @@ function EditEmployee(){
     const [contactNumber, setContactNumber] = useState("");
     const [gender, setGender] = useState("");
     const [jobTitle, setJobTitle] = useState("");
-    const [billableHours, setBillableHours] = useState("");
-    const [availableHours, setAvailabelHours] = useState("");
+    const [email, setEmail] = useState("");
 
   const {id} = useParams();
   useEffect(() => {
@@ -29,8 +28,7 @@ function EditEmployee(){
         setContactNumber(res.data.employee.contactNumber);
         setGender(res.data.employee.gender);
         setJobTitle(res.data.employee.jobTitle);
-        setBillableHours(res.data.employee.billableHours);
-        setAvailabelHours(res.data.employee.availableHours);
+        setEmail(res.data.employee.email);
       })
       .catch((err) => {
         console.log(err.message);
@@ -52,8 +50,7 @@ function EditEmployee(){
         contactNumber,
         gender,
         jobTitle,
-        billableHours,
-        availableHours
+        email
 
 
       }
@@ -147,26 +144,15 @@ function EditEmployee(){
   </br>
   <div class="col-md-12">
    
-    <input type="text" class="form-control" id="billableHours" placeholder="Billable Hours" 
-    value={billableHours}
+    <input type="email" class="form-control" id="email" placeholder="Email Address" 
+    value={email}
     onChange={(e)=>{
 
-      setBillableHours(e.target.value);
+      setEmail(e.target.value);
 
     }}/>
   </div>
-  <br>
-  </br>
-  <div class="col-md-12">
-    
-    <input type="text" class="form-control" id="availableHours" placeholder="Available Hours" 
-    value={availableHours}
-    onChange={(e)=>{
-
-      setAvailabelHours(e.target.value);
-
-    }}/>
-  </div>
+  
   <br>
   </br>
   <div class="col-md-12">

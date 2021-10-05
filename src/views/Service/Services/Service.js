@@ -72,6 +72,7 @@ return(
             <ul>
                 <li><Link to="/AddService">{'CREATE NEW'}</Link></li>
                 <li><Link to="/Service">SERVICES & PACKAGES</Link></li>
+                <li><Link to="/">SERVICES REPORTS</Link></li>
                 </ul>
 </header>
 <div className="filter-menu">
@@ -102,11 +103,12 @@ return(
                        
                           <span> 
                           
-                          <button className="mx-2 productbtn" style={{backgroundColor:red[500]}} onClick={()=>deleteService(services._id)} >
+                          <button className="mx-2 productbtn" style={{backgroundColor:red[500]}} 
+                          onClick={()=>{if (window.confirm('Are you sure you want to delete this record?'))deleteService(services._id)}} >
                                         DELETE <DeleteForeverIcon/>
                                         </button>
                               &nbsp;&nbsp;&nbsp;
-                              <button class="productbtn" style={{backgroundColor:blue[400]}} onClick={()=>view(services._id)}>
+                              <button class="productviewbtn" style={{backgroundColor:blue[400]}} onClick={()=>view(services._id)}>
                                         VIEW
                                     </button>
                               
@@ -120,8 +122,4 @@ return(
        
         </div>
   )
-  
-      
-       
-
        }export default Services

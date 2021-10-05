@@ -68,7 +68,7 @@ function Ledgers() {
       </div>
       <div>
         <table className="table table-striped ledgerTable">
-          <thead className="thead-dark">
+          <thead>
             <tr className="ledgerRaw">
               <th scope="col">Ledger ID</th>
               <th scope="col">Date</th>
@@ -77,6 +77,7 @@ function Ledgers() {
               <th scope="col">Payment Method</th>
             </tr>
           </thead>
+          <tbody>
           {loading ? (
             <button className="btn-btn-primary" type="button" disabled>
               <span
@@ -118,6 +119,7 @@ function Ledgers() {
                 </tr>
               ))
           )}
+          </tbody>
         </table>
       </div>
     </div>

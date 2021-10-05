@@ -77,6 +77,7 @@ class Calculation extends React.Component{
             </div>
             <br>
             </br>
+            
             <div>   
             <button type="submit" class="btn btn-primary " >CALCULATE</button>
         
