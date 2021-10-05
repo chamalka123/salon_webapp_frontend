@@ -98,7 +98,7 @@ return (
             <hr />
  <input className="search1"
                 style={{ width: "10%", height: "30px" }}
-                type="text"
+                type="date"
                 placeholder=" Date "
                 onChange={(e) => setSearchDate(e.target.value)} />
 
