@@ -16,7 +16,7 @@ const customerCardDetails = [
         id : 3,
         img : "https://th.bing.com/th/id/OIP.Zq88r2ZgD5FCTJn7dG_dzgHaFS?pid=ImgDet&rs=1",
         name : "SERVICES",
-        navigate : "/Service"
+        navigate : "/CustomerView"
     },
     {
         id : 4,
