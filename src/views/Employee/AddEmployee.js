@@ -6,13 +6,14 @@ import "./AddEmployee.css";
 export default function AddEmployee(){
 
   const [empId, setEmployee_id] = useState("");
+  const [nic, setNic] = useState("");
   const [empName, setEmployee_name] = useState("");
   const [age, setAge] = useState("");
   const [contactNumber, setContactNumber] = useState("");
   const [gender, setGender] = useState("");
   const [jobTitle, setJobTitle] = useState("");
-  const [billableHours, setBillableHours] = useState("");
-  const [availableHours, setAvailabelHours] = useState("");
+  const [email, setEmail] = useState(""); 
+  
 
   function sendData(e){
     e.preventDefault();
@@ -20,13 +21,14 @@ export default function AddEmployee(){
       const newEmployee ={
 
         empId,
+        nic,
         empName,
         age,
         contactNumber,
         gender,
         jobTitle,
-        billableHours,
-        availableHours
+        email,
+        
 
       }
 
@@ -46,10 +48,20 @@ export default function AddEmployee(){
 
   <div class="form-group">
 
-    <input type="text" class="form-control" id="empId" placeholder="Employee ID" required
+    <input type="text" class="form-control" id="empId" placeholder="Employee ID" 
     onChange={(e)=>{
 
         setEmployee_id(e.target.value);
+
+    }}/>
+  </div>
+
+  <div class="form-group">
+
+    <input type="text" class="form-control" id="nic" placeholder="National Identity Card Number" required
+    onChange={(e)=>{
+
+        setNic(e.target.value);
 
     }}/>
   </div>
@@ -66,7 +78,7 @@ export default function AddEmployee(){
 
   <div class="form-group">
     
-    <input type="text" class="form-control" id="age" placeholder="Enter the Age"
+    <input type="text" class="form-control" id="age" placeholder="Enter the Age"  pattern="[0-9]*" inputmode="numeric" required
     onChange={(e)=>{
 
         setAge(e.target.value);
@@ -76,7 +88,7 @@ export default function AddEmployee(){
 
   <div class="form-group">
      
-    <input type="text" class="form-control" id="contactNumber" placeholder="Enter the contact Number"
+    <input type="text" class="form-control" id="contactNumber" placeholder="Enter the contact Number" maxLength="10" inputmode="numeric"  required 
     onChange={(e)=>{
 
         setContactNumber(e.target.value);
@@ -85,6 +97,7 @@ export default function AddEmployee(){
   </div>
 
   <div class="form-group">
+  
     
     <input type="text" class="form-control" id="gender" placeholder="Gender"
     onChange={(e)=>{
@@ -105,23 +118,14 @@ export default function AddEmployee(){
   </div>
   <div class="form-group">
     
-    
-    <input type="text" class="form-control" id="billableHours" placeholder="Billable Hours"
+    <input type="email" class="form-control" id="email" placeholder="Email Address"
     onChange={(e)=>{
 
-        setBillableHours (e.target.value);
+        setEmail (e.target.value);
 
     }}/>
   </div>
-  <div class="form-group">
-    
-    <input type="text" class="form-control" id="availableHours"  placeholder="Available Hours"
-    onChange={(e)=>{
-
-        setAvailabelHours (e.target.value);
-
-    }}/>
-  </div>
+  
   
 
 
