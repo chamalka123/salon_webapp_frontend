@@ -36,6 +36,7 @@ import Navbar from "./Navbar/Navbar";
 import CustomerList from "../views/customer/customerList";
 import CustomerLogin from "../views/CustomerLogin/CustomerLogin";
 import CreateBudgetPlan from "../views/BudgetPlans/CreateBudgetPlan";
+import AddLedgers from "../views/Ledgers/AddLedgers";
 
 function App() {
   return (
@@ -71,6 +72,9 @@ function App() {
           </Route>
           <Route exact path="/ledgers">
             <Ledgers />
+          </Route>
+          <Route exact path="/add/ledgers">
+            <AddLedgers />
           </Route>
           <Route exact path="/Payment">
             <Payment />

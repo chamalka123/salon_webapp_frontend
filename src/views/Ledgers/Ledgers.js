@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Ledgers.css";
@@ -7,6 +8,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import { green, red } from "@material-ui/core/colors";
+import AddCircleIcon from '@material-ui/icons/AddCircle';
 
 function Ledgers() {
   //search ledgers using ledger Id
@@ -77,7 +79,6 @@ function Ledgers() {
               <th scope="col">Payment Method</th>
             </tr>
           </thead>
-          <tbody>
           {loading ? (
             <button className="btn-btn-primary" type="button" disabled>
               <span
@@ -119,9 +120,12 @@ function Ledgers() {
                 </tr>
               ))
           )}
-          </tbody>
         </table>
+        <Link to={"/add/ledgers"} className="btn btn-warning btn-sm">
+        ADD LEDGERS<AddCircleIcon />  
+        </Link>
       </div>
+     
     </div>
   );
 }
