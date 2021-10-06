@@ -3,30 +3,25 @@ import "./ServiceReport.css";
 import axios from 'axios';
 import { useState, useEffect } from "react";
 import jsPDF from "jspdf";
-import DeleteIcon from "@material-ui/icons/Delete";
 import autoTable from "jspdf-autotable";
 import { Link } from "react-router-dom";
-import { red,blueGrey} from "@material-ui/core/colors";
 import AddCircleIcon from '@material-ui/icons/AddCircle';
-import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
 export default function DetailsPage() {
-    
+
   const [servicesreports, setServicesreports] = useState([])
   const [loading, setLoading] = useState(false);
   const [posts, setPosts] = useState([]);
-  const [searchmonth, setSearchMonth] = useState("");
+  const [searchDate, setSearchDate] = useState("");
 
   useEffect(() => {
-    const loadPosts = async () => {
-      setLoading(true);
-      const response = await axios.get("http://localhost:8070/servicereport");
-      setPosts(response.data);
-      setLoading(false);
-    };
-    loadPosts();
+      const loadPosts = async () => {
+          setLoading(true);
+          const response = await axios.get("http://localhost:8070/servicereport");
+          setPosts(response.data);
+          setLoading(false);
+      }
+      loadPosts();
   }, []);
-
-
   useEffect(() => {
      function getServices() {
        axios.get(`http://localhost:8070/servicereport`).then((res) => {
@@ -87,52 +82,39 @@ export default function DetailsPage() {
 
     doc.save('servicesdetails.pdf'); //this downloads a copy of the pdf in your local instance.
 };
- function deleteService(id){        
-   axios.delete(`http://localhost:8070/servicereport/delete/${id}`) 
-   .then((res) => {
-    //console.log(res.data);
-  })
-    
-  .catch((error) => {
-      alert(`Failed to delete the product\n${error.message}`)
-  }) 
-} 
-
 return (
     <> <div className="reportBody">
    <br></br>
    <br></br>
    <br></br>
    <br></br>
-  
+   <br></br>
+   <br></br>
     <div className="containerDetails">
     <hr />
             <center>
             <h1>Daily Services Reports</h1>
            </center>
             <hr />
-            <input className="search1"
+ <input className="search1"
                 style={{ width: "10%", height: "30px" }}
-                type="text"
-                placeholder=" Month "
-                onChange={(e) => setSearchMonth(e.target.value)} />
-              
+                type="date"
+                placeholder=" Date "
+                onChange={(e) => setSearchDate(e.target.value)} />
 
       <table className="table table-bordered detailTable" id="my-table">
         <thead className="bg-dark text-light">
           <tr className="detailRaw">
           <th scope="col">ID</th>
           <th scope="col">Service/Package</th>
-          <th scope="col">Month</th>
-          <th scope="col">Date</th>
           <th scope="col">Price</th>
-       
+          <th scope="col">Date</th>
           <th scope="col">Count</th>
           <th scope="col">Total</th>
          
           </tr>
         </thead>
-    
+
         {loading ? (
                             <button class="btn-btn-primary" type="button" disabled>
                                 <span class="spinner-border spinner-border-sm" role="status" aris-hidden="true"></span>
@@ -140,39 +122,28 @@ return (
                         ) : (
                             posts
                                 .filter((value) => {
-                                    if (searchmonth === "") {
+                                    if (searchDate === "") {
                                         return value;
-                                    }else if(value.month?.toLowerCase().includes(searchmonth.toLowerCase())){
-                                    
+                                    } else if (
+                                        value.date.includes(searchDate.toUpperCase())
+                                    ) {
                                         return value;
                                     }
 
 
                                 }).map((servicesreports) =>
-                <tr>
-        
+                                
+       
+          <tr>
             <td className="expenseTableData">{servicesreports._id}</td>
             <td className="expenseTableData">{servicesreports.serviceName}</td>
-            <td className="expenseTableData">{servicesreports.month}</td>
-            <td className="expenseTableData">{servicesreports.date}</td>
             <td className="expenseTableData">Rs.{servicesreports.price}.00</td>
-        
+            <td className="expenseTableData">{servicesreports.date}</td>
             <td className="expenseTableData">{servicesreports.count}</td>
             <td className="expenseTableData">Rs.{servicesreports.totalPrice}.00</td>
-            <td>
-           
-            &nbsp;
-            <button
-              className="btn btn-sm expenseButton"
-              onClick={() => {if (window.confirm('Are you sure you wish to delete this record?')) deleteService(servicesreports._id)}}
-            >
-              <DeleteIcon className="btn-icon" style={{color:red[600]}} fontSize="small"/>
-            </button>
-            </td>
             </tr>
-              )
-          )}
-   
+        ))}
+        
 </table>
       
       <center>
@@ -180,11 +151,7 @@ return (
         ADD DETAILS <AddCircleIcon />
       </Link>
       &nbsp;&nbsp;
-      <button type="button" class="btn btn-danger btn sm" onClick={()=>createPdf()}> <PictureAsPdfIcon />Download PDF</button>
-      &nbsp;&nbsp;
-          <Link to="/Service">
-            <button className="btn btn-danger"style={{backgroundColor:blueGrey[300]}}>CANCEL</button>
-          </Link>
+      <button type="button" class="btn btn-danger btn sm" onClick={()=>createPdf()}>Download PDF</button>
       </center>
     </div>
     

@@ -62,20 +62,17 @@ function AddService() {
         <br></br>
         <br></br>
         <br></br>
-        <h1>
-             CREATE NEW
+        <header className="serviceHeader">
+    <div className="logo">
+                <h1>
+                    <Link to={"/AddService"}>{'CREATE NEW'}</Link>
                 </h1>
-                <div>
-      <ul className="nav nav-pills nav-fill">
-        <li className="nav-item">
-          <Link to={"/Service"} className="nav-link active">SERVICES & PACKAGES</Link>
-        </li>
-        &nbsp;
-        <li className="nav-item">
-          <Link to={"/DetailsPage"} className="nav-link active">REPORTS</Link>
-        </li>
-      </ul>
-    </div>
+            </div>
+            <ul>
+                <li><Link to="/AddService">{'CREATE NEW'}</Link></li>
+                <li><Link to="/Service">SERVICES&PACKAGES</Link></li>
+                </ul>
+</header>
 <br></br>
         <div className="create_service">
             <form onSubmit={add} class="addService">

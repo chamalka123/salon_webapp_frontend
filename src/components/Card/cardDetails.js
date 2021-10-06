@@ -32,7 +32,7 @@ const cardDetails = [
     {
         id : 6,
         img : "https://th.bing.com/th/id/OIP.Zq88r2ZgD5FCTJn7dG_dzgHaFS?pid=ImgDet&rs=1",
-        name : "SERVICE",
+        name : "SERVICES",
         navigate : "/Service"
     },
     {

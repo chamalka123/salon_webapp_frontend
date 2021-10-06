@@ -110,21 +110,7 @@
 
 }
 
-.detailca{
-    width: 100%;
-    max-height: 40%;
-    padding: 30px;
-    text-align: left;
-    background: rgb(223, 219, 219);
-    border-radius: 50px;
-}
-.detail{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 20px;
-}
+
 @media (min-width: 600px) {
     .productGrid {
         grid-template-columns: repeat(2, 1fr);

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./ServiceReport.css";
 import axios from "axios";
-import { red,blueGrey} from "@material-ui/core/colors";
 import { Link } from "react-router-dom";
 
 function AddReport() {
@@ -10,14 +9,7 @@ function AddReport() {
     const [date, setDate] = useState("");
     const [count, setCount] = useState("");
     const [totalPrice, setTotalPrice] = useState("");
-    const [month, setMonth]=useState("");
 
-
-    function calcTotal(e){
-      setTotalPrice(count * price);
-      e.preventDefault();
-    }
-  
     function sendReportData(e) {
         e.preventDefault(); //prevent submit event default behaviour
         const newDetail = {
@@ -25,8 +17,7 @@ function AddReport() {
             price,
             date,
             count,
-            totalPrice,
-            month
+            totalPrice
         };
         axios
         .post("http://localhost:8070/servicereport/add", newDetail)
@@ -56,27 +47,19 @@ function AddReport() {
                 />
               </div>
               <div className="form-group">
-            <label for="exampleInputmonth">Month</label>
-            <select id="inputState" className="form-control" onChange={(e) => {
-                setMonth(e.target.value);
-              }}>
-              <option defaultValue>-- Select Month --</option>
-                  <option value="JANUARY">JANUARY</option>
-                  <option value="FEBRUARY">FEBRUARY</option>
-                  <option value="MARCH">MARCH</option>
-                  <option value="APRIL">APRIL</option>
-                  <option value="MAY">MAY</option>
-                  <option value="JUNE">JUNE</option>
-                  <option value="JULY">JULY</option>
-                  <option value="AUGUST">AUGUST</option>
-                  <option value="SEPTEMBER">SEPTEMBER</option>
-                  <option value="OCTOBER">OCTOBER</option>
-                  <option value="NOVEMBER">NOVEMBER</option>
-                  <option value="DECEMBER">DECEMBER</option>
-                
-            </select>
-          </div>
-          <div className="form-group">
+                <label for="exmapleprice">Price</label>
+                <input
+                  required ={true}
+                  type="number" min="0" 
+                  className="form-control"
+                  id="exmapleprice"
+                  placeholder="Price(Rs)"
+                  onChange={(e) => {
+                    setPrice(e.target.value);
+                  }}
+                />
+                </div> 
+              <div className="form-group">
                 <label for="exampleInputEntryDate1">Entry Date</label>
                 <input
                   required ={true}
@@ -90,20 +73,6 @@ function AddReport() {
                 />
               </div>
               <div className="form-group">
-                <label for="exmapleprice">Price</label>
-                <input
-                  required ={true}
-                  type="number" min="0" 
-                  className="form-control"
-                  id="exmapleprice"
-                  placeholder="Price(Rs)"
-                  onChange={(e) => {
-                
-                    setPrice(e.target.value);
-                  }} />
-                </div> 
-              
-              <div className="form-group">
                 <label for="exampleCount1">Count</label>
                 <input
                   required ={true}
@@ -113,20 +82,17 @@ function AddReport() {
                   placeholder="No of clients"
                   onChange={(e) => {
                     setCount(e.target.value);
-                  }} />
+                  }}
+                />
               </div>
-              <button className="btn btn-warning" style={{ marginTop: '15px', marginBottom: '15px' }} onClick={calcTotal}>
-            Calculate Total
-          </button>
               <div className="form-group">
                 <label for="exampleTotal">Total</label>
                 <input
                   required ={true}
-                  type="text" min="0" 
+                  type="number" min="0" 
                   className="form-control"
                   id="exampleTotal"
                   placeholder="Total"
-                  value ={totalPrice}
                   onChange={(e) => {
                     setTotalPrice(e.target.value);
                   }}
