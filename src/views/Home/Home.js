@@ -4,11 +4,16 @@ import "./Home.css";
 
 import Card from "../../components/Card/Card";
 
+
 import cardDetails from "../../components/Card/cardDetails";
+
+import customerCardDetails from "../../components/Card/customerCardDetails";
+
 
 
 
 function Home(){
+
 
     return(
 
@@ -57,6 +62,25 @@ function Home(){
             </div>
 
     );
+
+
+    return (
+        <div className="admin-home">
+            <div class="heading">Home</div>
+          {customerCardDetails.map((customerCardDetails) => {
+            return (
+              <div>
+                <Card
+                  key={customerCardDetails.id}
+                  name={customerCardDetails.name}
+                  img={customerCardDetails.img}
+                  navigate={customerCardDetails.navigate}
+                />
+              </div>
+            );
+          })}
+        </div>
+      );
 
 }
 
