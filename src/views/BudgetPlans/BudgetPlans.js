@@ -6,7 +6,6 @@ import "./BudgetPlans.css";
 import DeleteIcon from '@material-ui/icons/Delete';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import { red } from "@material-ui/core/colors";
-import { Link } from "react-router-dom";
 
 function BudgetPlans() {
   //fetch all expense collections
@@ -50,13 +49,11 @@ function BudgetPlans() {
               <div className="planText">{budgetPlans.estimate}</div>
               <div className="planText">{budgetPlans.actual}</div>
               <div className="planText">{budgetPlans.balance}</div>
-              <Link to={"/add/budgetplans"}>
-                <AddCircleIcon fontSize="small"/>
-              </Link>
+              <button className="btn btn-sm btnBudget"><AddCircleIcon fontSize="small"/></button>
               &nbsp;
               <button
               className="btn btn-sm btnBudget"
-              onClick={() => {if (window.confirm('Are you sure you wish to delete this record?'))deleteBudgetPlans(budgetPlans._id)}}
+              onClick={() => deleteBudgetPlans(budgetPlans._id)}
               >
               <DeleteIcon fontSize="small" style={{color: red[600]}}/>
             </button>

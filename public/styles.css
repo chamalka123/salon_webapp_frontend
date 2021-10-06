@@ -5,19 +5,9 @@
 }
 
 body{
+    background: rgb(255, 255, 255);
     padding: 0;
-    height: 100%;
 }
-
-#root{
-    min-height: 180vh;
-    background-image:  linear-gradient(rgba(202, 188, 188, 0.2),rgba(83, 78, 78, 0.2)),url(./image/background.jpg);
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-position:center;
-    color: white;
-}
-
 .welcomePicture{
     background-image: url(./image/welcomeScreenImage.jpg);
     height:60vh;

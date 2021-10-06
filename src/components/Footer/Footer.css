@@ -1,12 +1,11 @@
 footer{
+    position: absolute;
     text-align: center;
     bottom: 0;
     width: 100%;
-    position: fixed;
-    background-color: #3f50b5;
+    height: 2.5rem;
 }
 
 footer p{
-    color: rgb(255, 255, 255);
-    margin-top: 1%;
+    color: rgb(53, 52, 52)
 }

@@ -4,17 +4,18 @@ import "./Home.css";
 
 import Card from "../../components/Card/Card";
 
-
 import cardDetails from "../../components/Card/cardDetails";
 
+<<<<<<< HEAD
 import customerCardDetails from "../../components/Card/customerCardDetails";
 import SideDrawer from "../../components/Header/SideDrawer.js";
 
 
+=======
+>>>>>>> parent of 9014e97 (feedback and career portal management updated)
 
 
 function Home(){
-
 
     return(
 
@@ -64,6 +65,7 @@ function Home(){
 
     );
 
+<<<<<<< HEAD
 
     return (
       
@@ -85,6 +87,8 @@ function Home(){
         </div>
       );
 
+=======
+>>>>>>> parent of 9014e97 (feedback and career portal management updated)
 }
 
 export default Home;

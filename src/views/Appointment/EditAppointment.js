@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from "react";
 import axios from "axios";
 import { useParams } from "react-router";
-import "./Appointment.css";
+
 
 function EditAppointment(){
 
@@ -58,14 +58,24 @@ function EditAppointment(){
   }
 
     return(
-      <div className="appointmentBody">
-     <div className="appointment-container"> 
+     <div className="container"> 
      <h1>Edit Appointment</h1>
-      <form onSubmit={sendUpdateAppointment} className="add-appointment">
+      <form onSubmit={sendUpdateAppointment}>
 
   <div class="col-md-12">
+    <label for="appointment_id">Appointment ID</label>
+    <input type="text" class="form-control" id="appointment_id" 
+    value={appointment_id}
+    onChange={(e)=>{
+
+      setAppointment_id(e.target.value);
+
+    }}/>
+  </div>
+  
+  <div class="col-md-12">
     <label for="customer_name">Customer Name</label>
-    <input type="text" class="form-control" id="customer_name" placeholder="Enter Name" maxlength="20" size="20"
+    <input type="text" class="form-control" id="customer_name" placeholder="Enter Name"
     value={customer_name}
     onChange={(e)=>{
 
@@ -87,7 +97,7 @@ function EditAppointment(){
 
   <div class="col-md-12">
     <label for="appointment_date">Appointment Date</label>
-    <input type="text" class="form-control" id="appointment_date" placeholder="mm/dd/yyyy" 
+    <input type="text" class="form-control" id="appointment_date" placeholder="Enter the date" 
     value={appointment_date}
     onChange={(e)=>{
 
@@ -126,7 +136,6 @@ function EditAppointment(){
   </center>
 </form>
 </div>  
-</div>
     );
 }
 export default EditAppointment;

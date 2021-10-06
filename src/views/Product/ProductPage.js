@@ -37,16 +37,12 @@ export default function ProductPage() {
 
     return (
         <><div className="productpage">
+            <h1>Product Page</h1>
             <hr />
-            <center>
-            <h1>PRODUCT PAGE</h1>
-            </center>
-            <hr />
-
             <input className="search1"
-            style={{ width:"15%" ,height:"30px"}}
+            style={{ width:"18%" ,height:"30px"}}
             type="text"
-            placeholder="    Enter Product Category"
+            placeholder="  Enter Product Category"
             onChange={(e) => setSearchName(e.target.value)}/>
 
 
@@ -75,7 +71,7 @@ export default function ProductPage() {
 
                }).map((products) => 
 
-               
+
               <div className="productContainer">
                   <div class="productCard">
 

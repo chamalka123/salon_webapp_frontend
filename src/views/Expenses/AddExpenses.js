@@ -15,7 +15,7 @@ function AddExpenses() {
       expenseCategory,
       date,
       amount,
-      description
+      description,
     };
 
     axios
@@ -37,7 +37,7 @@ function AddExpenses() {
             <select id="inputState" className="form-control" onChange={(e) => {
                 setCategory(e.target.value);
               }}>
-              <option defaultValue>Product</option>
+              <option selected>Product</option>
               <option>Service</option>
             </select>
           </div>
@@ -45,7 +45,7 @@ function AddExpenses() {
             <label for="exampleInputEntryDate1">Entry Date</label>
             <input
               required ={true}
-              type="date"
+              type="text"
               className="form-control"
               id="exampleInputEntryDate1"
               placeholder="Enter Entry Date"
@@ -58,10 +58,10 @@ function AddExpenses() {
             <label for="exampleInputEntryDate1">Amount</label>
             <input
               required ={true}
-              type="number" min="0" 
+              type="text"
               className="form-control"
               id="exampleInputEntryDate1"
-              placeholder="Amount(Rs)"
+              placeholder="Amount"
               onChange={(e) => {
                 setAmount(e.target.value);
               }}
@@ -69,9 +69,8 @@ function AddExpenses() {
           </div>
           <div className="form-group">
             <label for="exampleInputEntryDate1">Description</label>
-            <textarea
+            <input
               required ={true}
-              maxLength = {100}
               type="text"
               className="form-control"
               id="exampleInputEntryDate1"
@@ -94,4 +93,3 @@ function AddExpenses() {
   );
 }
 export default AddExpenses;
-

@@ -9,6 +9,10 @@ function Navbar() {
         </li>
         &nbsp;
         <li className="nav-item">
+          <Link to={"/income"} className="nav-link active">Income</Link>
+        </li>
+        &nbsp;
+        <li className="nav-item">
           <Link to={"/ledgers"} className="nav-link active">Digital Ledgers</Link>
         </li>
         &nbsp;
