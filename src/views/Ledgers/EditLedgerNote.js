@@ -1,26 +1,49 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
+import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 
-function AddLedgers() {
+function EditLedgerNote() {
+  
   const [date, setDate] = useState("");
   const [note, setNote] = useState("");
   const [type, setType] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
 
-  function sendLedgerData(e) {
+  //retrieve relevent data form relavent fields
+  //const [expense, setExpense] = useState("");
+  const { id } = useParams();
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8070/ledger/get/${id}`)
+      .then((res) => {
+        // setExpense(res.data);
+        //console.log(res.data.ledgers);
+        setDate(res.data.ledger.date);
+        setNote(res.data.ledger.note);
+        setType(res.data.ledger.type);
+        setPaymentMethod(res.data.ledger.paymentMethod);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  //update data
+  function sendUpdateNote(e) {
     e.preventDefault(); //prevent submit event default behaviour
-    const newLedger = {
-      date,
+    const updateNote = {
       note,
+      date,
       type,
-      paymentMethod
+      paymentMethod,
     };
 
     axios
-      .post("http://localhost:8070/ledger/add", newLedger)
+      .put(`http://localhost:8070/ledger/update/${id}`, updateNote)
       .then(() => {
-        alert("Ledger plan added");
+        alert("Update expense sucessfully");
       })
       .catch((err) => {
         alert(err);
@@ -29,63 +52,62 @@ function AddLedgers() {
 
   return (
     <div className="expenseBody">
-      <div className="container col-6" onSubmit={sendLedgerData}>
+      <div className="container col-6" onSubmit={sendUpdateNote}>
         <form className="addExpense">
-           <div className="form-group">
-            <label for="exampleInputEntryDate1">Date</label>
+          <div className="form-group">
+            <label htmlFor="exampleInputEntryDate1">Date</label>
             <input
-              required ={true}
-              type="date"
+              type=""
               className="form-control"
               id="exampleInputEntryDate1"
               placeholder="Enter Entry Date"
+              value={date}
               onChange={(e) => {
                 setDate(e.target.value);
               }}
             />
           </div>
           <div className="form-group">
-            <label for="exampleInputEntryDate1">Small Note</label>
-            <textarea
-              required={true}
-              maxLength={100}
+            <label htmlFor="exampleInputCategory">Small Note</label>
+            <input
               type="text"
               className="form-control"
-              id="exampleInputEntryDate1"
-              placeholder="Description"
+              id="exampleInputexpenseCategory1"
+              placeholder="Enter Expense Category"
+              value={note}
               onChange={(e) => {
                 setNote(e.target.value);
               }}
             />
           </div>
           <div className="form-group">
-            <label for="exampleInputEntryDate1">Type</label>
+            <label htmlFor="exampleInputEntryDate1">Type</label>
             <input
-              required={true}
               type="text"
               className="form-control"
-              id="exampleInputEntryDate1"
+              id="type"
               placeholder="Type"
+              value={type}
               onChange={(e) => {
                 setType(e.target.value);
               }}
             />
           </div>
           <div className="form-group">
-            <label for="exampleInputEntryDate1">Payment Method</label>
+            <label htmlFor="exampleInputEntryDate1">Payment Method</label>
             <input
-              required={true}
               type="text"
               className="form-control"
               id="exampleInputEntryDate1"
-              placeholder="Payment Method"
+              placeholder="Description"
+              value={paymentMethod}
               onChange={(e) => {
                 setPaymentMethod(e.target.value);
               }}
             />
           </div>
-          <button type="submit" className="btn btn-primary">
-            Submit
+          <button type="submit" className="btn btn-success">
+            Update
           </button>
           &nbsp;
           <Link to="/Expenses">
@@ -96,4 +118,4 @@ function AddLedgers() {
     </div>
   );
 }
-export default AddLedgers;
+export default EditLedgerNote;

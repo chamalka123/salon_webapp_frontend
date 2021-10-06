@@ -8,7 +8,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import { green, red } from "@material-ui/core/colors";
-import AddCircleIcon from '@material-ui/icons/AddCircle';
+import AddCircleIcon from "@material-ui/icons/AddCircle";
 
 function Ledgers() {
   //search ledgers using ledger Id
@@ -106,14 +106,29 @@ function Ledgers() {
                     <button
                       className="btn btn-sm ledgerButton"
                       id="deleteNote"
-                      onClick={() => {if (window.confirm('Are you sure you wish to delete this record?'))deleteLedger(ledger._id)}}
+                      onClick={() => {
+                        if (
+                          window.confirm(
+                            "Are you sure you wish to delete this record?"
+                          )
+                        )
+                          deleteLedger(ledger._id);
+                      }}
                     >
                       <DeleteIcon
                         fontSize="small"
                         style={{ color: red[600] }}
                       />
                     </button>
-                    <EditIcon fontSize="small" style={{ color: green[600] }} />
+                    <Link
+                      to={`/ledger/${ledger._id}`}
+                      className="btn btn-sm expenseButton"
+                    >
+                      <EditIcon
+                        fontSize="small"
+                        style={{ color: green[600] }}
+                      />
+                    </Link>
                   </td>
                   <td className="expenseTableData">{ledger.type}</td>
                   <td className="expenseTableData">{ledger.paymentMethod}</td>
@@ -122,10 +137,10 @@ function Ledgers() {
           )}
         </table>
         <Link to={"/add/ledgers"} className="btn btn-warning btn-sm">
-        ADD LEDGERS<AddCircleIcon />  
+          ADD LEDGERS
+          <AddCircleIcon />
         </Link>
       </div>
-     
     </div>
   );
 }

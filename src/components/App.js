@@ -37,6 +37,7 @@ import CustomerList from "../views/customer/customerList";
 import CustomerLogin from "../views/CustomerLogin/CustomerLogin";
 import CreateBudgetPlan from "../views/BudgetPlans/CreateBudgetPlan";
 import AddLedgers from "../views/Ledgers/AddLedgers";
+import EditLedgerNote from "../views/Ledgers/EditLedgerNote";
 
 function App() {
   return (
@@ -100,6 +101,9 @@ function App() {
           <Route exact path="/update/:id" component={EditPayment}></Route>
           <Route exact path="/EditExpense/:id">
             <EditExpenses />
+          </Route>
+          <Route exact path="/ledger/:id">
+            <EditLedgerNote />
           </Route>
           <Route exact path="/Service">
             <Service />
