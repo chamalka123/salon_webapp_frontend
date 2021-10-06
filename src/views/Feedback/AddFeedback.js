@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import axios from "axios";
-
+import "./Feedback.css";
 
 
 export default function AddFeedback(){
@@ -34,23 +34,17 @@ export default function AddFeedback(){
   }
 
     return(
-     <div className="container"> 
+      
+      <div className="feedbackBody">
+     <div className="feedback-container"> 
      <h1>Add New Feedback</h1>
-      <form onSubmit={sendData}>
+      <form onSubmit={sendData} className="add-feedback">
 
-  <div class="form-group">
-    <label for="feedback_id">Feedback ID</label>
-    <input type="text" class="form-control" id="feedback_id" required 
-    onChange={(e)=>{
-
-      setFeedback_id(e.target.value);
-
-    }}/>
-  </div>
+ 
   
   <div class="form-group">
     <label for="customer_name">Customer Name</label>
-    <input type="text" class="form-control" id="customer_name" required 
+    <input type="text" class="form-control" id="customer_name" maxlength="20" size="20" required 
     onChange={(e)=>{
 
       setCustomer_name(e.target.value);
@@ -97,6 +91,7 @@ export default function AddFeedback(){
   </div>
   </center>
 </form>
-</div>  
+</div>
+</div>
     )
 }

@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from "react";
 import axios from "axios";
 import { useParams } from "react-router";
+import "./Feedback.css";
 
 
 function EditFeedback(){
@@ -57,24 +58,16 @@ function EditFeedback(){
   }
 
     return(
-     <div className="container"> 
+      <div className="feedbackBody">
+     <div className="feedback-container"> 
      <h1>Edit Feedback</h1>
-      <form onSubmit={sendUpdateFeedback}>
+      <form onSubmit={sendUpdateFeedback} className="add-feedback">
 
-  <div class="col-md-12">
-    <label for="feedback_id">Feedback ID</label>
-    <input type="text" class="form-control" id="feedback_id" 
-    value={feedback_id}
-    onChange={(e)=>{
 
-      setFeedback_id(e.target.value);
-
-    }}/>
-  </div>
   
   <div class="col-md-12">
     <label for="customer_name">Customer Name</label>
-    <input type="text" class="form-control" id="customer_name" 
+    <input type="text" class="form-control" id="customer_name"  maxlength="20" size="20"
     value={customer_name}
     onChange={(e)=>{
 
@@ -124,7 +117,8 @@ function EditFeedback(){
   </div>
   </center>
 </form>
-</div>  
+</div> 
+</div>
     );
 }
 export default EditFeedback;
