@@ -3,25 +3,26 @@ import axios from "axios";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 
-function EditExpenses() {
-  const [expenseCategory, setExpenseCategory] = useState("");
+function EditLedgerNote() {
+  
   const [date, setDate] = useState("");
-  const [amount, setAmount] = useState("");
-  const [description, setDescription] = useState("");
+  const [note, setNote] = useState("");
+  const [type, setType] = useState("");
+  const [paymentMethod, setPaymentMethod] = useState("");
 
   //retrieve relevent data form relavent fields
   //const [expense, setExpense] = useState("");
   const { id } = useParams();
   useEffect(() => {
     axios
-      .get(`http://localhost:8070/expense/get/${id}`)
+      .get(`http://localhost:8070/ledger/get/${id}`)
       .then((res) => {
         // setExpense(res.data);
-        console.log(res.data.expense);
-        setExpenseCategory(res.data.expense.expenseCategory);
-        setAmount(res.data.expense.amount);
-        setDate(res.data.expense.date);
-        setDescription(res.data.expense.description);
+        //console.log(res.data.ledgers);
+        setDate(res.data.ledger.date);
+        setNote(res.data.ledger.note);
+        setType(res.data.ledger.type);
+        setPaymentMethod(res.data.ledger.paymentMethod);
       })
       .catch((err) => {
         console.log(err.message);
@@ -30,17 +31,17 @@ function EditExpenses() {
   }, []);
 
   //update data
-  function sendUpdateExpense(e) {
+  function sendUpdateNote(e) {
     e.preventDefault(); //prevent submit event default behaviour
-    const updateExpense = {
-      expenseCategory,
+    const updateNote = {
+      note,
       date,
-      amount,
-      description,
+      type,
+      paymentMethod,
     };
 
     axios
-      .put(`http://localhost:8070/expense/update/${id}`, updateExpense)
+      .put(`http://localhost:8070/ledger/update/${id}`, updateNote)
       .then(() => {
         alert("Update expense sucessfully");
       })
@@ -51,25 +52,12 @@ function EditExpenses() {
 
   return (
     <div className="expenseBody">
-      <div className="container col-6" onSubmit={sendUpdateExpense}>
+      <div className="container col-6" onSubmit={sendUpdateNote}>
         <form className="addExpense">
           <div className="form-group">
-            <label htmlFor="exampleInputCategory">Expense Category</label>
+            <label htmlFor="exampleInputEntryDate1">Date</label>
             <input
-              type="text"
-              className="form-control"
-              id="exampleInputexpenseCategory1"
-              placeholder="Enter Expense Category"
-              value={expenseCategory}
-              onChange={(e) => {
-                setExpenseCategory(e.target.value);
-              }}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="exampleInputEntryDate1">Entry Date</label>
-            <input
-              type="date"
+              type=""
               className="form-control"
               id="exampleInputEntryDate1"
               placeholder="Enter Entry Date"
@@ -80,29 +68,41 @@ function EditExpenses() {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="exampleInputEntryDate1">Amount</label>
+            <label htmlFor="exampleInputCategory">Small Note</label>
             <input
-              type="number"
-              min={0}
+              type="text"
               className="form-control"
-              id="exampleInputEntryDate1"
-              placeholder="Amount"
-              value={amount}
+              id="exampleInputexpenseCategory1"
+              placeholder="Enter Expense Category"
+              value={note}
               onChange={(e) => {
-                setAmount(e.target.value);
+                setNote(e.target.value);
               }}
             />
           </div>
           <div className="form-group">
-            <label htmlFor="exampleInputEntryDate1">Description</label>
+            <label htmlFor="exampleInputEntryDate1">Type</label>
+            <input
+              type="text"
+              className="form-control"
+              id="type"
+              placeholder="Type"
+              value={type}
+              onChange={(e) => {
+                setType(e.target.value);
+              }}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="exampleInputEntryDate1">Payment Method</label>
             <input
               type="text"
               className="form-control"
               id="exampleInputEntryDate1"
               placeholder="Description"
-              value={description}
+              value={paymentMethod}
               onChange={(e) => {
-                setDescription(e.target.value);
+                setPaymentMethod(e.target.value);
               }}
             />
           </div>
@@ -118,4 +118,4 @@ function EditExpenses() {
     </div>
   );
 }
-export default EditExpenses;
+export default EditLedgerNote;

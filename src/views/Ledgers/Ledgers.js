@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Ledgers.css";
@@ -7,6 +8,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import { green, red } from "@material-ui/core/colors";
+import AddCircleIcon from "@material-ui/icons/AddCircle";
 
 function Ledgers() {
   //search ledgers using ledger Id
@@ -67,8 +69,8 @@ function Ledgers() {
         <SearchIcon />
       </div>
       <div>
-        <table className="table table-striped ledgerTable">
-          <thead>
+        <table className="table table-bordered incomeTable table-light">
+          <thead  className="thead-dark">
             <tr className="ledgerRaw">
               <th scope="col">Ledger ID</th>
               <th scope="col">Date</th>
@@ -77,7 +79,6 @@ function Ledgers() {
               <th scope="col">Payment Method</th>
             </tr>
           </thead>
-          <tbody>
           {loading ? (
             <button className="btn-btn-primary" type="button" disabled>
               <span
@@ -96,31 +97,49 @@ function Ledgers() {
                   return value;
                 }
               })
-              .map((ledger) => (
-                <tr key={ledger._id}>
-                  <td className="expenseTableData">{ledger.ledgerId}</td>
+              .map((ledger, index) => (
+                <tr key={index}>
+                  <th className="expenseTableData" scope="row">{index+1}</th>
                   <td className="expenseTableData">{ledger.date}</td>
                   <td className="expenseTableData">
                     {ledger.note}
                     <button
                       className="btn btn-sm ledgerButton"
                       id="deleteNote"
-                      onClick={() => {if (window.confirm('Are you sure you wish to delete this record?'))deleteLedger(ledger._id)}}
+                      onClick={() => {
+                        if (
+                          window.confirm(
+                            "Are you sure you wish to delete this record?"
+                          )
+                        )
+                          deleteLedger(ledger._id);
+                      }}
                     >
                       <DeleteIcon
                         fontSize="small"
                         style={{ color: red[600] }}
                       />
                     </button>
-                    <EditIcon fontSize="small" style={{ color: green[600] }} />
+                    <Link
+                      to={`/ledger/${ledger._id}`}
+                      className="btn btn-sm expenseButton"
+                    >
+                      <EditIcon
+                        fontSize="small"
+                        style={{ color: green[600] }}
+                      />
+                    </Link>
                   </td>
                   <td className="expenseTableData">{ledger.type}</td>
                   <td className="expenseTableData">{ledger.paymentMethod}</td>
                 </tr>
               ))
           )}
-          </tbody>
         </table>
+        <Link to={"/add/ledgers"} className="btn btn-warning btn-sm">
+          ADD LEDGERS
+          <AddCircleIcon />
+        </Link>
       </div>
     </div>
   );
