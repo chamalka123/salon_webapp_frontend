@@ -65,7 +65,7 @@ function ServiceDetails(props) {
           <br></br>
           <br></br>
   
-<div className="detail">
+<div className="detailca">
             <div className="detail">
                        <img src="/image/d.jpg " alt="" />
                  

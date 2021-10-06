@@ -46,6 +46,7 @@ import CustomerLogin from "../views/CustomerLogin/CustomerLogin";
 import DetailsPage from "../views/Service/ServiceReports/DetailsPage";
 import AddReport from "../views/Service/ServiceReports/AddReport";
 
+
 function App() {
   return (
     <div>
@@ -126,6 +127,7 @@ function App() {
           <Route exact path="/AddReport">
             <AddReport />
           </Route>
+          
           <Route exact path="/Product">
             <AllProduct />
           </Route>

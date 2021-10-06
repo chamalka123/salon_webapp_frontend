@@ -9,6 +9,7 @@ function AddReport() {
     const [date, setDate] = useState("");
     const [count, setCount] = useState("");
     const [totalPrice, setTotalPrice] = useState("");
+    const [month, setMonth]=useState("");
 
     function sendReportData(e) {
         e.preventDefault(); //prevent submit event default behaviour
@@ -17,7 +18,8 @@ function AddReport() {
             price,
             date,
             count,
-            totalPrice
+            totalPrice,
+            month
         };
         axios
         .post("http://localhost:8070/servicereport/add", newDetail)
@@ -46,6 +48,27 @@ function AddReport() {
                   }}
                 />
               </div>
+              <div className="form-group">
+            <label for="exampleInputmonth">Month</label>
+            <select id="inputState" className="form-control" onChange={(e) => {
+                setMonth(e.target.value);
+              }}>
+              <option defaultValue>-- Select Month --</option>
+                  <option value="JANUARY">JANUARY</option>
+                  <option value="FEBRUARY">FEBRUARY</option>
+                  <option value="MARCH">MARCH</option>
+                  <option value="APRIL">APRIL</option>
+                  <option value="MAY">MAY</option>
+                  <option value="JUNE">JUNE</option>
+                  <option value="JULY">JULY</option>
+                  <option value="AUGUST">AUGUST</option>
+                  <option value="SEPTEMBER">SEPTEMBER</option>
+                  <option value="OCTOBER">OCTOBER</option>
+                  <option value="NOVEMBER">NOVEMBER</option>
+                  <option value="DECEMBER">DECEMBER</option>
+                
+            </select>
+          </div>
               <div className="form-group">
                 <label for="exmapleprice">Price</label>
                 <input
