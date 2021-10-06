@@ -33,26 +33,16 @@ export default function AddAppointment(){
       alert(err)
     })
   }
-
+  
     return(
       <div className="appointmentBody">
-     <div className="container"> 
+     <div className="appointment-container"> 
      <h1>Add New Appointment</h1>
-      <form onSubmit={sendData}>
+      <form onSubmit={sendData} className="add-appointment">
 
-  <div class="form-group">
-    <label for="appointment_id">Appointment ID</label>
-    <input type="text" class="form-control" id="appointment_id" required
-    onChange={(e)=>{
-
-      setAppointment_id(e.target.value);
-
-    }}/>
-  </div>
-  
   <div class="form-group">
     <label for="customer_name">Customer Name</label>
-    <input type="text" class="form-control" id="customer_name" placeholder="Enter Name" required
+    <input type="text" class="form-control" id="customer_name" placeholder="Enter Name" maxlength="20" size="20" required
     onChange={(e)=>{
 
       setCustomer_name(e.target.value);
@@ -72,7 +62,7 @@ export default function AddAppointment(){
 
   <div class="form-group">
     <label for="appointment_date">Appointment Date</label>
-    <input type="text" class="form-control" id="appointment_date" placeholder="Enter the date" required
+    <input type="text" class="form-control" id="appointment_date" placeholder="mm/dd/yyyy" required
     onChange={(e)=>{
 
       setAppointment_date(e.target.value);
