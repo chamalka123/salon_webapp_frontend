@@ -1,21 +1,23 @@
-.appointmentBody{
+.feedbackBody{
 
     margin: 4% 8% 0 10%;
 
 }
-.searchappointment{
+.searchfeedback{
     margin: 2.5% 10px ;
 
   }
-.appointment-container {
+
+.feedback-container{
     border-radius: 10px;
     background-color: rgb(202, 209, 209);
     padding: 10px;
     width: 600px;
     height: 610px;
-    margin: 8% 8% 0 10%;
+    margin: 8% 8% 0 10%
 }
-.add-appointment{
+
+.add-feedback{
     margin: 2%;
     height: 500px;
 }

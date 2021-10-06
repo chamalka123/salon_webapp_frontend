@@ -1,11 +1,18 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Footer from "./Footer/Footer";
 import Home from "../views/Home/Home";
+import Signup from "../views/customer/signup";
 import Admin from "../views/adminPanel/adminPanel";
 import MyAccount from "../views/myAccount/myAccount";
-import Expenses from "../views/Expenses/Expenses";
+import Expenses from "../views/Expenses/expenses";
 import Payment from "../views/Payment/Payment";
 import AddExpenses from "../views/Expenses/AddExpenses";
+
+import Feedback from "../views/Feedback/Feedback";
+import AddFeedback from "../views/Feedback/AddFeedback";
+import EditFeedback from "../views/Feedback/EditFeedback";
+
+
 import AllEmployee from "../views/Employee/AllEmployee";
 import AddEmployee from "../views/Employee/AddEmployee";
 import EditEmployee from "../views/Employee/EditEmployee";
@@ -23,6 +30,7 @@ import SingleItem from "../views/Service/SingleItem/SingleItem";
 import CustomerView from "../views/Service/CustomerView/CustomerView";
 import CustomerSingleItem from "../views/Service/CustomerView/CustomerSingleItem";
 import UpdateService from "../views/Service/UpdateService/UpdateService";
+
 import Appointment from "../views/Appointment/Appointment";
 import AddAppointment from "../views/Appointment/AddAppointment";
 import EditAppointment from "../views/Appointment/EditAppointment";
@@ -51,13 +59,15 @@ function App() {
   return (
     <div>
       <Router>
-      <SideDrawer /> 
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/home">
             <Home />
           </Route>
-          <Route exact path="/login">
+          <Route exact path="/">
             <CustomerLogin />
+          </Route>
+          <Route exact path="/signup">
+            <Signup />
           </Route>
           <Route exact path="/admin-login">
             <AdminLogin />
@@ -94,6 +104,20 @@ function App() {
           <Route exact path="/AddPayment">
             <AddPayment />
           </Route>
+
+
+          <Route exact path="/Feedback">
+            <Feedback />
+          </Route>
+          <Route exact path="/AddFeedback">
+            <AddFeedback />
+          </Route>
+          <Route exact path="/EditFeedback/:id">
+            <EditFeedback />
+          </Route>
+
+
+
           <Route exact path="/Appointment">
             <Appointment />
           </Route>
@@ -171,6 +195,9 @@ function App() {
             <CustomerList />
           </Route>
 
+
+
+
           <Route exact path="/AddCalSalary">
             <AddCalSalary/>
           </Route>
@@ -186,6 +213,7 @@ function App() {
           <Route exact path="/EditempAt/:id">
             <EditempAt/>
           </Route>
+
         </Switch>
       </Router>
       <Footer />

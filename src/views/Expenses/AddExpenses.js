@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Expenses.css";
+import "./expenses.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
