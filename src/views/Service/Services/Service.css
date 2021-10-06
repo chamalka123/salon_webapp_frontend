@@ -12,6 +12,9 @@
 .serviceHeader .logo{
     flex: 6;
 }
+.serviceHeader .logo h1{
+    color: rgb(49, 49, 204);
+}
 .serviceHeader a{
     text-transform: uppercase;
     color: #555;
@@ -60,7 +63,7 @@
 .productcard{  
     max-height: 351px;
     width: 200px;
-    background: #d6d7db;
+    background: #8dc9e6;
     border-radius: 15px;
     position:static;
     border: none;
@@ -93,6 +96,9 @@
     color:white;
     border: none;
     border-radius: 90px;
+}
+.productcard h6{
+   color: rgb(5, 5, 75);
 }
 .productGrid{
     display: grid;

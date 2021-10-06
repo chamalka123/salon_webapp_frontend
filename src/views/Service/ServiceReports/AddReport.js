@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./ServiceReport.css";
 import axios from "axios";
+import { red,blueGrey} from "@material-ui/core/colors";
 import { Link } from "react-router-dom";
 
 function AddReport() {
@@ -11,6 +12,12 @@ function AddReport() {
     const [totalPrice, setTotalPrice] = useState("");
     const [month, setMonth]=useState("");
 
+
+    function calcTotal(e){
+      setTotalPrice(count * price);
+      e.preventDefault();
+    }
+  
     function sendReportData(e) {
         e.preventDefault(); //prevent submit event default behaviour
         const newDetail = {
@@ -69,20 +76,7 @@ function AddReport() {
                 
             </select>
           </div>
-              <div className="form-group">
-                <label for="exmapleprice">Price</label>
-                <input
-                  required ={true}
-                  type="number" min="0" 
-                  className="form-control"
-                  id="exmapleprice"
-                  placeholder="Price(Rs)"
-                  onChange={(e) => {
-                    setPrice(e.target.value);
-                  }}
-                />
-                </div> 
-              <div className="form-group">
+          <div className="form-group">
                 <label for="exampleInputEntryDate1">Entry Date</label>
                 <input
                   required ={true}
@@ -96,6 +90,20 @@ function AddReport() {
                 />
               </div>
               <div className="form-group">
+                <label for="exmapleprice">Price</label>
+                <input
+                  required ={true}
+                  type="number" min="0" 
+                  className="form-control"
+                  id="exmapleprice"
+                  placeholder="Price(Rs)"
+                  onChange={(e) => {
+                
+                    setPrice(e.target.value);
+                  }} />
+                </div> 
+              
+              <div className="form-group">
                 <label for="exampleCount1">Count</label>
                 <input
                   required ={true}
@@ -105,17 +113,20 @@ function AddReport() {
                   placeholder="No of clients"
                   onChange={(e) => {
                     setCount(e.target.value);
-                  }}
-                />
+                  }} />
               </div>
+              <button className="btn btn-warning" style={{ marginTop: '15px', marginBottom: '15px' }} onClick={calcTotal}>
+            Calculate Total
+          </button>
               <div className="form-group">
                 <label for="exampleTotal">Total</label>
                 <input
                   required ={true}
-                  type="number" min="0" 
+                  type="text" min="0" 
                   className="form-control"
                   id="exampleTotal"
                   placeholder="Total"
+                  value ={totalPrice}
                   onChange={(e) => {
                     setTotalPrice(e.target.value);
                   }}

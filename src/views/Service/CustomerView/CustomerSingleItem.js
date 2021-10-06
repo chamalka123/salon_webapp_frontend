@@ -15,6 +15,7 @@ function ServiceDetails(props) {
     const[duration,setDuration]=useState("");
     const[content,setContent]=useState("");
     const[category,setCategory]=useState("");
+    const [images,setImages]=useState("");
     const [services, setServices] = useState([]);
   const history=useHistory()
     const config = {
@@ -31,6 +32,7 @@ function ServiceDetails(props) {
         setDuration(res.data.service.duration)
         setContent(res.data.service.content)
         setCategory(res.data.service.category)
+        setImages(res.data.service.images)
         console.log(res)   
       }).catch((err) => {
         alert(err)
@@ -67,7 +69,7 @@ function ServiceDetails(props) {
   
 <div className="detailca">
             <div className="detail">
-                       <img src="/image/d.jpg " alt="" />
+                       <img src={`${images}`} alt="" />
                  
            <div className="box-detail">
                         <div className="row">

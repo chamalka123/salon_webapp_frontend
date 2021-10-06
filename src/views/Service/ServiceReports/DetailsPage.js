@@ -6,8 +6,9 @@ import jsPDF from "jspdf";
 import DeleteIcon from "@material-ui/icons/Delete";
 import autoTable from "jspdf-autotable";
 import { Link } from "react-router-dom";
-import { green, red } from "@material-ui/core/colors";
+import { red,blueGrey} from "@material-ui/core/colors";
 import AddCircleIcon from '@material-ui/icons/AddCircle';
+import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
 export default function DetailsPage() {
     
   const [servicesreports, setServicesreports] = useState([])
@@ -96,6 +97,7 @@ export default function DetailsPage() {
       alert(`Failed to delete the product\n${error.message}`)
   }) 
 } 
+
 return (
     <> <div className="reportBody">
    <br></br>
@@ -114,6 +116,8 @@ return (
                 type="text"
                 placeholder=" Month "
                 onChange={(e) => setSearchMonth(e.target.value)} />
+              
+
       <table className="table table-bordered detailTable" id="my-table">
         <thead className="bg-dark text-light">
           <tr className="detailRaw">
@@ -176,7 +180,11 @@ return (
         ADD DETAILS <AddCircleIcon />
       </Link>
       &nbsp;&nbsp;
-      <button type="button" class="btn btn-danger btn sm" onClick={()=>createPdf()}>Download PDF</button>
+      <button type="button" class="btn btn-danger btn sm" onClick={()=>createPdf()}> <PictureAsPdfIcon />Download PDF</button>
+      &nbsp;&nbsp;
+          <Link to="/Service">
+            <button className="btn btn-danger"style={{backgroundColor:blueGrey[300]}}>CANCEL</button>
+          </Link>
       </center>
     </div>
     
