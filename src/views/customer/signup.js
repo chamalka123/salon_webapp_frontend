@@ -1,11 +1,11 @@
 import React,{useState} from "react";
 import axios from "axios";
-import "./Home.css";
+import "../Home/Home.css";
 
 
 
 
-export default function AddProduct(){
+export default function Addcustomer(){
 
   const [custId, setCustId] = useState("");
   const [name, setName] = useState("");

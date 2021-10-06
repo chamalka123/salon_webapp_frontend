@@ -8,6 +8,7 @@ import Card from "../../components/Card/Card";
 import cardDetails from "../../components/Card/cardDetails";
 
 import customerCardDetails from "../../components/Card/customerCardDetails";
+import SideDrawer from "../../components/Header/SideDrawer.js";
 
 
 
@@ -19,7 +20,7 @@ function Home(){
 
         <div className="home-home">
 
-            
+            <SideDrawer/>
 
                 <h1>Home</h1>
 
@@ -65,7 +66,9 @@ function Home(){
 
 
     return (
+      
         <div className="admin-home">
+          <SideDrawer/>
             <div class="heading">Home</div>
           {customerCardDetails.map((customerCardDetails) => {
             return (

@@ -1,4 +1,4 @@
-/*import React,{useState,  useEffect} from "react";
+import React,{useState,  useEffect} from "react";
 import axios from "axios";
 
 
@@ -57,4 +57,4 @@ export default function AllPayment() {
             <link to={"/AddPayment"} className="btn btn-success btn-sm">ADD PAYMENT</link>
         </div>
     )
-  }*/
+  }

@@ -20,6 +20,7 @@ import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 
 const drawerWidth = 240;
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -141,7 +142,7 @@ export default function MiniDrawer() {
         </div>
         <Divider />
         <List>
-         <Link to="/" >
+         <Link to="/home" >
            <ListItem button>
              <ListItemIcon>
                <HomeIcon />
@@ -152,7 +153,7 @@ export default function MiniDrawer() {
         </List>
         <Divider />
         <List>
-         <Link to="/AdminPanel">
+         <Link to="/admin-login">
            <ListItem button>
              <ListItemIcon>
                <SupervisorAccountIcon />

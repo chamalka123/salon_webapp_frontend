@@ -7,7 +7,7 @@ function Header(){
         <header>
             <div className="nav-container">
                 <div className="nav-brand">Winray</div>
-                <Link to={"/"} className = "link">
+                <Link to={"/home"} className = "link">
                     <div className="nav-item">HOME</div>
                 </Link>
                 <div className="nav-item">ABOUT</div>
