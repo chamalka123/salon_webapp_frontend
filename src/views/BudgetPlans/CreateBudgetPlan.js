@@ -108,6 +108,8 @@ function CreateBudgetPlan() {
               id="exampleInputEntryDate1"
               placeholder="Balance(Rs)"
               onChange={(e) => {
+                
+                //setestimate(e.target.value) - setActual(e.target.value);
                 setBalance(e.target.value);
               }}
             />

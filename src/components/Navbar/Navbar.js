@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <div>
-      <ul className="nav nav-pills ">
+      <ul className="nav nav-pills nav-fill">
         <li className="nav-item">
           <Link to={"/Expenses"} className="nav-link active">Expenses</Link>
         </li>

@@ -69,8 +69,8 @@ function Ledgers() {
         <SearchIcon />
       </div>
       <div>
-        <table className="table table-striped ledgerTable">
-          <thead>
+        <table className="table table-bordered incomeTable table-light">
+          <thead  className="thead-dark">
             <tr className="ledgerRaw">
               <th scope="col">Ledger ID</th>
               <th scope="col">Date</th>
@@ -97,9 +97,9 @@ function Ledgers() {
                   return value;
                 }
               })
-              .map((ledger) => (
-                <tr key={ledger._id}>
-                  <td className="expenseTableData">{ledger.ledgerId}</td>
+              .map((ledger, index) => (
+                <tr key={index}>
+                  <th className="expenseTableData" scope="row">{index+1}</th>
                   <td className="expenseTableData">{ledger.date}</td>
                   <td className="expenseTableData">
                     {ledger.note}

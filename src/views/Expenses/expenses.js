@@ -110,7 +110,8 @@ function Expenses() {
         var pageWidth = pageSize.width ? pageSize.width : pageSize.getWidth();
 
         doc.autoTable({
-          html: "#my-table",
+          html: "#expensesheet",
+          html: "#incomesheet",
           startY: pageHeight - 760,
           theme: "grid",
         });
@@ -133,17 +134,16 @@ function Expenses() {
       doc.putTotalPages(totalPagesExp);
     }
 
-    doc.save("product.pdf"); //this downloads a copy of the pdf in your local instance.
+    doc.save("income-expense-report.pdf"); //this downloads a copy of the pdf in your local instance.
   }
 
   return (
     <div className="expenseBody">
       <Navbar />
       <div className="containerExpenses">
-        <div className="total">Total Expenses: Rs.{sumOfExpense}</div>
-        <div className="total">Profit: Rs.{profit}</div>
-        <table className="table table-bordered expenseTable" id="my-table">
-          <thead className="bg-dark text-light">
+        <div className="total">Total Expenses: Rs.{sumOfExpense}.00</div>
+        <table className="table table-bordered incomeTable table-light" id="expensesheet">
+          <thead className="thead-dark">
             <tr className="expenseRaw">
               <th scope="col">ID</th>
               <th scope="col">Entry Date</th>
@@ -163,17 +163,16 @@ function Expenses() {
               <td>
                 <Link
                   to={`/EditExpense/${expenses._id}`}
-                  className="btn btn-sm expenseButton"
+                  className="btn btn-sm btn-success"
                 >
-                  <EditIcon
+                  EDIT<EditIcon
                     className="btn-icon"
-                    style={{ color: green[600] }}
                     fontSize="small"
                   />
                 </Link>
                 &nbsp;
                 <button
-                  className="btn btn-sm expenseButton"
+                  className="btn btn-sm btn-danger"
                   onClick={() => {
                     if (
                       window.confirm(
@@ -182,10 +181,9 @@ function Expenses() {
                     )
                       deleteExpense(expenses._id);
                   }}
-                >
+                > DELETE
                   <DeleteIcon
                     className="btn-icon"
-                    style={{ color: red[600] }}
                     fontSize="small"
                   />
                 </button>
@@ -198,9 +196,9 @@ function Expenses() {
         </Link>
       </div>
       <div className="incomeBody">
-        <div className="total">Total Income: Rs.{sumOfIncome}</div>
+        <div className="total">Total Income: Rs.{sumOfIncome}.00</div>
         <div className="containerIncome">
-          <table className="table table-bordered incomeTable">
+          <table className="table table-bordered incomeTable table-light" id="incomesheet">
             <thead className="thead-dark">
               <tr className="incomeRaw">
                 <th scope="col">ID</th>
@@ -218,6 +216,7 @@ function Expenses() {
               ))}
             </tbody>
           </table>
+           <div className="total">Profit: Rs.{profit}.00</div>
         </div>
       </div>
       <button

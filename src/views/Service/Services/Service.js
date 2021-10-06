@@ -72,7 +72,7 @@ return(
             <ul>
                 <li><Link to="/AddService">{'CREATE NEW'}</Link></li>
                 <li><Link to="/Service">SERVICES & PACKAGES</Link></li>
-                <li><Link to="/">SERVICES REPORTS</Link></li>
+                <li><Link to="/DetailsPage">SERVICES REPORTS</Link></li>
                 </ul>
 </header>
 <div className="filter-menu">
@@ -97,8 +97,8 @@ return(
                         <img  src="./image/d.jpg" alt="service"/>
                     </div>
                     <div class="p-3">
-                     
-                        <h7>{services.title}</h7>
+                    
+                        <h6>{services.title}</h6>
                         <h6>Rs.{services.price}.00</h6>
                        
                           <span> 

@@ -10,13 +10,13 @@ const customerCardDetails = [
         id : 2,
         img : "https://th.bing.com/th/id/OIP.AHK5hP2sR6Ojh-vwwD2c0QHaEK?pid=ImgDet&rs=1",
         name : "PRODUCTS",
-        navigate : "/Product"
+        navigate : "/ProductPage"
     },
     {
         id : 3,
         img : "https://th.bing.com/th/id/OIP.Zq88r2ZgD5FCTJn7dG_dzgHaFS?pid=ImgDet&rs=1",
         name : "SERVICES",
-        navigate : "/Service"
+        navigate : "/CustomerView"
     },
     {
         id : 4,

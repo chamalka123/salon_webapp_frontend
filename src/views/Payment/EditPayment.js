@@ -42,6 +42,7 @@ useEffect(() => {
 
         setPaytype(res.data.pay.paymentType);
 
+      
         setDiscounts(res.data.pay.discount);
 
         setDate(res.data.pay.date);
@@ -72,6 +73,7 @@ function sendUpdatePayment(e){
       paymentId,
       customername,
       paymentType,
+   
       discount,
       date,
       amount
@@ -133,6 +135,8 @@ onChange={(e)=>{
   }} />
 
   </div>
+
+ 
 
   <div className="form-group">
   <label for="discount">Discount</label>
