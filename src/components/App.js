@@ -46,7 +46,8 @@ import AdminLogin from "../views/AdminLogin/AdminLogin";
 import BudgetPlans from "../views/BudgetPlans/BudgetPlans";
 import Ledgers from "../views/Ledgers/Ledgers";
 import Navbar from "./Navbar/Navbar";
-
+import CustomerList from "../views/customer/customerList";
+import CustomerLogin from "../views/CustomerLogin/CustomerLogin";
 import CreateBudgetPlan from "../views/BudgetPlans/CreateBudgetPlan";
 import AddLedgers from "../views/Ledgers/AddLedgers";
 import EditLedgerNote from "../views/Ledgers/EditLedgerNote";
@@ -62,7 +63,9 @@ function App() {
           <Route exact path="/home">
             <Home />
           </Route>
-         
+          <Route exact path="/">
+            <CustomerLogin />
+          </Route>
           <Route exact path="/signup">
             <Signup />
           </Route>
@@ -188,7 +191,9 @@ function App() {
           <Route exact path="/AddEmployeeSalary">
             <AddEmployeeSalary />
           </Route>
-       
+          <Route exact path="/Client">
+            <CustomerList />
+          </Route>
 
 
 
