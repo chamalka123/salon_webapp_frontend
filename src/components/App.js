@@ -4,7 +4,7 @@ import Home from "../views/Home/Home";
 import Signup from "../views/customer/signup";
 import Admin from "../views/adminPanel/adminPanel";
 import MyAccount from "../views/myAccount/myAccount";
-import Expenses from "../views/Expenses/Expenses";
+import Expenses from "../views/Expenses/expenses";
 import Payment from "../views/Payment/Payment";
 import AddExpenses from "../views/Expenses/AddExpenses";
 
@@ -53,7 +53,6 @@ import AddLedgers from "../views/Ledgers/AddLedgers";
 import EditLedgerNote from "../views/Ledgers/EditLedgerNote";
 import DetailsPage from "../views/Service/ServiceReports/DetailsPage";
 import AddReport from "../views/Service/ServiceReports/AddReport";
-
 
 function App() {
   return (
@@ -160,7 +159,6 @@ function App() {
           <Route exact path="/AddReport">
             <AddReport />
           </Route>
-          
           <Route exact path="/Product">
             <AllProduct />
           </Route>
@@ -194,9 +192,6 @@ function App() {
           <Route exact path="/Client">
             <CustomerList />
           </Route>
-
-
-
 
           <Route exact path="/AddCalSalary">
             <AddCalSalary/>

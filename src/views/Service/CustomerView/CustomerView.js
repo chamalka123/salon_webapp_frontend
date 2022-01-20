@@ -76,7 +76,7 @@ return(
 <div class="column">
                 <div class="productcard">
                     <div class="imgBx">
-                        <img  src={`${services.images}`}  alt="service"/>
+                        <img  src="./image/d.jpg" alt="service"/>
                     </div>
                     <div class="p-3">
                      

@@ -63,25 +63,18 @@ return(
     <br></br>
     <br></br>
     <br></br>
-  
+    <header className="serviceHeader">
+    <div className="logo">
                 <h1>
-              SERVICES MANAGEMENT
+                    <Link to={"/CustomerView"}>{'SERVICES MANAGEMENT'}</Link>
                 </h1>
-                <div>
-      <ul className="nav nav-pills nav-fill">
-        <li className="nav-item">
-          <Link to={"/Service"} className="nav-link active">SERVICES & PACKAGES</Link>
-        </li>
-        &nbsp;
-        <li className="nav-item">
-          <Link to={"/AddService"} className="nav-link active">CREATE NEW</Link>
-        </li>
-        &nbsp;
-        <li className="nav-item">
-          <Link to={"/DetailsPage"} className="nav-link active">REPORTS</Link>
-        </li>
-      </ul>
-    </div>
+            </div>
+            <ul>
+                <li><Link to="/AddService">{'CREATE NEW'}</Link></li>
+                <li><Link to="/Service">SERVICES & PACKAGES</Link></li>
+                <li><Link to="/DetailsPage">SERVICES REPORTS</Link></li>
+                </ul>
+</header>
 <div className="filter-menu">
 <input type="text"style={{width:"16%", height:"25%"}}  placeholder="Enter your search" onChange={(e)=>setSearchtitle(e.target.value)}/> </div>
 {loading ?(
@@ -101,7 +94,7 @@ return(
 <div class="column">
                 <div class="productcard">
                     <div class="imgBx">
-                        <img  src={`${services.images}`} alt="service"/>
+                        <img  src="./image/d.jpg" alt="service"/>
                     </div>
                     <div class="p-3">
                     

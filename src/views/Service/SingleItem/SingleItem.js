@@ -16,7 +16,6 @@ function ServiceDetails(props) {
     const[content,setContent]=useState("");
     const[category,setCategory]=useState("");
     const [services, setServices] = useState([]);
-    const [images,setImages]=useState("");
   const history=useHistory()
     const config = {
         headers: {
@@ -32,7 +31,6 @@ function ServiceDetails(props) {
         setDuration(res.data.service.duration)
         setContent(res.data.service.content)
         setCategory(res.data.service.category)
-        setImages(res.data.service.images)
         console.log(res)   
       }).catch((err) => {
         alert(err)
@@ -76,7 +74,7 @@ function ServiceDetails(props) {
         
 <div className="detailcard">
             <div className="detail">
-                       <img src={`${images}`} alt="" />
+                       <img src="/image/d.jpg " alt="" />
                  
            <div className="box-detail">
                         <div className="row">

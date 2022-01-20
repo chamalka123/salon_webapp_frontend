@@ -16,53 +16,8 @@ import SideDrawer from "../../components/Header/SideDrawer.js";
 function Home(){
 
 
-    return(
+    
 
-        <div className="home-home">
-
-            <SideDrawer/>
-
-                <h1>Home</h1>
-
-
-
-                        {cardDetails.map( (cardDetails) => {
-
-                            return(
-
-                                <div>
-
-
-
-                                        <Card 
-
-                                            key = {cardDetails.id}
-
-                                            name = {cardDetails.name}
-
-                                            img  = {cardDetails.img}
-
-                                            navigate = {cardDetails.navigate}
-
-                                        />
-
-
-
-                               
-
-                                </div>
-
-                            );
-
-                        })}
-
-
-
-     
-
-            </div>
-
-    );
 
 
     return (
