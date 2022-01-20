@@ -1,5 +1,4 @@
-Student IT Number - IT20491994
- GitHub Username - saduni-udeshika
+
 
 # Getting Started with Create React App
 
