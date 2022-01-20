@@ -18,11 +18,16 @@ function UpdateService(props){
     const[category,setCategory]=useState("");
     const history=useHistory();
     const [previewSource, setPreviewSource] = useState();
+    const[images,setImages]=useState("");
 
+    const [fileInputState, setFileInputState] = useState('');
+    const [selectedFile, setSelectedFile] = useState();
      //handling the image uploading
      const handleFileInputChange = (e) => {
         const file = e.target.files[0]
         previewImage(file);
+        setSelectedFile(file);
+        setFileInputState(e.target.value);
     };
 
     //display a preview of uploaded image
@@ -46,6 +51,7 @@ function UpdateService(props){
             setDuration(res.data.service.duration);
             setContent(res.data.service.content);
             setCategory(res.data.service.category);
+            setImages(res.data.service.images);
           })
           .catch((error) => {
             alert("Failed to fetch item data")
@@ -182,29 +188,7 @@ async function sendUpdateService(e){
                             </div>
                     </div>
                     </div>
-                    <div className="col-4 d-flex justify-content-center">
-                        <div>
-                            {previewSource ? 
-                                <img src={previewSource} alt="preview" className="previewImgservice"/>
-                            :
-                                <img src="/image/d.jpg" className="updatepreviewImgservice" alt="service pic"/>
-                            }
-                            <div className="form-group">
-                                <label htmlFor="productimg">
-                                    <input
-                                        style={{ display: 'none' }}
-                                        id="serviceimg"
-                                        name="serviceimg"
-                                        type="file"
-                                         onChange={handleFileInputChange}
-                                    />
-                                    <Button color="primary" variant="contained" component="span">
-                                        <AddAPhotoIcon/> &nbsp; Update Image
-                                    </Button>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
+                   
                 </div>
                 <div className="row">
                     <div className="col-md-12">

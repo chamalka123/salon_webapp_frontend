@@ -18,37 +18,61 @@ function AddService() {
     const[content,setContent]=useState("");
     const[category,setCategory]=useState("");
     const [previewSource, setPreviewSource] = useState();
+    const [selectedFile, setSelectedFile] = useState();
+    const [fileInputState, setFileInputState] = useState('');
 
+  
   
     //handling the image uploading
     const handleFileInputChange = (event) => {
-        const file = event.target.files[0]
-        previewImage(file);
+        const file = event.target.files[0];
+        previewFile(file);
+        setSelectedFile(file);
+        setFileInputState(event.target.value);
     };
 
     //display a preview of uploaded image
-    const previewImage = (file) => {
+    const previewFile = (file) => {
         const reader = new FileReader();
         reader.readAsDataURL(file)
-        reader.onload = () => {
+        reader.onloadend = () => {
             setPreviewSource(reader.result)
         }
     }
 
-    const newService = {service_id,title,price,duration,content,category}
-
     async function add(event){
         event.preventDefault();
-
         const config = {
             headers: {
                 "content-Type": "application/json"
             }
         };
         
+        let images
+        
+
+        if(previewSource){
+            const formData = new FormData();
+            formData.append("file", selectedFile) 
+            formData.append("upload_preset", "services_new")
+
+           
+            try {
+                await axios.post(" https://api.cloudinary.com/v1_1/dclcwoqj1/image/upload", formData).then((res) =>{
+                    images = res.data.secure_url
+                })
+            } catch (error) {
+                alert(error)
+            }
+        }
+
+    const newService = {service_id,title,price,duration,content,category,images}
+
+        
         try {
             await axios.post("http://localhost:8070/service/add", newService, config)
-            alert("Added Successfully")          
+            alert("Added Successfully")   
+            event.target.reset();       
         }catch (error) {         
             alert("Can't be Added");
         }
@@ -168,9 +192,11 @@ function AddService() {
                                     <input
                                         style={{ display: 'none' }}
                                         id="serviceimg"
+                                        required="true"
                                         name="serviceimg"
                                         type="file"
                                         onChange={handleFileInputChange}
+                                        value={fileInputState}
                                     />
 
                                     <Button color="primary" variant="contained" component="span">

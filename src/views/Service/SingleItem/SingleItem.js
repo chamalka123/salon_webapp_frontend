@@ -122,7 +122,7 @@ function ServiceDetails(props) {
                         <div key={key}> 
                             <div class="productcard">
                                     <div class="imgBx">
-                                        <img  src="/image/d.jpg" alt="service"/>
+                                        <img  src={"/image/d.jpg"} alt="service"/>
                                     </div>
                                     <div class="p-3">
                                         <h6>{Service.title}</h6>
